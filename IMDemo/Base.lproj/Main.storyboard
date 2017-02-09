@@ -94,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qSl-4m-f11" id="nhb-2L-eg0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserNameHere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chO-Oi-Dkj" userLabel="UserName">
@@ -148,6 +148,9 @@
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="添加好友"/>
+                                <connections>
+                                    <segue destination="my1-hG-c1o" kind="show" id="csX-2X-4Fw"/>
+                                </connections>
                             </button>
                             <connections>
                                 <segue destination="my1-hG-c1o" kind="show" id="gRB-ca-34V"/>
@@ -187,19 +190,59 @@
                                     <action selector="sendButtonPressed:" destination="plJ-XU-Ikk" eventType="touchUpInside" id="vVp-Bu-yiL"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zmS-a0-exb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="223"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatCell" id="ztR-gm-QIB" customClass="ChatCell" customModule="IMDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ztR-gm-QIB" id="XXa-Gl-9yd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-dQ-5Wq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="Jtk-dQ-5Wq" secondAttribute="trailing" id="MdH-25-UPB"/>
+                                                <constraint firstItem="Jtk-dQ-5Wq" firstAttribute="top" secondItem="XXa-Gl-9yd" secondAttribute="top" id="MhT-lH-rPU"/>
+                                                <constraint firstAttribute="bottom" secondItem="Jtk-dQ-5Wq" secondAttribute="bottom" id="dKb-vK-cQt"/>
+                                                <constraint firstItem="Jtk-dQ-5Wq" firstAttribute="leading" secondItem="XXa-Gl-9yd" secondAttribute="leading" id="xQO-IV-zOu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="Jtk-dQ-5Wq" id="1dG-rt-9Ni"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="plJ-XU-Ikk" id="32T-Oo-z6w"/>
+                                    <outlet property="delegate" destination="plJ-XU-Ikk" id="qUn-qH-RZc"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qm5-a5-d2K" firstAttribute="leading" secondItem="WaF-gv-9r6" secondAttribute="trailing" constant="22" id="6xc-VV-8HI"/>
                             <constraint firstItem="qm5-a5-d2K" firstAttribute="centerY" secondItem="WaF-gv-9r6" secondAttribute="centerY" constant="-1" id="8uc-1B-XSE"/>
                             <constraint firstItem="41A-FS-hzP" firstAttribute="top" secondItem="WaF-gv-9r6" secondAttribute="bottom" constant="339" id="H3N-Ek-IgX"/>
+                            <constraint firstAttribute="trailing" secondItem="zmS-a0-exb" secondAttribute="trailing" id="OOd-3m-0yI"/>
+                            <constraint firstItem="zmS-a0-exb" firstAttribute="leading" secondItem="iAx-8z-gRO" secondAttribute="leading" id="RkC-dl-Yc2"/>
+                            <constraint firstItem="zmS-a0-exb" firstAttribute="top" secondItem="gBh-6Q-T20" secondAttribute="bottom" id="T0P-C7-Pbb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WaF-gv-9r6" secondAttribute="trailing" constant="98" id="XS7-0Q-M5N"/>
+                            <constraint firstItem="qm5-a5-d2K" firstAttribute="top" secondItem="zmS-a0-exb" secondAttribute="bottom" constant="10" id="Z3s-tB-U94"/>
                             <constraint firstItem="WaF-gv-9r6" firstAttribute="leading" secondItem="iAx-8z-gRO" secondAttribute="leadingMargin" id="waX-2r-gJl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="eeE-ck-6CU"/>
                     <connections>
                         <outlet property="inputTextField" destination="WaF-gv-9r6" id="w3L-QC-XT2"/>
+                        <outlet property="tableView" destination="zmS-a0-exb" id="dYC-JH-ca0"/>
                         <outlet property="titleItem" destination="eeE-ck-6CU" id="yKw-2L-Kwc"/>
                     </connections>
                 </viewController>
@@ -279,4 +322,7 @@
             <point key="canvasLocation" x="942" y="170"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="gRB-ca-34V"/>
+    </inferredMetricsTieBreakers>
 </document>
