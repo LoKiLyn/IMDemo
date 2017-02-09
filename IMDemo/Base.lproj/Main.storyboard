@@ -36,6 +36,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NI6-LV-9eK" userLabel="Login Button">
                                 <rect key="frame" x="162" y="296" width="38" height="30"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZZ-EO-9ue"/>
@@ -93,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qSl-4m-f11" id="nhb-2L-eg0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserNameHere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chO-Oi-Dkj" userLabel="UserName">
@@ -130,14 +131,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jp8-iI-Q3a">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Dlf-kx-GGI">
+                        <barButtonItem key="rightBarButtonItem" id="Dlf-kx-GGI">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bq5-om-2Me">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="添加好友"/>
-                                <connections>
-                                    <segue destination="my1-hG-c1o" kind="show" id="j04-yq-yUs"/>
-                                </connections>
                             </button>
                             <connections>
                                 <segue destination="my1-hG-c1o" kind="show" id="gRB-ca-34V"/>
@@ -234,7 +232,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="添加好友" id="ML6-4K-eGb">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="P6b-RO-zxr">
+                        <barButtonItem key="leftBarButtonItem" id="P6b-RO-zxr">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4gq-AX-Pxa" userLabel="返回">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -270,7 +268,4 @@
             <point key="canvasLocation" x="942" y="170"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gRB-ca-34V"/>
-    </inferredMetricsTieBreakers>
 </document>
