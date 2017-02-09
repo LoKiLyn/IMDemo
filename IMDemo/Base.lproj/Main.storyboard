@@ -131,6 +131,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jp8-iI-Q3a">
+                        <barButtonItem key="leftBarButtonItem" id="5bh-na-ktJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Pjh-lS-4n9">
+                                <rect key="frame" x="16" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="注销">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonPressed:" destination="CTJ-Zf-RzO" eventType="touchUpInside" id="dJu-Wm-yDT"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="Dlf-kx-GGI">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bq5-om-2Me">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
