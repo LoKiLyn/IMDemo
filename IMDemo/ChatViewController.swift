@@ -72,8 +72,10 @@ extension ChatViewController: NIMChatManagerDelegate {
             let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
             alert.addAction(okAction)
             self.present(alert, animated: true)
-//            let indexPath = IndexPath(row: self.messages.count + 1, section: 0)
-//            self.tableView.insertRows(at:[indexPath], with: UITableViewRowAnimation.left)
+            self.messages.append(message)
+            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+            self.tableView.insertRows(at:[indexPath], with: UITableViewRowAnimation.left)
+            self.tableView.reloadData()
         }
         else {
             let alert = UIAlertController(title: "提示", message: "发送失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)
@@ -91,6 +93,9 @@ extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as! ChatCell
         cell.messageLabel.text = messages[indexPath.row].text
+        if messages[indexPath.row].senderName == nil {
+            cell.messageLabel.textColor = UIColor.red
+        }
         return cell
     }
 }
