@@ -50,12 +50,12 @@ class ChatViewController: UIViewController {
         } catch {
             print(error)
         }
-        print(message.description)
     }
     
 }
 
 extension ChatViewController: NIMChatManagerDelegate {
+    
     func onRecvMessages(_ messages: [NIMMessage]) {
         for message in messages {
             print(message.text as Any)

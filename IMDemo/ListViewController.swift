@@ -20,11 +20,6 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for user:NIMUser in NIMSDK.shared().userManager.myFriends()! {
-            print(user.userId?.description as Any)
-        }
-
     }
     
     //MARK: - Navigation
@@ -77,7 +72,6 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        print(friendList?[indexPath.row].description as Any)
         selectedIndexPath = indexPath
         performSegue(withIdentifier: "showChatViewController", sender: self)
     }
