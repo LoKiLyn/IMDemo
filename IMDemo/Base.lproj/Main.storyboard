@@ -199,6 +199,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="eeE-ck-6CU"/>
                     <connections>
+                        <outlet property="inputTextField" destination="WaF-gv-9r6" id="w3L-QC-XT2"/>
                         <outlet property="titleItem" destination="eeE-ck-6CU" id="yKw-2L-Kwc"/>
                     </connections>
                 </viewController>
