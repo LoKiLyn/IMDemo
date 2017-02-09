@@ -180,15 +180,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MessageLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okR-dj-WJQ">
-                                <rect key="frame" x="46" y="116" width="273" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qm5-a5-d2K">
                                 <rect key="frame" x="283" y="297" width="36" height="30"/>
                                 <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="plJ-XU-Ikk" eventType="touchUpInside" id="vVp-Bu-yiL"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -196,15 +193,13 @@
                             <constraint firstItem="qm5-a5-d2K" firstAttribute="leading" secondItem="WaF-gv-9r6" secondAttribute="trailing" constant="22" id="6xc-VV-8HI"/>
                             <constraint firstItem="qm5-a5-d2K" firstAttribute="centerY" secondItem="WaF-gv-9r6" secondAttribute="centerY" constant="-1" id="8uc-1B-XSE"/>
                             <constraint firstItem="41A-FS-hzP" firstAttribute="top" secondItem="WaF-gv-9r6" secondAttribute="bottom" constant="339" id="H3N-Ek-IgX"/>
-                            <constraint firstItem="okR-dj-WJQ" firstAttribute="top" secondItem="gBh-6Q-T20" secondAttribute="bottom" constant="52" id="R2c-nG-OYN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WaF-gv-9r6" secondAttribute="trailing" constant="98" id="XS7-0Q-M5N"/>
-                            <constraint firstItem="okR-dj-WJQ" firstAttribute="leading" secondItem="iAx-8z-gRO" secondAttribute="leadingMargin" constant="30" id="bqx-h1-8va"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="okR-dj-WJQ" secondAttribute="trailing" constant="40" id="sBV-ws-isw"/>
                             <constraint firstItem="WaF-gv-9r6" firstAttribute="leading" secondItem="iAx-8z-gRO" secondAttribute="leadingMargin" id="waX-2r-gJl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="eeE-ck-6CU"/>
                     <connections>
-                        <outlet property="roomLabel" destination="okR-dj-WJQ" id="Qcb-Fm-o7y"/>
+                        <outlet property="titleItem" destination="eeE-ck-6CU" id="yKw-2L-Kwc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F95-ke-SUu" userLabel="First Responder" sceneMemberID="firstResponder"/>

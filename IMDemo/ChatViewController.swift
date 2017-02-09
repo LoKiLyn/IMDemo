@@ -10,11 +10,30 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
-    var user: NIMUser?
+    // MARK: - Propertys
     
-    @IBOutlet weak var roomLabel: UILabel!
+    var user: NIMUser?
+    @IBOutlet weak var titleItem: UINavigationItem!
+    
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.roomLabel.text = user?.userId
+        self.titleItem.title = user?.userId
     }
+    
+    
+    // MARK: - Events
+    
+    @IBAction func sendButtonPressed(_ sender: UIButton) {
+        let message = NIMMessage()
+        let session = NIMSession((user?.userId)!, type: NIMSessionType.P2P)
+        do {
+           try NIMSDK.shared().chatManager.send(message, to: session)
+        } catch {
+            print(error)
+        }
+    }
+    
 }
