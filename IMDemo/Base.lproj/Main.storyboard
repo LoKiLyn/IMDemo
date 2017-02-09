@@ -165,7 +165,7 @@
         <!--Chat View Controller-->
         <scene sceneID="hZQ-fw-3DO">
             <objects>
-                <viewController id="plJ-XU-Ikk" userLabel="Chat View Controller" sceneMemberID="viewController">
+                <viewController id="plJ-XU-Ikk" userLabel="Chat View Controller" customClass="ChatViewController" customModule="IMDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gBh-6Q-T20"/>
                         <viewControllerLayoutGuide type="bottom" id="41A-FS-hzP"/>
@@ -203,6 +203,9 @@
                             <constraint firstItem="WaF-gv-9r6" firstAttribute="leading" secondItem="iAx-8z-gRO" secondAttribute="leadingMargin" id="waX-2r-gJl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="roomLabel" destination="okR-dj-WJQ" id="Qcb-Fm-o7y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F95-ke-SUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

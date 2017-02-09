@@ -10,8 +10,14 @@ import UIKit
 
 class ListViewController: UIViewController {
     
+    //MARK: - Property
+    
     var friendList = NIMSDK.shared().userManager.myFriends()
+    var selectedIndexPath: IndexPath?
 
+    
+    //MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,10 +26,16 @@ class ListViewController: UIViewController {
         }
 
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    //MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showChatViewController" {
+            let destination = segue.destination as! ChatViewController
+            destination.user = friendList?[(selectedIndexPath?.row)!]
+        }
     }
+    
+    //MARK: - Events
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
         NIMSDK.shared().loginManager.logout { (error) in
@@ -65,6 +77,7 @@ extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         print(friendList?[indexPath.row].description as Any)
+        selectedIndexPath = indexPath
         performSegue(withIdentifier: "showChatViewController", sender: self)
     }
     

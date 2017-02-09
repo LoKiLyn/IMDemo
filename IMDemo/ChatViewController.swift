@@ -10,8 +10,11 @@ import UIKit
 
 class ChatViewController: UIViewController {
 
+    var user: NIMUser?
+    
+    @IBOutlet weak var roomLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.roomLabel.text = user?.userId
     }
 }
