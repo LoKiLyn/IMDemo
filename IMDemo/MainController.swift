@@ -16,6 +16,11 @@ class MainController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NIMSDK.shared().loginManager.autoLogin("test02", token: "000002")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.performSegue(withIdentifier: "showListViewController", sender: self)
     }
 
     override func didReceiveMemoryWarning() {

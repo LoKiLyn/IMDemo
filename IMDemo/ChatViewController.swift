@@ -95,6 +95,8 @@ extension ChatViewController: UITableViewDataSource {
         cell.messageLabel.text = messages[indexPath.row].text
         if messages[indexPath.row].senderName == nil {
             cell.messageLabel.textColor = UIColor.red
+        }else {
+            cell.messageLabel.textColor = UIColor.black
         }
         return cell
     }
