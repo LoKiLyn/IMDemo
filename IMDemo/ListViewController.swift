@@ -14,7 +14,7 @@ class ListViewController: UIViewController {
     
     var friendList = NIMSDK.shared().userManager.myFriends()
     var selectedIndexPath: IndexPath?
-    var teamOption: NIMCreateTeamOption?
+    var teamId: String?
 
     
     //MARK: - LifeCycle
@@ -33,7 +33,7 @@ class ListViewController: UIViewController {
         
         if segue.identifier == "showGroupViewController" {
             let destination = segue.destination as! GroupViewController
-            destination.teamOption = self.teamOption
+            destination.teamId = self.teamId
         }
     }
     
@@ -77,9 +77,9 @@ class ListViewController: UIViewController {
         teamOption.name = "TestTeam"
         let currentUser = NIMSDK.shared().loginManager.currentAccount()
         print(currentUser)
-        NIMSDK.shared().teamManager.createTeam(teamOption, users: [((self.friendList?.first)?.userId)!]) { (error, string) in
+        NIMSDK.shared().teamManager.createTeam(teamOption, users: [((self.friendList?.first)?.userId)!]) { (error, teamId) in
             if error == nil {
-                print(string as Any)
+                self.teamId = teamId
                 let alert = UIAlertController(title: "提示", message: "创建群成功", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(okAction)
@@ -88,7 +88,6 @@ class ListViewController: UIViewController {
                         self.performSegue(withIdentifier: "showGroupViewController", sender: self)
                     })
                 })
-
             }
             else {
                 let alert = UIAlertController(title: "提示", message: "创建群失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)
@@ -101,7 +100,6 @@ class ListViewController: UIViewController {
                 })
             }
         }
-        self.teamOption = teamOption
     }
     
 }
