@@ -10,10 +10,12 @@ import UIKit
 
 class GroupViewController: UIViewController {
 
+    var teamOption: NIMCreateTeamOption?
+    @IBOutlet weak var titleItem: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.titleItem.title = teamOption?.name
     }
 
     override func didReceiveMemoryWarning() {

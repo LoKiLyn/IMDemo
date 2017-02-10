@@ -74,7 +74,7 @@
             </objects>
             <point key="canvasLocation" x="-17" y="170"/>
         </scene>
-        <!--Group View Controller-->
+        <!--Title-->
         <scene sceneID="D5f-nW-tam">
             <objects>
                 <viewController storyboardIdentifier="GroupViewController" id="iGj-YN-qSy" customClass="GroupViewController" customModule="IMDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -87,6 +87,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="H0q-eF-UkA"/>
+                    <connections>
+                        <outlet property="titleItem" destination="H0q-eF-UkA" id="EPc-qJ-BMk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIL-Cv-YqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -228,7 +232,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ztR-gm-QIB" id="XXa-Gl-9yd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-dQ-5Wq">

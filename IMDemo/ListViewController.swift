@@ -14,6 +14,7 @@ class ListViewController: UIViewController {
     
     var friendList = NIMSDK.shared().userManager.myFriends()
     var selectedIndexPath: IndexPath?
+    var teamOption: NIMCreateTeamOption?
 
     
     //MARK: - LifeCycle
@@ -28,6 +29,11 @@ class ListViewController: UIViewController {
         if segue.identifier == "showChatViewController" {
             let destination = segue.destination as! ChatViewController
             destination.user = friendList?[(selectedIndexPath?.row)!]
+        }
+        
+        if segue.identifier == "showGroupViewController" {
+            let destination = segue.destination as! GroupViewController
+            destination.teamOption = self.teamOption
         }
     }
     
@@ -54,7 +60,24 @@ class ListViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func createGroupButtonPressed(_ sender: UIButton) {
+        let teamOption = NIMCreateTeamOption()
+        //群公告
+        teamOption.announcement = "Team Annoucement: Hi all"
+        //群头像
+        teamOption.avatarUrl = nil
+        //谁可以邀请群成员
+        teamOption.inviteMode = NIMTeamInviteMode.all
+        //被邀请人验证方式
+        teamOption.beInviteMode = NIMTeamBeInviteMode.noAuth
+        //群验证方式
+        teamOption.joinMode = NIMTeamJoinMode.noAuth
+        //群名称
+        teamOption.name = "TestTeam"
+        let currentUser = NIMSDK.shared().loginManager.currentAccount()
+        NIMSDK.shared().teamManager.createTeam(teamOption, users:[currentUser], completion: nil)
+        self.teamOption = teamOption
     }
     
 }
