@@ -74,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="-17" y="170"/>
         </scene>
-        <!--Title-->
+        <!--Group View Controller-->
         <scene sceneID="D5f-nW-tam">
             <objects>
-                <viewController storyboardIdentifier="GroupViewController" id="iGj-YN-qSy" customClass="GroupViewController" customModule="IMDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupViewController" id="iGj-YN-qSy" userLabel="Group View Controller" customClass="GroupViewController" customModule="IMDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5oD-NU-n7F"/>
                         <viewControllerLayoutGuide type="bottom" id="SgX-ps-dgr"/>
@@ -148,7 +148,6 @@
                                 <state key="normal" title="创建群"/>
                                 <connections>
                                     <action selector="createGroupButtonPressed:" destination="CTJ-Zf-RzO" eventType="touchUpInside" id="hQY-jK-ylA"/>
-                                    <segue destination="iGj-YN-qSy" kind="show" identifier="showGroupViewController" id="qyG-O1-Dkp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -193,6 +192,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="plJ-XU-Ikk" kind="show" identifier="showChatViewController" id="BYF-Re-jsh"/>
+                        <segue destination="iGj-YN-qSy" kind="show" identifier="showGroupViewController" id="fuc-NB-KRt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfc-Ts-BOj" userLabel="First Responder" sceneMemberID="firstResponder"/>

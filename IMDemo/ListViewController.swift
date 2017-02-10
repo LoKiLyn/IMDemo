@@ -76,7 +76,31 @@ class ListViewController: UIViewController {
         //群名称
         teamOption.name = "TestTeam"
         let currentUser = NIMSDK.shared().loginManager.currentAccount()
-        NIMSDK.shared().teamManager.createTeam(teamOption, users:[currentUser], completion: nil)
+        print(currentUser)
+        NIMSDK.shared().teamManager.createTeam(teamOption, users: [((self.friendList?.first)?.userId)!]) { (error, string) in
+            if error == nil {
+                print(string as Any)
+                let alert = UIAlertController(title: "提示", message: "创建群成功", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: {
+                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+                        self.performSegue(withIdentifier: "showGroupViewController", sender: self)
+                    })
+                })
+
+            }
+            else {
+                let alert = UIAlertController(title: "提示", message: "创建群失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)
+                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion:{
+//                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+//                        self.dismiss(animated: true)
+//                    })
+                })
+            }
+        }
         self.teamOption = teamOption
     }
     
