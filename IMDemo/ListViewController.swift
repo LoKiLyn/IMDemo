@@ -22,9 +22,8 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let team = NIMSDK.shared().teamManager.allMyTeams()
-        self.myTeams = team
     }
+    
     
     //MARK: - Navigation
     
@@ -70,6 +69,7 @@ class ListViewController: UIViewController {
     }
     
     @IBAction func createGroupButtonPressed(_ sender: UIButton) {
+        
         let teamOption = NIMCreateTeamOption()
         //群公告
         teamOption.announcement = "Team Annoucement: Hi all"
@@ -83,17 +83,13 @@ class ListViewController: UIViewController {
         teamOption.joinMode = NIMTeamJoinMode.noAuth
         //群名称
         teamOption.name = "TestTeam"
-        let currentUser = NIMSDK.shared().loginManager.currentAccount()
-        print(currentUser)
         NIMSDK.shared().teamManager.createTeam(teamOption, users: [((self.friendList?.first)?.userId)!]) { (error, teamId) in
             if error == nil {
                 let alert = UIAlertController(title: "提示", message: "创建群成功，群号为\(teamId)", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: {
-//                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-//                        self.performSegue(withIdentifier: "showGroupViewController", sender: self)
-//                    })
+                    
                 })
             }
             else {
@@ -110,6 +106,8 @@ class ListViewController: UIViewController {
     }
     
     @IBAction func myTeamButtonPressed(_ sender: UIButton) {
+        let team = NIMSDK.shared().teamManager.allMyTeams()
+        self.myTeams = team
         self.performSegue(withIdentifier: "showMyGroupsViewController", sender: self)
     }
     

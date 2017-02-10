@@ -31,6 +31,11 @@ class GroupViewController: UIViewController {
 }
 
 extension GroupViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "群用户"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (teamMembers?.count)!
     }
