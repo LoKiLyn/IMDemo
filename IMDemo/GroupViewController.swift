@@ -136,7 +136,7 @@ extension GroupViewController: UITableViewDataSource {
             return cell!
         }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as! ChatCell
-            cell.textLabel?.text = messages[indexPath.row].text
+            cell.textLabel?.text = "\(messages[indexPath.row].from!): \(messages[indexPath.row].text!)"
             if messages[indexPath.row].senderName == nil {
                 cell.textLabel?.textColor = UIColor.red
             }else {
