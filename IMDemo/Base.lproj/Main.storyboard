@@ -85,16 +85,43 @@
                     <view key="view" contentMode="scaleToFill" id="XD7-Uk-nka">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wp1-hr-22h">
+                                <rect key="frame" x="150" y="64" width="225" height="403"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupMemberCell" id="MKH-z2-pTE" customClass="GroupListCell" customModule="IMDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="225" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MKH-z2-pTE" id="5bR-nA-hPj">
+                                            <rect key="frame" x="0.0" y="0.0" width="225" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iGj-YN-qSy" id="jhX-sM-ayi"/>
+                                    <outlet property="delegate" destination="iGj-YN-qSy" id="sO8-cU-5AA"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SgX-ps-dgr" firstAttribute="top" secondItem="wp1-hr-22h" secondAttribute="bottom" constant="200" id="0OS-EL-pZA"/>
+                            <constraint firstAttribute="trailing" secondItem="wp1-hr-22h" secondAttribute="trailing" id="MX2-QC-DnV"/>
+                            <constraint firstItem="wp1-hr-22h" firstAttribute="leading" secondItem="XD7-Uk-nka" secondAttribute="leading" constant="150" id="Nz7-nZ-L9L"/>
+                            <constraint firstItem="wp1-hr-22h" firstAttribute="top" secondItem="5oD-NU-n7F" secondAttribute="bottom" id="ylj-kT-Yiv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="H0q-eF-UkA"/>
                     <connections>
+                        <outlet property="groupMemberView" destination="wp1-hr-22h" id="Lyh-7x-hMi"/>
                         <outlet property="titleItem" destination="H0q-eF-UkA" id="EPc-qJ-BMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIL-Cv-YqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3185" y="994"/>
+            <point key="canvasLocation" x="3184.8000000000002" y="993.55322338830592"/>
         </scene>
         <!--My Groups View Controller-->
         <scene sceneID="7D9-RA-Irb">
@@ -354,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F95-ke-SUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941.60000000000002" y="1723.9880059970017"/>
+            <point key="canvasLocation" x="2126" y="1777"/>
         </scene>
         <!--AddFriend View Controller-->
         <scene sceneID="dFu-yG-ORh">

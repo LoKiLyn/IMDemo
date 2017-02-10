@@ -11,27 +11,34 @@ import UIKit
 class GroupViewController: UIViewController {
 
     var teamId: String?
+    var teamMembers: Array<NIMTeamMember>?
     @IBOutlet weak var titleItem: UINavigationItem!
+    @IBOutlet weak var groupMemberView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.titleItem.title = teamId!
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        NIMSDK.shared().teamManager.fetchTeamMembers(teamId!) { (error, teamMembers) in
+            if error == nil {
+                self.teamMembers = teamMembers
+                print(teamMembers as Any)
+            }else {
+                print(error as Any)
+            }
+        }
     }
     
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension GroupViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (teamMembers?.count)!
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupMemberCell")
+        cell?.textLabel?.text = "UserID: \(teamMembers![indexPath.row].userId!)"
+        return cell!
+    }
 
 }
