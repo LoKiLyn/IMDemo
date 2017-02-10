@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIL-Cv-YqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3004" y="979"/>
+            <point key="canvasLocation" x="3185" y="994"/>
         </scene>
         <!--My Groups View Controller-->
         <scene sceneID="7D9-RA-Irb">
@@ -112,13 +112,30 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="ZFx-Ps-wFP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="ZFx-Ps-wFP" customClass="GroupListCell" customModule="IMDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZFx-Ps-wFP" id="kYU-mj-b9H">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOi-kG-UsC" userLabel="TeamId Label">
+                                                    <rect key="frame" x="8" y="8" width="359" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="yOi-kG-UsC" secondAttribute="bottom" id="73a-Pe-fOB"/>
+                                                <constraint firstItem="yOi-kG-UsC" firstAttribute="leading" secondItem="kYU-mj-b9H" secondAttribute="leadingMargin" id="Ayx-cc-Ka5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yOi-kG-UsC" secondAttribute="trailing" id="VHC-hb-y0u"/>
+                                                <constraint firstItem="yOi-kG-UsC" firstAttribute="top" secondItem="kYU-mj-b9H" secondAttribute="topMargin" id="tOe-GH-8ju"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="teamIdLabel" destination="yOi-kG-UsC" id="nOF-0N-rPf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -135,10 +152,13 @@
                             <constraint firstItem="Z4r-Yp-xiC" firstAttribute="leading" secondItem="g7f-0i-mle" secondAttribute="leading" id="w2t-ge-xAM"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="iGj-YN-qSy" kind="show" identifier="showGroupViewController" id="1eJ-J4-Wnp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pKT-wj-bGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="1438"/>
+            <point key="canvasLocation" x="2126" y="995"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="ND3-mi-qGV">
@@ -244,7 +264,6 @@
                     </navigationItem>
                     <connections>
                         <segue destination="plJ-XU-Ikk" kind="show" identifier="showChatViewController" id="BYF-Re-jsh"/>
-                        <segue destination="iGj-YN-qSy" kind="show" identifier="showGroupViewController" id="fuc-NB-KRt"/>
                         <segue destination="lVI-Ia-r8V" kind="show" identifier="showMyGroupsViewController" id="zKv-Dg-jPi"/>
                     </connections>
                 </viewController>

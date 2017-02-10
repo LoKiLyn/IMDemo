@@ -14,7 +14,7 @@ class ListViewController: UIViewController {
     
     var friendList = NIMSDK.shared().userManager.myFriends()
     var selectedIndexPath: IndexPath?
-    var teamId: String?
+//    var teamId: String?
     var myTeams: Array<NIMTeam>?
 
     
@@ -34,10 +34,10 @@ class ListViewController: UIViewController {
             destination.user = friendList?[(selectedIndexPath?.row)!]
         }
         
-        if segue.identifier == "showGroupViewController" {
-            let destination = segue.destination as! GroupViewController
-            destination.teamId = self.teamId
-        }
+//        if segue.identifier == "showGroupViewController" {
+//            let destination = segue.destination as! GroupViewController
+//            destination.teamId = self.teamId
+//        }
         
         if segue.identifier == "showMyGroupsViewController" {
             let destination = segue.destination as! MyGroupsViewController
@@ -87,14 +87,13 @@ class ListViewController: UIViewController {
         print(currentUser)
         NIMSDK.shared().teamManager.createTeam(teamOption, users: [((self.friendList?.first)?.userId)!]) { (error, teamId) in
             if error == nil {
-                self.teamId = teamId
-                let alert = UIAlertController(title: "提示", message: "创建群成功", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "提示", message: "创建群成功，群号为\(teamId)", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(okAction)
                 self.present(alert, animated: true, completion: {
-                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-                        self.performSegue(withIdentifier: "showGroupViewController", sender: self)
-                    })
+//                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
+//                        self.performSegue(withIdentifier: "showGroupViewController", sender: self)
+//                    })
                 })
             }
             else {

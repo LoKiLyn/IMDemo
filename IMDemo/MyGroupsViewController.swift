@@ -11,6 +11,7 @@ import UIKit
 class MyGroupsViewController: UIViewController {
 
     var myTeams: Array<NIMTeam>?
+    var selectedTeamId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +24,13 @@ class MyGroupsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showGroupViewController" {
+            let destination = segue.destination as! GroupViewController
+            destination.teamId = self.selectedTeamId
+        }
+    }
+    
 }
 
 extension MyGroupsViewController: UITableViewDataSource {
@@ -32,9 +40,19 @@ extension MyGroupsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell")
-        cell?.textLabel?.text = "群组ID: \(myTeams?[indexPath.row].teamId)"
-        return cell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: "groupCell") as! GroupListCell
+        cell.teamIdLabel.text = "群ID: \(myTeams![indexPath.row].teamId!)"
+        return cell
+    }
+
+}
+
+extension MyGroupsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        self.selectedTeamId = myTeams?[indexPath.row].teamId
+        self.performSegue(withIdentifier: "showGroupViewController", sender: self)
     }
 
 }
