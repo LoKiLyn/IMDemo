@@ -46,6 +46,7 @@ class GroupViewController: UIViewController {
             }else {
                 print(error as Any)
             }
+            self.groupMemberView.reloadData()
         }
     }
     
@@ -64,6 +65,20 @@ class GroupViewController: UIViewController {
             print(error)
         }
     }
+    
+    @IBAction func inviteButtonPressed(_ sender: UIButton) {
+        NIMSDK.shared().teamManager.addUsers(["test03"], toTeam: teamId!, postscript: "ComeOn") { (error, teamMembers) in
+            if error == nil {
+                for teamMember in teamMembers! {
+                    self.teamMembers?.append(teamMember)
+                }
+                self.groupMemberView.reloadData()
+            }else {
+                print(error as Any)
+            }
+        }
+    }
+    
 }
 
 extension GroupViewController: NIMChatManagerDelegate {
@@ -108,7 +123,7 @@ extension GroupViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == groupMemberView{
-            return (teamMembers?.count)!
+            return (teamMembers?.count) ?? 0
         }else {
             return messages.count
         }

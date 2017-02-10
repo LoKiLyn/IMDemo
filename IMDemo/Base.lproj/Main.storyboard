@@ -113,6 +113,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQg-jw-REq">
+                                <rect key="frame" x="297" y="365" width="36" height="30"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendButtonPressed:" destination="iGj-YN-qSy" eventType="touchUpInside" id="hpI-pb-dcb"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zQ5-kP-M9F">
                                 <rect key="frame" x="0.0" y="64" width="219" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,11 +138,11 @@
                                     <outlet property="delegate" destination="iGj-YN-qSy" id="5aA-Zf-vbw"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQg-jw-REq">
-                                <rect key="frame" x="297" y="365" width="36" height="30"/>
-                                <state key="normal" title="Send"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBW-Nf-kuI" userLabel="Invite Button">
+                                <rect key="frame" x="278" y="72" width="62" height="30"/>
+                                <state key="normal" title="邀请好友"/>
                                 <connections>
-                                    <action selector="sendButtonPressed:" destination="iGj-YN-qSy" eventType="touchUpInside" id="hpI-pb-dcb"/>
+                                    <action selector="inviteButtonPressed:" destination="iGj-YN-qSy" eventType="touchUpInside" id="sp7-xQ-DCo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -143,6 +150,7 @@
                         <constraints>
                             <constraint firstItem="SgX-ps-dgr" firstAttribute="top" secondItem="wp1-hr-22h" secondAttribute="bottom" constant="321" id="0OS-EL-pZA"/>
                             <constraint firstItem="zQ5-kP-M9F" firstAttribute="leading" secondItem="XD7-Uk-nka" secondAttribute="leadingMargin" constant="-16" id="3c0-bP-oIW"/>
+                            <constraint firstItem="DBW-Nf-kuI" firstAttribute="leading" secondItem="zQ5-kP-M9F" secondAttribute="trailing" constant="59" id="DbS-wc-PuW"/>
                             <constraint firstItem="mxj-CK-cfe" firstAttribute="leading" secondItem="XD7-Uk-nka" secondAttribute="leading" constant="16" id="Ejh-VQ-ENd"/>
                             <constraint firstItem="wp1-hr-22h" firstAttribute="leading" secondItem="zQ5-kP-M9F" secondAttribute="trailing" constant="8" id="Fez-7J-7Vz"/>
                             <constraint firstItem="zQ5-kP-M9F" firstAttribute="bottom" secondItem="wp1-hr-22h" secondAttribute="bottom" id="I0G-cj-R6Z"/>
@@ -151,6 +159,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="XQg-jw-REq" secondAttribute="trailing" constant="26" id="NdL-PR-cHV"/>
                             <constraint firstItem="wp1-hr-22h" firstAttribute="leading" secondItem="XD7-Uk-nka" secondAttribute="leading" constant="227" id="Nz7-nZ-L9L"/>
                             <constraint firstItem="zQ5-kP-M9F" firstAttribute="top" secondItem="wp1-hr-22h" secondAttribute="top" id="V6I-jj-ZVV"/>
+                            <constraint firstItem="DBW-Nf-kuI" firstAttribute="top" secondItem="5oD-NU-n7F" secondAttribute="bottom" constant="8" id="gmO-13-Pf5"/>
                             <constraint firstItem="SgX-ps-dgr" firstAttribute="top" secondItem="mxj-CK-cfe" secondAttribute="bottom" constant="271" id="lpI-4l-dA4"/>
                             <constraint firstItem="XQg-jw-REq" firstAttribute="centerY" secondItem="mxj-CK-cfe" secondAttribute="centerY" constant="-1" id="wbg-mt-ykn"/>
                             <constraint firstItem="wp1-hr-22h" firstAttribute="top" secondItem="5oD-NU-n7F" secondAttribute="bottom" id="ylj-kT-Yiv"/>
