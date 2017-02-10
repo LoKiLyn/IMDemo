@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="170"/>
+            <point key="canvasLocation" x="-17" y="170"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="ND3-mi-qGV">
@@ -94,7 +94,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qSl-4m-f11" id="nhb-2L-eg0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UserNameHere" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chO-Oi-Dkj" userLabel="UserName">
@@ -323,6 +323,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gRB-ca-34V"/>
+        <segue reference="csX-2X-4Fw"/>
     </inferredMetricsTieBreakers>
 </document>
