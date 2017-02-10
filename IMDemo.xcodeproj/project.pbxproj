@@ -14,6 +14,7 @@
 		031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */; };
 		031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */; };
 		037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */; };
+		037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */; };
 		03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B4081E4C5D4C004A4113 /* ChatCell.swift */; };
 		03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */; };
 		03CBA0CD1E4ABBDA0076397C /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA0CC1E4ABBDA0076397C /* MainController.swift */; };
@@ -32,6 +33,7 @@
 		031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
 		03C0B4081E4C5D4C004A4113 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		03CBA0C71E4ABBD90076397C /* IMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */,
 				031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */,
 				037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */,
+				037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03CBA0CD1E4ABBDA0076397C /* MainController.swift in Sources */,
+				037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */,
 				031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */,
 				03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */,
 				031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */,

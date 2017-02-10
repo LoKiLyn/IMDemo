@@ -15,12 +15,15 @@ class ListViewController: UIViewController {
     var friendList = NIMSDK.shared().userManager.myFriends()
     var selectedIndexPath: IndexPath?
     var teamId: String?
+    var myTeams: Array<NIMTeam>?
 
     
     //MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let team = NIMSDK.shared().teamManager.allMyTeams()
+        self.myTeams = team
     }
     
     //MARK: - Navigation
@@ -34,6 +37,11 @@ class ListViewController: UIViewController {
         if segue.identifier == "showGroupViewController" {
             let destination = segue.destination as! GroupViewController
             destination.teamId = self.teamId
+        }
+        
+        if segue.identifier == "showMyGroupsViewController" {
+            let destination = segue.destination as! MyGroupsViewController
+            destination.myTeams = myTeams
         }
     }
     
@@ -100,6 +108,10 @@ class ListViewController: UIViewController {
                 })
             }
         }
+    }
+    
+    @IBAction func myTeamButtonPressed(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "showMyGroupsViewController", sender: self)
     }
     
 }

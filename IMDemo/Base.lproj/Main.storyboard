@@ -94,7 +94,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xIL-Cv-YqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014" y="1433"/>
+            <point key="canvasLocation" x="3004" y="979"/>
+        </scene>
+        <!--My Groups View Controller-->
+        <scene sceneID="7D9-RA-Irb">
+            <objects>
+                <viewController storyboardIdentifier="MyGroupsViewController" id="lVI-Ia-r8V" customClass="MyGroupsViewController" customModule="IMDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6z2-Gf-AoR"/>
+                        <viewControllerLayoutGuide type="bottom" id="CJ5-Nm-qcp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g7f-0i-mle">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Z4r-Yp-xiC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="groupCell" id="ZFx-Ps-wFP">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZFx-Ps-wFP" id="kYU-mj-b9H">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="lVI-Ia-r8V" id="VSD-bz-Cb7"/>
+                                    <outlet property="delegate" destination="lVI-Ia-r8V" id="2E0-Dx-4Ia"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Z4r-Yp-xiC" secondAttribute="trailing" id="DEs-K3-1Nh"/>
+                            <constraint firstItem="CJ5-Nm-qcp" firstAttribute="top" secondItem="Z4r-Yp-xiC" secondAttribute="bottom" id="EDv-jd-7cr"/>
+                            <constraint firstItem="Z4r-Yp-xiC" firstAttribute="top" secondItem="6z2-Gf-AoR" secondAttribute="bottom" id="Vmh-8m-H3L"/>
+                            <constraint firstItem="Z4r-Yp-xiC" firstAttribute="leading" secondItem="g7f-0i-mle" secondAttribute="leading" id="w2t-ge-xAM"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKT-wj-bGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2126" y="1438"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="ND3-mi-qGV">
@@ -150,6 +194,14 @@
                                     <action selector="createGroupButtonPressed:" destination="CTJ-Zf-RzO" eventType="touchUpInside" id="hQY-jK-ylA"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbe-EG-fCa" userLabel="MyTeamButton">
+                                <rect key="frame" x="27" y="79" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="我的群组"/>
+                                <connections>
+                                    <action selector="myTeamButtonPressed:" destination="CTJ-Zf-RzO" eventType="touchUpInside" id="uGJ-HB-rSl"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.73365268880000001" green="1" blue="0.64344326969999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -193,6 +245,7 @@
                     <connections>
                         <segue destination="plJ-XU-Ikk" kind="show" identifier="showChatViewController" id="BYF-Re-jsh"/>
                         <segue destination="iGj-YN-qSy" kind="show" identifier="showGroupViewController" id="fuc-NB-KRt"/>
+                        <segue destination="lVI-Ia-r8V" kind="show" identifier="showMyGroupsViewController" id="zKv-Dg-jPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mfc-Ts-BOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -232,7 +285,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ztR-gm-QIB" id="XXa-Gl-9yd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jtk-dQ-5Wq">
@@ -337,7 +390,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVY-2V-67o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2014" y="748"/>
+            <point key="canvasLocation" x="2126" y="254"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Z0-Z9-aSp">
