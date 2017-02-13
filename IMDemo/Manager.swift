@@ -8,8 +8,8 @@
 
 import UIKit
 
-class Manager: NSObject {
-    static let shared = Manager()
+class LoginManager: NSObject {
+    static let shared = LoginManager()
     
     /**
      *  登录
@@ -51,6 +51,24 @@ class Manager: NSObject {
      */
     func isLogined() -> (Bool){
         return NIMSDK.shared().loginManager.isLogined()
+    }
+    
+}
+
+class UserManager: NSObject {
+    static let shared = UserManager()
+
+    /**
+     *  添加好友
+     *
+     *  @param friendID    好友账号
+     *  @param completion 完成回调
+     */
+    
+    func addFriend(friendID: String, completion:@escaping (Error?) -> ()){
+        let request = NIMUserRequest()
+        request.userId = friendID
+        NIMSDK.shared().userManager.requestFriend(request, completion: completion)
     }
 
 }

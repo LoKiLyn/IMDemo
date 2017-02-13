@@ -58,6 +58,7 @@ class ListViewController: UIViewController {
                         self.dismiss(animated: true)
                     })
                 })
+                print(NIMSDK.shared().loginManager.isLogined())
             }
             else {
                 let alert = UIAlertController(title: "提示", message: "云信注销失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)
@@ -66,7 +67,6 @@ class ListViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
-        print(NIMSDK.shared().loginManager.isLogined())
     }
     
     @IBAction func createGroupButtonPressed(_ sender: UIButton) {
