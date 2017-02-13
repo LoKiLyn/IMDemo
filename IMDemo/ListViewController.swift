@@ -66,6 +66,7 @@ class ListViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
             }
         }
+        print(NIMSDK.shared().loginManager.isLogined())
     }
     
     @IBAction func createGroupButtonPressed(_ sender: UIButton) {
