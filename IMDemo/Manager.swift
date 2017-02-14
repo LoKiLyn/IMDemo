@@ -45,6 +45,15 @@ class LoginManager: NSObject {
     }
     
     /**
+     *  返回当前登录帐号
+     *
+     *  @return 当前登录帐号,如果没有登录成功,这个地方会返回空字符串""
+     */
+    func currentAccount() -> (String){
+        return NIMSDK.shared().loginManager.currentAccount()
+    }
+    
+    /**
      *  当前登录状态
      *
      *  @return 当前登录状态

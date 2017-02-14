@@ -14,6 +14,7 @@
 		031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */; };
 		031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */; };
 		0326E4D31E519E7800C30BBF /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D21E519E7800C30BBF /* Manager.swift */; };
+		0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D61E51B7F600C30BBF /* Extensions.swift */; };
 		037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */; };
 		037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */; };
 		037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB1011E4D842E002D734C /* GroupListCell.swift */; };
@@ -36,6 +37,7 @@
 		031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		0326E4D21E519E7800C30BBF /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		0326E4D61E51B7F600C30BBF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
 		037DB1011E4D842E002D734C /* GroupListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListCell.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */,
 				037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */,
 				0326E4D21E519E7800C30BBF /* Manager.swift */,
+				0326E4D61E51B7F600C30BBF /* Extensions.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */,
 				037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */,
 				0326E4D31E519E7800C30BBF /* Manager.swift in Sources */,
+				0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */,
 				031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */,
 				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
 				031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */,

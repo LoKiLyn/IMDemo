@@ -23,12 +23,10 @@ class MainController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         self.accountTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
-        Manager.shared.login(login: accountTextField.text!, token: passwordTextField.text!) { (error) in
+        LoginManager.shared.login(login: accountTextField.text!, token: passwordTextField.text!) { (error) in
             if error == nil {
-                print(NIMSDK.shared().loginManager.isLogined())
-                let alert = UIAlertController(title: "提示", message: "云信登录成功，您好，\(NIMSDK.shared().loginManager.currentAccount())", preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(okAction)
+                print(LoginManager.shared.isLogined())
+                let alert = UIAlertController().createAlertWithAction(title: "提示", message: "云信登录成功，您好，\(LoginManager.shared.currentAccount())", style: UIAlertControllerStyle.alert, actionTitle: "OK", actionStyle: UIAlertActionStyle.cancel)
                 self.present(alert, animated: true, completion: {
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
                         self.dismiss(animated: true)
@@ -37,9 +35,7 @@ class MainController: UIViewController {
                 })
             }
             else{
-                let alert = UIAlertController(title: "提示", message: "云信登录失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)
-                let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-                alert.addAction(okAction)
+                let alert = UIAlertController().createAlertWithAction(title: "提示", message: "云信登录失败,\(error)", style:  UIAlertControllerStyle.alert, actionTitle: "OK", actionStyle: UIAlertActionStyle.cancel)
                 self.present(alert, animated: true, completion: nil)
             }
         }
