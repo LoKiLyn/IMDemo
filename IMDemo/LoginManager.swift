@@ -97,6 +97,7 @@ class UserManager: NSObject {
 class TeamManager: NSObject {
     
     typealias TeamCreateHandler = (Error?, _ teamID: String?) -> Void
+    typealias TeamHandler = (Error?) -> Void
     
     /**
      *  创建群组
@@ -126,6 +127,17 @@ class TeamManager: NSObject {
     
     func hasJoinedATeam() -> (Bool) {
         return (NIMSDK.shared().teamManager.allMyTeams()?.count)! >= 1
+    }
+    
+    /**
+     *  解散群组
+     *
+     *  @param teamId      群组ID
+     *  @param completion  完成后的回调
+     */
+    
+    func dismissTeam(teamID: String, completion: @escaping TeamHandler) {
+        NIMSDK.shared().teamManager.dismissTeam(teamID, completion: completion)
     }
     
 }
