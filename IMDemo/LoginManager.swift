@@ -98,6 +98,7 @@ class TeamManager: NSObject {
     
     typealias TeamCreateHandler = (Error?, _ teamID: String?) -> Void
     typealias TeamHandler = (Error?) -> Void
+    // MARK: -- Need to modify.
     typealias TeamMemberHandler = (Error?, Array<NIMTeamMember>?) -> Void
     
     /**
@@ -165,5 +166,35 @@ class TeamManager: NSObject {
         NIMSDK.shared().teamManager.addUsers(users, toTeam: teamID, postscript: postScript, completion: completion)
     }
 
+}
+
+class ChatManager: NSObject {
+    typealias MessageHandler = (Error?) -> Void
+    
+    func sendMessageWithText(text: String, toSessionID: String, completion: MessageHandler) {
+        let message = NIMMessage()
+        message.text = text
+        let session = NIMSession(toSessionID, type: NIMSessionType.team)
+        // MARK: - Remain to be verified.
+        do {
+            try NIMSDK.shared().chatManager.send(message, to: session)
+        } catch {
+            completion(error)
+        }
+    }
+//    
+//    func sendMessageWithImage() {
+//    
+//    }
+}
+
+@objc protocol ChatManagerDelegate {
+    @objc optional
+    /**
+     *  即将发送消息回调
+     *  @discussion 因为发消息之前可能会有个异步的准备过程,所以需要在收到这个回调时才将消息加入到datasource中
+     *  @param message 当前发送的消息
+     */
+    func willSendMessage(message:NIMMessage)
     
 }
