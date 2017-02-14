@@ -6,4 +6,4 @@
 //  Copyright © 2017年 LinJian. All rights reserved.
 //
 
-#import "NIMSDK.h"
+#import <NIMSDK.h>
