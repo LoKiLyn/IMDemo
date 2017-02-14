@@ -98,6 +98,7 @@ class TeamManager: NSObject {
     
     typealias TeamCreateHandler = (Error?, _ teamID: String?) -> Void
     typealias TeamHandler = (Error?) -> Void
+    typealias TeamMemberHandler = (Error?, Array<NIMTeamMember>?) -> Void
     
     /**
      *  创建群组
@@ -139,5 +140,30 @@ class TeamManager: NSObject {
     func dismissTeam(teamID: String, completion: @escaping TeamHandler) {
         NIMSDK.shared().teamManager.dismissTeam(teamID, completion: completion)
     }
+    
+    /**
+     *  退出群组
+     *
+     *  @param teamId     群组ID
+     *  @param completion 完成后的回调
+     */
+    
+    func quitTeam(teamID: String, completion: @escaping TeamHandler) {
+        NIMSDK.shared().teamManager.quitTeam(teamID, completion: completion)
+    }
+    
+    /**
+     *  邀请用户入群
+     *
+     *  @param users       用户ID列表
+     *  @param teamId      群组ID
+     *  @param postscript  邀请附言
+     *  @param completion  完成后的回调
+     */
+    
+    func addUsers(users: Array<String>, teamID: String, postScript: String, completion:@escaping TeamMemberHandler) {
+        NIMSDK.shared().teamManager.addUsers(users, toTeam: teamID, postscript: postScript, completion: completion)
+    }
+
     
 }
