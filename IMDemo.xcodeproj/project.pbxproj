@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031943ED1E53F0CF0015DA8F /* IMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */; };
+		031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EE1E53F5420015DA8F /* IMTeamManager.swift */; };
+		031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F01E53F5AE0015DA8F /* IMChatManager.swift */; };
 		031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */; };
 		031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9F1E4B0E25006F8CF0 /* ListViewController.swift */; };
 		031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA11E4B1C6F006F8CF0 /* UserInfo.swift */; };
 		031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA31E4B2132006F8CF0 /* UserInfoCell.swift */; };
 		031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */; };
 		031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */; };
-		0326E4D31E519E7800C30BBF /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D21E519E7800C30BBF /* LoginManager.swift */; };
+		0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D21E519E7800C30BBF /* IMLoginManager.swift */; };
 		0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D61E51B7F600C30BBF /* Extensions.swift */; };
 		037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */; };
 		037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */; };
@@ -25,11 +28,14 @@
 		03CBA0D01E4ABBDA0076397C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0CE1E4ABBDA0076397C /* Main.storyboard */; };
 		03CBA0D21E4ABBDA0076397C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D11E4ABBDA0076397C /* Assets.xcassets */; };
 		03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D31E4ABBDA0076397C /* LaunchScreen.storyboard */; };
-		03D6973C1E52A946002E0451 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6973B1E52A946002E0451 /* Manager.swift */; };
+		03D6973C1E52A946002E0451 /* IMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6973B1E52A946002E0451 /* IMManager.swift */; };
 		253B7C9EFB758C54A84B4EAB /* Pods_IMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginModel.swift; sourceTree = "<group>"; };
+		031943EE1E53F5420015DA8F /* IMTeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamManager.swift; sourceTree = "<group>"; };
+		031943F01E53F5AE0015DA8F /* IMChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatManager.swift; sourceTree = "<group>"; };
 		031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IMDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		031A1D9F1E4B0E25006F8CF0 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -37,7 +43,7 @@
 		031A1DA31E4B2132006F8CF0 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		0326E4D21E519E7800C30BBF /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		0326E4D21E519E7800C30BBF /* IMLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginManager.swift; sourceTree = "<group>"; };
 		0326E4D61E51B7F600C30BBF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
@@ -51,7 +57,7 @@
 		03CBA0D11E4ABBDA0076397C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03CBA0D41E4ABBDA0076397C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03CBA0D61E4ABBDA0076397C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03D6973B1E52A946002E0451 /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		03D6973B1E52A946002E0451 /* IMManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMManager.swift; sourceTree = "<group>"; };
 		6762E5EB97AB937240AC12F8 /* Pods-IMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		834A076FA27F3CCE11C09B17 /* Pods-IMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +75,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031943F21E53F5E80015DA8F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */,
+				0326E4D21E519E7800C30BBF /* IMLoginManager.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		031A1DA71E4B2E78006F8CF0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,8 +136,10 @@
 		03D6973D1E52A954002E0451 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				0326E4D21E519E7800C30BBF /* LoginManager.swift */,
-				03D6973B1E52A946002E0451 /* Manager.swift */,
+				03D6973B1E52A946002E0451 /* IMManager.swift */,
+				031943F21E53F5E80015DA8F /* Login */,
+				031943EE1E53F5420015DA8F /* IMTeamManager.swift */,
+				031943F01E53F5AE0015DA8F /* IMChatManager.swift */,
 			);
 			name = Manager;
 			sourceTree = "<group>";
@@ -283,19 +300,22 @@
 				03CBA0CD1E4ABBDA0076397C /* MainController.swift in Sources */,
 				037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */,
 				031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */,
-				03D6973C1E52A946002E0451 /* Manager.swift in Sources */,
+				03D6973C1E52A946002E0451 /* IMManager.swift in Sources */,
 				037DB1061E4DA429002D734C /* GroupMemberCell.swift in Sources */,
 				03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */,
 				031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */,
 				037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */,
 				031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */,
 				037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */,
-				0326E4D31E519E7800C30BBF /* LoginManager.swift in Sources */,
+				0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */,
 				0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */,
+				031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */,
 				031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */,
 				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
+				031943ED1E53F0CF0015DA8F /* IMLoginModel.swift in Sources */,
 				031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */,
 				03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */,
+				031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class Manager: NSObject {
+class IMManager: NSObject {
 
-    static let shared = Manager()
+    static let shared = IMManager()
     private override init(){}
     
-    var loginManager: LoginManager = LoginManager()
-    
+    var loginManager: IMLoginManager = IMLoginManager()
+    var teamManager: IMTeamManager = IMTeamManager()
 }
 
