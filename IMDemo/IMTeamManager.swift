@@ -11,19 +11,17 @@ import UIKit
 typealias TeamCreateHandler = (Error?, _ teamID: String?) -> Void
 typealias TeamHandler = (Error?) -> Void
 // MARK: -- Need to modify.
-typealias TeamMemberHandler = (Error?, _ teamMember: Array<NIMTeamMember>?) -> Void
+typealias TeamMemberHandler = (Error?, _ teamMember: Array<IMTeamMember>?) -> Void
 
 protocol IMTeamProtocol: NSObjectProtocol {
     func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler)
     func hasJoinedATeam() -> (Bool)
-    func dismissTeam(teamID: String, completion: @escaping TeamHandler)
-    func quitTeam(teamID: String, completion: @escaping TeamHandler) 
+    func dismissTeam(model:BaseTeamModel, completion: @escaping TeamHandler)
+    func quitTeam(model:BaseTeamModel, completion: @escaping TeamHandler)
+    func addUsers(model:BaseTeamModel, completion:@escaping TeamMemberHandler)
 }
 
 class IMTeamManager: NSObject {
-    
-    enum teamError: Error {
-    }
 
     var teamProvider: IMTeamProtocol?
     var teamModel: BaseTeamModel?
@@ -57,8 +55,8 @@ class IMTeamManager: NSObject {
      *  @param completion  完成后的回调
      */
     
-    func dismissTeam(teamID: String, completion: @escaping TeamHandler) {
-        NIMSDK.shared().teamManager.dismissTeam(teamID, completion: completion)
+    func dismissTeam(model:BaseTeamModel, completion: @escaping TeamHandler) {
+        teamProvider?.dismissTeam(model: model, completion: completion)
     }
     
     /**
@@ -68,8 +66,8 @@ class IMTeamManager: NSObject {
      *  @param completion 完成后的回调
      */
     
-    func quitTeam(teamID: String, completion: @escaping TeamHandler) {
-        NIMSDK.shared().teamManager.quitTeam(teamID, completion: completion)
+    func quitTeam(model:BaseTeamModel, completion: @escaping TeamHandler) {
+        teamProvider?.quitTeam(model: model, completion: completion)
     }
     
     /**
@@ -81,8 +79,8 @@ class IMTeamManager: NSObject {
      *  @param completion  完成后的回调
      */
     
-    func addUsers(users: Array<String>, teamID: String, postScript: String, completion:@escaping TeamMemberHandler) {
-        NIMSDK.shared().teamManager.addUsers(users, toTeam: teamID, postscript: postScript, completion: completion)
+    func addUsers(model:BaseTeamModel, completion:@escaping TeamMemberHandler) {
+        teamProvider?.addUsers(model: model, completion: completion)
     }
     
 }

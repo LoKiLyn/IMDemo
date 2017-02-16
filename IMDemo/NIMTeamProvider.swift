@@ -9,6 +9,12 @@
 import UIKit
 
 class NIMTeamProvider: NSObject,IMTeamProtocol {
+    
+    enum teamError: Error {
+        case NoTeamID
+        case NoUsersToAdd
+    }
+    
     func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler){
         let teamOption = NIMCreateTeamOption()
         //群名称
@@ -22,15 +28,50 @@ class NIMTeamProvider: NSObject,IMTeamProtocol {
         let users = model.initialUsers
         NIMSDK.shared().teamManager.createTeam(teamOption, users: users!, completion: completion)
     }
+    
     func hasJoinedATeam() -> (Bool){
         return (NIMSDK.shared().teamManager.allMyTeams()?.count)! >= 1
-
     }
-    func dismissTeam(teamID: String, completion: @escaping TeamHandler){
-        NIMSDK.shared().teamManager.dismissTeam(teamID, completion: completion)
-
+    
+    func dismissTeam(model:BaseTeamModel, completion: @escaping TeamHandler){
+        let teamID = model.teamID
+        if teamID == nil {
+            completion(teamError.NoTeamID)
+        }else {
+            NIMSDK.shared().teamManager.dismissTeam(teamID!, completion: completion)
+        }
     }
-    func quitTeam(teamID: String, completion: @escaping TeamHandler){
-        NIMSDK.shared().teamManager.quitTeam(teamID, completion: completion)
+    
+    func quitTeam(model:BaseTeamModel, completion: @escaping TeamHandler){
+        let teamID = model.teamID
+        if teamID == nil {
+            completion(teamError.NoTeamID)
+        }else {
+            NIMSDK.shared().teamManager.quitTeam(teamID!, completion: completion)
+        }
+    }
+    
+    func addUsers(model:BaseTeamModel, completion: @escaping TeamMemberHandler){
+        let users = model.usersToAdd
+        let teamID = model.teamID
+        let postScript = model.postScript
+        if users == nil {
+            completion(teamError.NoUsersToAdd, nil)
+        }else if teamID == nil {
+            completion(teamError.NoTeamID, nil)
+        }
+        NIMSDK.shared().teamManager.addUsers(users!, toTeam: teamID!, postscript: postScript) { (error, members) in
+            var memberArray: Array<IMTeamMember>?
+            for nimMember in members! {
+                let member = IMTeamMember()
+                member.userID = nimMember.userId
+                member.teamID = nimMember.teamId
+                member.invitor = nimMember.invitor
+                member.nickName = nimMember.nickname
+                member.type = IMTeamMember.TeamMemberType(rawValue: nimMember.type.rawValue)
+                memberArray?.append(member)
+            }
+            completion(error, memberArray)
+        }
     }
 }

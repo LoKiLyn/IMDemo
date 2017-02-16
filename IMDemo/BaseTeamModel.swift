@@ -9,5 +9,12 @@
 import UIKit
 
 class BaseTeamModel: NSObject {
+    //创建群组时的初始用户
     var initialUsers: Array<String>?
+    //群组ID
+    var teamID: String?
+    //添加群组成员
+    var usersToAdd: Array<String>?
+    //邀请信息
+    var postScript: String = ""
 }
