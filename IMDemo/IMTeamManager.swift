@@ -10,6 +10,9 @@ import UIKit
 
 class IMTeamManager: NSObject {
     
+    enum teamError: Error {
+    }
+    
     typealias TeamCreateHandler = (Error?, _ teamID: String?) -> Void
     typealias TeamHandler = (Error?) -> Void
     // MARK: -- Need to modify.
@@ -22,17 +25,18 @@ class IMTeamManager: NSObject {
      *  @param completion 完成回调(error,teamID)
      */
     
-    func createTeam(users:Array<String>, completion:@escaping TeamCreateHandler) {
+    func createTeam(model:IMTeamModel, completion:@escaping TeamCreateHandler) {
         let teamOption = NIMCreateTeamOption()
         //群名称
         teamOption.name = ""
         //谁可以邀请群成员
-        teamOption.inviteMode = NIMTeamInviteMode.all
+        teamOption.inviteMode = NIMTeamInviteMode.manager
         //被邀请人验证方式
         teamOption.beInviteMode = NIMTeamBeInviteMode.noAuth
         //群验证方式
         teamOption.joinMode = NIMTeamJoinMode.noAuth
-        NIMSDK.shared().teamManager.createTeam(teamOption, users: users, completion: completion)
+        let users = model.initialUsers
+        NIMSDK.shared().teamManager.createTeam(teamOption, users: users!, completion: completion)
     }
     
     /**

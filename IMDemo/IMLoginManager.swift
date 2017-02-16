@@ -8,19 +8,60 @@
 
 import UIKit
 
+@objc protocol IMLoginProtocol: NSObjectProtocol {
+    func login(account:String, token:String, completion: @escaping (Error?) -> ())
+    func autoLogin(account:String, token:String)
+    func logout(completion: @escaping (Error?) -> ())
+    @objc optional func currentAccount()
+    @objc optional func isLogined()
+}
+
 class IMLoginManager: NSObject {
     
+    enum loginError: Error {
+        case NoAccount
+        case NoPassword
+    }
+    
+    enum SDKType: NSInteger {
+        case Nim
+    }
+    
     typealias LoginHandler = (Error?) -> ()
+    
+    var loginProvider: IMLoginProtocol = NIMLoginProvider()
+    var loginModel: BaseLoginModel = NIMLoginModel()
+    
+    /**
+     *  切换SDK
+     *
+     *  @param SDKType   SDK
+     */
+    func switchSDK(SDKType:SDKType){
+        switch SDKType {
+        case .Nim:
+            //MARK: Remain to be improved.
+            loginProvider = NIMLoginProvider()
+            loginModel = NIMLoginModel()
+        }
+    }
     
     /**
      *  登录
      *
-     *  @param login    帐号
-     *  @param token    令牌 (在后台绑定的登录token)
+     *  @param model      登陆模型
      *  @param completion 完成回调
      */
-    func login(login: String, token: String, completion: @escaping LoginHandler){
-        NIMSDK.shared().loginManager.login(login, token: token, completion: completion)
+    func login(model: BaseLoginModel, completion: @escaping LoginHandler){
+        if (model.account == nil) {
+            completion(loginError.NoAccount)
+        }else if (model.token == nil) {
+            completion(loginError.NoPassword)
+        }else{
+            let account = model.account
+            let token = model.token
+            loginProvider.login(account: account!, token: token!, completion: completion)
+        }
     }
     
     /**
@@ -30,8 +71,17 @@ class IMLoginManager: NSObject {
      *  @param token      令牌 (在后台绑定的登录token)
      *  @discussion 启动APP如果已经保存了用户帐号和令牌,建议使用这个登录方式,使用这种方式可以在无网络时直接打开会话窗口
      */
-    func autologin(account: String, token: String){
-        NIMSDK.shared().loginManager.autoLogin(account, token: token)
+    // MARK: To be tested.
+    func autologin(model: BaseLoginModel, completion: @escaping LoginHandler){
+        if (model.account == nil) {
+            completion(loginError.NoAccount)
+        }else if (model.token == nil) {
+            completion(loginError.NoPassword)
+        }else{
+            let account = model.account
+            let token = model.token
+            loginProvider.autoLogin(account: account!, token: token!)
+        }
     }
     
     /**

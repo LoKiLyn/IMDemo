@@ -1,5 +1,5 @@
 //
-//  NIMObject.swift
+//  NIMModel.swift
 //  IMDemo
 //
 //  Created by 小白 on 2017/2/15.
@@ -8,8 +8,6 @@
 
 import UIKit
 
-class IMLoginModel: NSObject {
-    var account: String?
-    var token: String?
-    var teamID: String?
+class NIMLoginModel: BaseLoginModel {
+
 }

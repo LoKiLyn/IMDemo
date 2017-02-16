@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		031943ED1E53F0CF0015DA8F /* IMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */; };
+		031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */; };
 		031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EE1E53F5420015DA8F /* IMTeamManager.swift */; };
 		031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F01E53F5AE0015DA8F /* IMChatManager.swift */; };
+		031943F41E5404FE0015DA8F /* IMTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F31E5404FE0015DA8F /* IMTeamModel.swift */; };
+		031943F91E542E220015DA8F /* NIMLoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F81E542E220015DA8F /* NIMLoginProvider.swift */; };
+		031943FB1E5444F90015DA8F /* NIMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943FA1E5444F90015DA8F /* NIMLoginModel.swift */; };
 		031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */; };
 		031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9F1E4B0E25006F8CF0 /* ListViewController.swift */; };
 		031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA11E4B1C6F006F8CF0 /* UserInfo.swift */; };
@@ -33,9 +36,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginModel.swift; sourceTree = "<group>"; };
+		031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLoginModel.swift; sourceTree = "<group>"; };
 		031943EE1E53F5420015DA8F /* IMTeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamManager.swift; sourceTree = "<group>"; };
 		031943F01E53F5AE0015DA8F /* IMChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatManager.swift; sourceTree = "<group>"; };
+		031943F31E5404FE0015DA8F /* IMTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamModel.swift; sourceTree = "<group>"; };
+		031943F81E542E220015DA8F /* NIMLoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMLoginProvider.swift; sourceTree = "<group>"; };
+		031943FA1E5444F90015DA8F /* NIMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMLoginModel.swift; sourceTree = "<group>"; };
 		031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IMDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		031A1D9F1E4B0E25006F8CF0 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -78,10 +84,21 @@
 		031943F21E53F5E80015DA8F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */,
 				0326E4D21E519E7800C30BBF /* IMLoginManager.swift */,
+				031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */,
+				031943F81E542E220015DA8F /* NIMLoginProvider.swift */,
+				031943FA1E5444F90015DA8F /* NIMLoginModel.swift */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		031943F51E5405050015DA8F /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				031943EE1E53F5420015DA8F /* IMTeamManager.swift */,
+				031943F31E5404FE0015DA8F /* IMTeamModel.swift */,
+			);
+			name = Team;
 			sourceTree = "<group>";
 		};
 		031A1DA71E4B2E78006F8CF0 /* Controller */ = {
@@ -138,7 +155,7 @@
 			children = (
 				03D6973B1E52A946002E0451 /* IMManager.swift */,
 				031943F21E53F5E80015DA8F /* Login */,
-				031943EE1E53F5420015DA8F /* IMTeamManager.swift */,
+				031943F51E5405050015DA8F /* Team */,
 				031943F01E53F5AE0015DA8F /* IMChatManager.swift */,
 			);
 			name = Manager;
@@ -305,14 +322,17 @@
 				03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */,
 				031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */,
 				037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */,
+				031943F91E542E220015DA8F /* NIMLoginProvider.swift in Sources */,
 				031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */,
+				031943FB1E5444F90015DA8F /* NIMLoginModel.swift in Sources */,
 				037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */,
 				0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */,
 				0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */,
 				031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */,
 				031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */,
+				031943F41E5404FE0015DA8F /* IMTeamModel.swift in Sources */,
 				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
-				031943ED1E53F0CF0015DA8F /* IMLoginModel.swift in Sources */,
+				031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */,
 				031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */,
 				03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */,
 				031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */,
