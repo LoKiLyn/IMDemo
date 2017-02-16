@@ -10,15 +10,23 @@ import UIKit
 
 class NIMLoginProvider: NSObject, IMLoginProtocol {
     
-    func login(account: String, token: String, completion: @escaping (Error?) -> ()) {
+    internal func login(account: String, token: String, completion: @escaping (Error?) -> ()) {
         NIMSDK.shared().loginManager.login(account, token: token, completion: completion)
     }
     
-    func autoLogin(account: String, token: String) {
+    internal func autoLogin(account: String, token: String) {
         NIMSDK.shared().loginManager.autoLogin(account, token: token)
     }
     
-    func logout(completion: @escaping (Error?) -> ()) {
+    internal func logout(completion: @escaping (Error?) -> ()) {
         NIMSDK.shared().loginManager.logout(completion)
+    }
+    
+    internal func isLogined() -> (Bool) {
+        return NIMSDK.shared().loginManager.isLogined()
+    }
+    
+    internal func currentAccount() -> (String) {
+        return NIMSDK.shared().loginManager.currentAccount()
     }
 }

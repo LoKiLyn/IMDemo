@@ -47,7 +47,7 @@ class ListViewController: UIViewController {
     //MARK: - Events
     
     @IBAction func logoutButtonPressed(_ sender: UIButton) {
-        NIMSDK.shared().loginManager.logout { (error) in
+        IMManager.shared.loginManager.logout { (error) in
             if error == nil {
                 let alert = UIAlertController(title: "提示", message: "注销成功！", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

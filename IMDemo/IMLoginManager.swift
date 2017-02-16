@@ -8,15 +8,15 @@
 
 import UIKit
 
-@objc protocol IMLoginProtocol: NSObjectProtocol {
+protocol IMLoginProtocol: NSObjectProtocol {
     func login(account:String, token:String, completion: @escaping (Error?) -> ())
     func autoLogin(account:String, token:String)
     func logout(completion: @escaping (Error?) -> ())
-    @objc optional func currentAccount()
-    @objc optional func isLogined()
+    func currentAccount() -> (String)
+    func isLogined() -> (Bool)
 }
 
-class IMLoginManager: NSObject {
+class IMLoginManager: NSObject{
     
     enum loginError: Error {
         case NoAccount
