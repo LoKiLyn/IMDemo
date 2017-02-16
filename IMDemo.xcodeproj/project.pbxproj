@@ -10,7 +10,7 @@
 		031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */; };
 		031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EE1E53F5420015DA8F /* IMTeamManager.swift */; };
 		031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F01E53F5AE0015DA8F /* IMChatManager.swift */; };
-		031943F41E5404FE0015DA8F /* IMTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F31E5404FE0015DA8F /* IMTeamModel.swift */; };
+		031943F41E5404FE0015DA8F /* BaseTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F31E5404FE0015DA8F /* BaseTeamModel.swift */; };
 		031943F91E542E220015DA8F /* NIMLoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F81E542E220015DA8F /* NIMLoginProvider.swift */; };
 		031943FB1E5444F90015DA8F /* NIMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943FA1E5444F90015DA8F /* NIMLoginModel.swift */; };
 		031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */; };
@@ -19,6 +19,8 @@
 		031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA31E4B2132006F8CF0 /* UserInfoCell.swift */; };
 		031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */; };
 		031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */; };
+		0323742D1E55530900014308 /* NIMTeamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323742C1E55530900014308 /* NIMTeamProvider.swift */; };
+		0323742F1E55531600014308 /* NIMTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323742E1E55531600014308 /* NIMTeamModel.swift */; };
 		0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D21E519E7800C30BBF /* IMLoginManager.swift */; };
 		0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D61E51B7F600C30BBF /* Extensions.swift */; };
 		037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */; };
@@ -39,7 +41,7 @@
 		031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLoginModel.swift; sourceTree = "<group>"; };
 		031943EE1E53F5420015DA8F /* IMTeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamManager.swift; sourceTree = "<group>"; };
 		031943F01E53F5AE0015DA8F /* IMChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatManager.swift; sourceTree = "<group>"; };
-		031943F31E5404FE0015DA8F /* IMTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamModel.swift; sourceTree = "<group>"; };
+		031943F31E5404FE0015DA8F /* BaseTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTeamModel.swift; sourceTree = "<group>"; };
 		031943F81E542E220015DA8F /* NIMLoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMLoginProvider.swift; sourceTree = "<group>"; };
 		031943FA1E5444F90015DA8F /* NIMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMLoginModel.swift; sourceTree = "<group>"; };
 		031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IMDemo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		031A1DA31E4B2132006F8CF0 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
 		031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
 		031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0323742C1E55530900014308 /* NIMTeamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMTeamProvider.swift; sourceTree = "<group>"; };
+		0323742E1E55531600014308 /* NIMTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMTeamModel.swift; sourceTree = "<group>"; };
 		0326E4D21E519E7800C30BBF /* IMLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginManager.swift; sourceTree = "<group>"; };
 		0326E4D61E51B7F600C30BBF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
@@ -96,7 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				031943EE1E53F5420015DA8F /* IMTeamManager.swift */,
-				031943F31E5404FE0015DA8F /* IMTeamModel.swift */,
+				031943F31E5404FE0015DA8F /* BaseTeamModel.swift */,
+				0323742C1E55530900014308 /* NIMTeamProvider.swift */,
+				0323742E1E55531600014308 /* NIMTeamModel.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -330,12 +336,14 @@
 				0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */,
 				031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */,
 				031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */,
-				031943F41E5404FE0015DA8F /* IMTeamModel.swift in Sources */,
+				031943F41E5404FE0015DA8F /* BaseTeamModel.swift in Sources */,
+				0323742F1E55531600014308 /* NIMTeamModel.swift in Sources */,
 				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
 				031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */,
 				031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */,
 				03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */,
 				031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */,
+				0323742D1E55530900014308 /* NIMTeamProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

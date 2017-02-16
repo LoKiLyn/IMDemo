@@ -8,7 +8,6 @@
 
 import UIKit
 
-class IMTeamModel: NSObject {
+class BaseTeamModel: NSObject {
     var initialUsers: Array<String>?
-
 }

@@ -10,15 +10,36 @@ import UIKit
 
 class NIMLoginProvider: NSObject, IMLoginProtocol {
     
-    internal func login(account: String, token: String, completion: @escaping (Error?) -> ()) {
-        NIMSDK.shared().loginManager.login(account, token: token, completion: completion)
+    enum loginError: Error {
+        case NoAccount
+        case NoPassword
     }
     
-    internal func autoLogin(account: String, token: String) {
-        NIMSDK.shared().loginManager.autoLogin(account, token: token)
+    internal func login(model:BaseLoginModel, completion: @escaping LoginHandler) {
+        if (model.account == nil) {
+            completion(loginError.NoAccount)
+        }else if (model.token == nil) {
+            completion(loginError.NoPassword)
+        }else{
+            let account = model.account
+            let token = model.token
+            NIMSDK.shared().loginManager.login(account!, token: token!, completion: completion)
+        }
     }
     
-    internal func logout(completion: @escaping (Error?) -> ()) {
+    internal func autoLogin(model:BaseLoginModel, completion: @escaping LoginHandler) {
+        if (model.account == nil) {
+            completion(loginError.NoAccount)
+        }else if (model.token == nil) {
+            completion(loginError.NoPassword)
+        }else{
+            let account = model.account
+            let token = model.token
+            NIMSDK.shared().loginManager.autoLogin(account!, token: token!)
+        }
+    }
+    
+    internal func logout(completion: @escaping LoginHandler) {
         NIMSDK.shared().loginManager.logout(completion)
     }
     
@@ -29,4 +50,5 @@ class NIMLoginProvider: NSObject, IMLoginProtocol {
     internal func currentAccount() -> (String) {
         return NIMSDK.shared().loginManager.currentAccount()
     }
+    
 }

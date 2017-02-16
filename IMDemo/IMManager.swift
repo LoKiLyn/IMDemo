@@ -9,11 +9,35 @@
 import UIKit
 
 class IMManager: NSObject {
-
+    
+    enum SDKType: NSInteger {
+        case Nim
+    }
+    
     static let shared = IMManager()
-    private override init(){}
+    
+    private override init(){
+        super.init()
+        switchSDK(SDKType: IMManager.SDKType.Nim)
+    }
     
     var loginManager: IMLoginManager = IMLoginManager()
     var teamManager: IMTeamManager = IMTeamManager()
+    
+    
+    /**
+     *  切换SDK
+     *
+     *  @param SDKType   SDK
+     */
+    func switchSDK(SDKType:SDKType){
+        switch SDKType {
+        case .Nim:
+            loginManager.loginProvider = NIMLoginProvider()
+            loginManager.loginModel = NIMLoginModel()
+            teamManager.teamProvider = NIMTeamProvider()
+            teamManager.teamModel = NIMTeamModel()
+        }
+    }
 }
 

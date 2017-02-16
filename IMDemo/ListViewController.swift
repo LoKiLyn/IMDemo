@@ -14,7 +14,6 @@ class ListViewController: UIViewController {
     
     var friendList = NIMSDK.shared().userManager.myFriends()
     var selectedIndexPath: IndexPath?
-//    var teamId: String?
     var myTeams: Array<NIMTeam>?
 
     
@@ -32,11 +31,6 @@ class ListViewController: UIViewController {
             let destination = segue.destination as! ChatViewController
             destination.user = friendList?[(selectedIndexPath?.row)!]
         }
-        
-//        if segue.identifier == "showGroupViewController" {
-//            let destination = segue.destination as! GroupViewController
-//            destination.teamId = self.teamId
-//        }
         
         if segue.identifier == "showMyGroupsViewController" {
             let destination = segue.destination as! MyGroupsViewController
@@ -58,7 +52,7 @@ class ListViewController: UIViewController {
                         self.dismiss(animated: true)
                     })
                 })
-                print(NIMSDK.shared().loginManager.isLogined())
+                print(IMManager.shared.loginManager.isLogined())
             }
             else {
                 let alert = UIAlertController(title: "提示", message: "云信注销失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)

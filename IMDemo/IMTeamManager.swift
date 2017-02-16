@@ -8,15 +8,25 @@
 
 import UIKit
 
+typealias TeamCreateHandler = (Error?, _ teamID: String?) -> Void
+typealias TeamHandler = (Error?) -> Void
+// MARK: -- Need to modify.
+typealias TeamMemberHandler = (Error?, _ teamMember: Array<NIMTeamMember>?) -> Void
+
+protocol IMTeamProtocol: NSObjectProtocol {
+    func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler)
+    func hasJoinedATeam() -> (Bool)
+    func dismissTeam(teamID: String, completion: @escaping TeamHandler)
+    func quitTeam(teamID: String, completion: @escaping TeamHandler) 
+}
+
 class IMTeamManager: NSObject {
     
     enum teamError: Error {
     }
-    
-    typealias TeamCreateHandler = (Error?, _ teamID: String?) -> Void
-    typealias TeamHandler = (Error?) -> Void
-    // MARK: -- Need to modify.
-    typealias TeamMemberHandler = (Error?, Array<NIMTeamMember>?) -> Void
+
+    var teamProvider: IMTeamProtocol?
+    var teamModel: BaseTeamModel?
     
     /**
      *  创建群组
@@ -25,19 +35,10 @@ class IMTeamManager: NSObject {
      *  @param completion 完成回调(error,teamID)
      */
     
-    func createTeam(model:IMTeamModel, completion:@escaping TeamCreateHandler) {
-        let teamOption = NIMCreateTeamOption()
-        //群名称
-        teamOption.name = ""
-        //谁可以邀请群成员
-        teamOption.inviteMode = NIMTeamInviteMode.manager
-        //被邀请人验证方式
-        teamOption.beInviteMode = NIMTeamBeInviteMode.noAuth
-        //群验证方式
-        teamOption.joinMode = NIMTeamJoinMode.noAuth
-        let users = model.initialUsers
-        NIMSDK.shared().teamManager.createTeam(teamOption, users: users!, completion: completion)
+    func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler) {
+        teamProvider?.createTeam(model: model, completion: completion)
     }
+    
     
     /**
      *  是否已有群组
@@ -46,7 +47,7 @@ class IMTeamManager: NSObject {
      */
     
     func hasJoinedATeam() -> (Bool) {
-        return (NIMSDK.shared().teamManager.allMyTeams()?.count)! >= 1
+        return teamProvider!.hasJoinedATeam()
     }
     
     /**
@@ -84,16 +85,4 @@ class IMTeamManager: NSObject {
         NIMSDK.shared().teamManager.addUsers(users, toTeam: teamID, postscript: postScript, completion: completion)
     }
     
-}
-
-// MARK: To be discussed.
-@objc protocol TeamManagerDelegate {
-    
-    @objc optional
-    /**
-     *  群组增加回调
-     *
-     *  @param team 添加的群组
-     */
-    func onTeamAdded(team:NIMTeam)
 }
