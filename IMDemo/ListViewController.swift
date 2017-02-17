@@ -86,12 +86,11 @@ class ListViewController: UIViewController {
                 self.present(alert, animated: true, completion: {
                     
                 })
-            }
-            else {
+            } else {
                 let alert = UIAlertController(title: "提示", message: "创建群失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(okAction)
-                self.present(alert, animated: true, completion:{
+                self.present(alert, animated: true, completion: {
 //                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
 //                        self.dismiss(animated: true)
 //                    })
@@ -115,7 +114,6 @@ extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userInfoCell") as! UserInfoCell
         cell.userNameLabel.text = friendList?[indexPath.row].userId
-        
         return cell
     }
 }

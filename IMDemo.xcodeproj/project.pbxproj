@@ -22,12 +22,15 @@
 		0323742D1E55530900014308 /* NIMTeamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323742C1E55530900014308 /* NIMTeamProvider.swift */; };
 		0323742F1E55531600014308 /* NIMTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323742E1E55531600014308 /* NIMTeamModel.swift */; };
 		032374311E558C5200014308 /* IMTeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032374301E558C5200014308 /* IMTeamMember.swift */; };
+		032374341E55977000014308 /* InterfaceTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032374331E55977000014308 /* InterfaceTestController.swift */; };
 		0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D21E519E7800C30BBF /* IMLoginManager.swift */; };
 		0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D61E51B7F600C30BBF /* Extensions.swift */; };
 		037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */; };
 		037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */; };
 		037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB1011E4D842E002D734C /* GroupListCell.swift */; };
 		037DB1061E4DA429002D734C /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB1051E4DA429002D734C /* GroupMemberCell.swift */; };
+		038596DF1E5598B900C8DB4C /* InterfaceTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */; };
+		038596E11E559A4800C8DB4C /* Interface.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038596E01E559A4800C8DB4C /* Interface.plist */; };
 		03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B4081E4C5D4C004A4113 /* ChatCell.swift */; };
 		03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */; };
 		03CBA0CD1E4ABBDA0076397C /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA0CC1E4ABBDA0076397C /* MainController.swift */; };
@@ -55,12 +58,15 @@
 		0323742C1E55530900014308 /* NIMTeamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMTeamProvider.swift; sourceTree = "<group>"; };
 		0323742E1E55531600014308 /* NIMTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMTeamModel.swift; sourceTree = "<group>"; };
 		032374301E558C5200014308 /* IMTeamMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamMember.swift; sourceTree = "<group>"; };
+		032374331E55977000014308 /* InterfaceTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTestController.swift; sourceTree = "<group>"; };
 		0326E4D21E519E7800C30BBF /* IMLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginManager.swift; sourceTree = "<group>"; };
 		0326E4D61E51B7F600C30BBF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
 		037DB1011E4D842E002D734C /* GroupListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListCell.swift; sourceTree = "<group>"; };
 		037DB1051E4DA429002D734C /* GroupMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
+		038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InterfaceTest.storyboard; sourceTree = "<group>"; };
+		038596E01E559A4800C8DB4C /* Interface.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Interface.plist; sourceTree = "<group>"; };
 		03C0B4081E4C5D4C004A4113 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		03CBA0C71E4ABBD90076397C /* IMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +130,16 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		032374321E55970C00014308 /* InterfaceTesting */ = {
+			isa = PBXGroup;
+			children = (
+				032374331E55977000014308 /* InterfaceTestController.swift */,
+				038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */,
+				038596E01E559A4800C8DB4C /* Interface.plist */,
+			);
+			name = InterfaceTesting;
+			sourceTree = "<group>";
+		};
 		03CBA0BE1E4ABBD90076397C = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +161,7 @@
 		03CBA0C91E4ABBD90076397C /* IMDemo */ = {
 			isa = PBXGroup;
 			children = (
+				032374321E55970C00014308 /* InterfaceTesting */,
 				03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */,
 				031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */,
 				031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */,
@@ -262,6 +279,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038596DF1E5598B900C8DB4C /* InterfaceTest.storyboard in Resources */,
+				038596E11E559A4800C8DB4C /* Interface.plist in Resources */,
 				03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */,
 				03CBA0D21E4ABBDA0076397C /* Assets.xcassets in Resources */,
 				03CBA0D01E4ABBDA0076397C /* Main.storyboard in Resources */,
@@ -342,6 +361,7 @@
 				031943F41E5404FE0015DA8F /* BaseTeamModel.swift in Sources */,
 				0323742F1E55531600014308 /* NIMTeamModel.swift in Sources */,
 				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
+				032374341E55977000014308 /* InterfaceTestController.swift in Sources */,
 				031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */,
 				032374311E558C5200014308 /* IMTeamMember.swift in Sources */,
 				031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */,
