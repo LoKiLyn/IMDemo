@@ -19,6 +19,7 @@ protocol IMTeamProtocol: NSObjectProtocol {
     func dismissTeam(model:BaseTeamModel, completion: @escaping TeamHandler)
     func quitTeam(model:BaseTeamModel, completion: @escaping TeamHandler)
     func addUsers(model:BaseTeamModel, completion:@escaping TeamMemberHandler)
+    func currentTeamID() -> (String)
 }
 
 class IMTeamManager: NSObject {
@@ -81,6 +82,10 @@ class IMTeamManager: NSObject {
     
     func addUsers(model:BaseTeamModel, completion:@escaping TeamMemberHandler) {
         teamProvider?.addUsers(model: model, completion: completion)
+    }
+    
+    func currentTeamID() -> (String) {
+        return (teamProvider?.currentTeamID())!
     }
     
 }

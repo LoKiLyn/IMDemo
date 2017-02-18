@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTeamModel: NSObject {
     //创建群组时的初始用户
-    var initialUsers: Array<String>?
+    var initialUsers: Array<String> = []
     //群组ID
     var teamID: String?
     //添加群组成员

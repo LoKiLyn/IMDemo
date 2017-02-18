@@ -20,6 +20,7 @@ class LucaChatViewController: UIViewController {
         "ChatOtherVoiceCell",
         "ChatMyVoiceCell",
         ]
+    var hasTeam: Bool = false
     
     @IBOutlet private weak var tableView: UITableView!
     
@@ -28,6 +29,10 @@ class LucaChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hasTeam = IMManager.shared.teamManager.hasJoinedATeam()
+        if !hasTeam {
+            self.performSegue(withIdentifier: "presentCreateTeamViewController", sender: self)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +65,6 @@ extension LucaChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.items[indexPath.row])
-        
         return cell!
     }
 }

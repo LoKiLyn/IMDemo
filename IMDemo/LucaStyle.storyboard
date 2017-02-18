@@ -763,11 +763,77 @@
                     <connections>
                         <outlet property="tableView" destination="CsB-UL-OQa" id="VLj-uM-sZ6"/>
                         <segue destination="egy-hG-HNf" kind="show" identifier="showMemberViewController" id="gHv-Dl-ICz"/>
+                        <segue destination="326-td-FX9" kind="presentation" identifier="presentCreateTeamViewController" id="CNn-Uj-DjO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LfD-Rl-vhr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2895" y="27"/>
+        </scene>
+        <!--Luca Create Team View Controller-->
+        <scene sceneID="e3z-Hw-J1M">
+            <objects>
+                <viewController id="326-td-FX9" customClass="LucaCreateTeamViewController" customModule="IMDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mAf-NU-6na"/>
+                        <viewControllerLayoutGuide type="bottom" id="83a-24-w9e"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xgn-My-g0e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Y8k-vm-EC0" userLabel="Background ImageView">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mji-HP-tLP" userLabel="Generation Button">
+                                <rect key="frame" x="58" y="521" width="258" height="48"/>
+                                <color key="backgroundColor" red="0.52156862749999999" green="0.69411764710000001" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="BGi-cP-bjg"/>
+                                    <constraint firstAttribute="width" constant="258" id="F5e-el-RRP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="创建群组">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createTeam:" destination="326-td-FX9" eventType="touchUpInside" id="l8X-Ky-8Jo"/>
+                                    <action selector="login:" destination="GGI-bo-JXC" eventType="touchUpInside" id="Zc8-Da-yAR"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您还没有群组，来创建一个吧～" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPc-aV-HZu" userLabel="Content Label">
+                                <rect key="frame" x="70" y="255" width="235" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="235" id="tMS-0y-ePt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.25490196079999999" green="0.33333333329999998" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mji-HP-tLP" firstAttribute="centerX" secondItem="Y8k-vm-EC0" secondAttribute="centerX" id="IVl-OF-Xh0"/>
+                            <constraint firstItem="83a-24-w9e" firstAttribute="top" secondItem="Y8k-vm-EC0" secondAttribute="bottom" id="JPS-y2-zWj"/>
+                            <constraint firstItem="UPc-aV-HZu" firstAttribute="centerX" secondItem="Y8k-vm-EC0" secondAttribute="centerX" id="Keg-7K-M9d"/>
+                            <constraint firstItem="Y8k-vm-EC0" firstAttribute="leading" secondItem="xgn-My-g0e" secondAttribute="leading" id="Y8X-kz-r39"/>
+                            <constraint firstItem="mji-HP-tLP" firstAttribute="top" secondItem="Y8k-vm-EC0" secondAttribute="bottom" constant="-146" id="lLo-ff-ZW3"/>
+                            <constraint firstItem="Y8k-vm-EC0" firstAttribute="top" secondItem="mAf-NU-6na" secondAttribute="bottom" id="nP7-BN-Rof"/>
+                            <constraint firstAttribute="trailing" secondItem="Y8k-vm-EC0" secondAttribute="trailing" id="sI7-Jb-xoY"/>
+                            <constraint firstItem="Y8k-vm-EC0" firstAttribute="top" secondItem="UPc-aV-HZu" secondAttribute="bottom" constant="-254.5" id="w6r-Zr-0UX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eOk-Fi-vQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1964" y="851"/>
         </scene>
         <!--PlaceHolder NavigationController-->
         <scene sceneID="cW6-cG-yZl">
@@ -1093,7 +1159,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="quitButtonPressedWithSender:" destination="egy-hG-HNf" eventType="touchUpInside" id="6vT-it-9rk"/>
+                                    <action selector="quitButtonPressedWithSender:" destination="egy-hG-HNf" eventType="touchUpInside" id="RQk-qm-lUT"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1235,9 +1301,6 @@
                                         <integer key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="deleteButtonPressedWithSender:" destination="WWJ-7T-9WA" eventType="touchUpInside" id="IyL-UQ-yT7"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98823529409999999" green="0.98823529409999999" blue="0.98823529409999999" alpha="1" colorSpace="calibratedRGB"/>

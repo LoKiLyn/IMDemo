@@ -49,6 +49,7 @@
 		03EA25281E57F74B00DDDF77 /* LucaChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA25271E57F74B00DDDF77 /* LucaChatViewController.swift */; };
 		03EA252A1E57F94D00DDDF77 /* LucaMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA25291E57F94D00DDDF77 /* LucaMemberViewController.swift */; };
 		03EA252C1E58207000DDDF77 /* LucaMemberDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA252B1E58207000DDDF77 /* LucaMemberDeleteViewController.swift */; };
+		03EA252E1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA252D1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift */; };
 		253B7C9EFB758C54A84B4EAB /* Pods_IMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +99,7 @@
 		03EA25271E57F74B00DDDF77 /* LucaChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaChatViewController.swift; sourceTree = "<group>"; };
 		03EA25291E57F94D00DDDF77 /* LucaMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaMemberViewController.swift; sourceTree = "<group>"; };
 		03EA252B1E58207000DDDF77 /* LucaMemberDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaMemberDeleteViewController.swift; sourceTree = "<group>"; };
+		03EA252D1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaCreateTeamViewController.swift; sourceTree = "<group>"; };
 		6762E5EB97AB937240AC12F8 /* Pods-IMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		834A076FA27F3CCE11C09B17 /* Pods-IMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +238,7 @@
 				03EA25271E57F74B00DDDF77 /* LucaChatViewController.swift */,
 				03EA25291E57F94D00DDDF77 /* LucaMemberViewController.swift */,
 				03EA252B1E58207000DDDF77 /* LucaMemberDeleteViewController.swift */,
+				03EA252D1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift */,
 			);
 			name = Luca;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				03D38FCD1E56982200B76826 /* NIMChatProvider.swift in Sources */,
 				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
 				032374341E55977000014308 /* InterfaceTestController.swift in Sources */,
+				03EA252E1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift in Sources */,
 				031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */,
 				03EA252C1E58207000DDDF77 /* LucaMemberDeleteViewController.swift in Sources */,
 				032374311E558C5200014308 /* IMTeamMember.swift in Sources */,

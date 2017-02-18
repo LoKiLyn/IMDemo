@@ -95,6 +95,9 @@ class LucaBaseAlertController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    }
+    
     // MARK: Events
     
     @IBAction func submmitButtonPressed(_ sender: UIButton) {
@@ -102,8 +105,10 @@ class LucaBaseAlertController: UIViewController {
         switch sourceViewController.self {
         case is LucaLoginViewController:
             if showOrNot {
-            sourceViewController?.performSegue(withIdentifier: "showLucaChatViewController", sender: sourceViewController)
+                sourceViewController?.performSegue(withIdentifier: "showLucaChatViewController", sender: sourceViewController)
             }
+        case is LucaCreateTeamViewController:
+            sourceViewController?.dismiss(animated: true, completion: nil)
         default:
             break
         }

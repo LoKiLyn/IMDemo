@@ -21,13 +21,13 @@ class LucaLoginViewController: UIViewController {
     
     @IBAction func login(_ sender: UIButton) {
         
-        let loginModel = NIMLoginModel()
-        loginModel.account = accountTextField.text
-        loginModel.token = passwordTextField.text
+        let loginModel = BaseLoginModel()
+        loginModel.account = "test04"
+        loginModel.token = "000004"
         
         IMManager.shared.loginManager.login(model: loginModel) { (error) in
             if error == nil {
-                let userName = NIMSDK.shared().loginManager.currentAccount()
+                let userName = IMManager.shared.loginManager.currentAccount()
                 self.alert.alertTitle = "Welcome to Luka."
                 self.alert.contentLabel.text = "----- \(userName) -----"
                 self.alert.showOrNot = true
@@ -39,6 +39,7 @@ class LucaLoginViewController: UIViewController {
                 self.alert.show(inContainter: self)
             }
         }
+        
     }
     
     

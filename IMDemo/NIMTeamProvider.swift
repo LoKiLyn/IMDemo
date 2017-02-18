@@ -13,6 +13,7 @@ class NIMTeamProvider: NSObject,IMTeamProtocol {
     enum teamError: Error {
         case NoTeamID
         case NoUsersToAdd
+        case NeedDevideID
     }
     
     func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler){
@@ -25,8 +26,13 @@ class NIMTeamProvider: NSObject,IMTeamProtocol {
         teamOption.beInviteMode = NIMTeamBeInviteMode.noAuth
         //群验证方式
         teamOption.joinMode = NIMTeamJoinMode.noAuth
+        model.initialUsers.append(NIMSDK.shared().loginManager.currentAccount())
         let users = model.initialUsers
-        NIMSDK.shared().teamManager.createTeam(teamOption, users: users!, completion: completion)
+        if model.initialUsers.count <= 1 {
+            completion(teamError.NeedDevideID, nil)
+            return
+        }
+        NIMSDK.shared().teamManager.createTeam(teamOption, users: users, completion: completion)
     }
     
     func hasJoinedATeam() -> (Bool){
@@ -73,5 +79,10 @@ class NIMTeamProvider: NSObject,IMTeamProtocol {
             }
             completion(error, memberArray)
         }
+    }
+    
+    func currentTeamID() -> (String) {
+        let team = NIMSDK.shared().teamManager.allMyTeams()?.first
+        return (team?.teamId) ?? ""
     }
 }

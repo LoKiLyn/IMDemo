@@ -16,7 +16,6 @@ class LucaMemberViewController: UIViewController {
         "MemberCell",
         "QuietnessCell",
         ]
-    
     @IBOutlet private weak var tableView: UITableView!
     
     
@@ -24,7 +23,6 @@ class LucaMemberViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +37,22 @@ class LucaMemberViewController: UIViewController {
     // MARK: - Events
     
     @IBAction func quitButtonPressed(sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        let teamID = IMManager.shared.teamManager.currentTeamID()
+        let model = BaseTeamModel()
+        model.teamID = teamID
+        IMManager.shared.teamManager.dismissTeam(model: model) { (error) in
+            let alert = LucaBaseAlertController(nibName: "\(LucaBaseAlertController.self)", bundle: nil)
+            if error == nil {
+                alert.alertTitle = "提示"
+                alert.contentLabel.text = "退出群组\(teamID)成功"
+                alert.show(inContainter: self)
+            } else {
+                alert.alertTitle = "提示"
+                alert.contentLabel.text = "退出群组失败,错误信息：\(error!)"
+                alert.showOrNot = false
+                alert.show(inContainter: self)
+            }
+        }
     }
     
     
