@@ -23,6 +23,7 @@ class IMManager: NSObject {
     
     var loginManager: IMLoginManager = IMLoginManager()
     var teamManager: IMTeamManager = IMTeamManager()
+    var chatManager: IMChatManager = IMChatManager()
     
     
     /**
@@ -37,6 +38,7 @@ class IMManager: NSObject {
             loginManager.loginModel = NIMLoginModel()
             teamManager.teamProvider = NIMTeamProvider()
             teamManager.teamModel = NIMTeamModel()
+            chatManager.chatProvider = NIMChatProvider()
         }
     }
 }

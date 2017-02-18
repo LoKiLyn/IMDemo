@@ -8,8 +8,18 @@
 
 import UIKit
 
+typealias MessageHandler = (Error?) -> Void
+
+protocol IMChatProtocol: NSObjectProtocol {
+    func sendMessageWithText(model: BaseChatModel, completion: @escaping MessageHandler)
+    func sendMessageWithImage(model: BaseChatModel, completion: MessageHandler)
+    func sendMessageWithAudio(model: BaseChatModel, completion: MessageHandler)
+}
+
 class IMChatManager: NSObject {
-    typealias MessageHandler = (Error?) -> Void
+    
+    var chatProvider: IMChatProtocol?
+    var chatModel: BaseChatModel?
     
     /**
      *  发送文字消息
@@ -19,42 +29,16 @@ class IMChatManager: NSObject {
      *  @param completion  完成后的回调
      */
     
-    func sendMessageWithText(text: String, teamID: String, completion: MessageHandler) {
-        let message = NIMMessage()
-        message.text = text
-        let session = NIMSession(teamID, type: NIMSessionType.team)
-        // MARK: - Remain to be verified.
-        do {
-            try NIMSDK.shared().chatManager.send(message, to: session)
-        } catch {
-            completion(error)
-        }
+    func sendMessageWithText(model: BaseChatModel, completion: @escaping MessageHandler) {
+        chatProvider?.sendMessageWithText(model: model, completion: completion)
     }
     
-    func sendMessageWithImage(image: UIImage, teamID: String, completion: MessageHandler) {
-        let imageObject = NIMImageObject(image: image)
-        let message = NIMMessage()
-        message.messageObject = imageObject
-        let session = NIMSession(teamID, type: NIMSessionType.team)
-        // MARK: - Remain to be verified.
-        do {
-            try NIMSDK.shared().chatManager.send(message, to: session)
-        } catch {
-            completion(error)
-        }
+    func sendMessageWithImage(model: BaseChatModel, completion: MessageHandler) {
+        chatProvider?.sendMessageWithImage(model: model, completion: completion)
     }
     
-    func sendMessageWithAudio(filePath: String, toSessionID: String, completion: MessageHandler) {
-        let videoObject = NIMVideoObject(sourcePath: filePath)
-        let message = NIMMessage()
-        message.messageObject = videoObject
-        let session = NIMSession(toSessionID, type: NIMSessionType.team)
-        // MARK: - Remain to be verified.
-        do {
-            try NIMSDK.shared().chatManager.send(message, to: session)
-        } catch {
-            completion(error)
-        }
+    func sendMessageWithAudio(model: BaseChatModel, completion: MessageHandler) {
+        chatProvider?.sendMessageWithAudio(model: model, completion: completion)
     }
 }
 

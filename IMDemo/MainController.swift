@@ -24,8 +24,8 @@ class MainController: UIViewController {
         self.accountTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
         let model = NIMLoginModel()
-        model.account = "test02"
-        model.token = "000002"
+        model.account = self.accountTextField.text
+        model.token = self.passwordTextField.text
         IMManager.shared.loginManager.login(model: model) { (error) in
             if error == nil {
                 print(IMManager.shared.loginManager.isLogined())

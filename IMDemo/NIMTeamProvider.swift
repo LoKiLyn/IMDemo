@@ -20,7 +20,7 @@ class NIMTeamProvider: NSObject,IMTeamProtocol {
         //群名称
         teamOption.name = ""
         //谁可以邀请群成员
-        teamOption.inviteMode = NIMTeamInviteMode.manager
+        teamOption.inviteMode = NIMTeamInviteMode.all
         //被邀请人验证方式
         teamOption.beInviteMode = NIMTeamBeInviteMode.noAuth
         //群验证方式

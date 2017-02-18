@@ -64,37 +64,19 @@ class ListViewController: UIViewController {
     }
     
     @IBAction func createGroupButtonPressed(_ sender: UIButton) {
-        
-        let teamOption = NIMCreateTeamOption()
-        //群公告
-        teamOption.announcement = "Team Annoucement: Hi all"
-        //群头像
-        teamOption.avatarUrl = nil
-        //谁可以邀请群成员
-        teamOption.inviteMode = NIMTeamInviteMode.all
-        //被邀请人验证方式
-        teamOption.beInviteMode = NIMTeamBeInviteMode.noAuth
-        //群验证方式
-        teamOption.joinMode = NIMTeamJoinMode.noAuth
-        //群名称
-        teamOption.name = "TestTeam"
-        NIMSDK.shared().teamManager.createTeam(teamOption, users: [((self.friendList?.first)?.userId)!]) { (error, teamId) in
+        let model = NIMTeamModel()
+        model.initialUsers = ["test01","test03"]
+        IMManager.shared.teamManager.createTeam(model: model) { (error, teamId) in
             if error == nil {
-                let alert = UIAlertController(title: "提示", message: "创建群成功，群号为\(teamId)", preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: "提示", message: "创建群成功，群号为\(teamId),群成员:", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(okAction)
-                self.present(alert, animated: true, completion: {
-                    
-                })
+                self.present(alert, animated: true)
             } else {
                 let alert = UIAlertController(title: "提示", message: "创建群失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                 alert.addAction(okAction)
-                self.present(alert, animated: true, completion: {
-//                    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-//                        self.dismiss(animated: true)
-//                    })
-                })
+                self.present(alert, animated: true)
             }
         }
     }
