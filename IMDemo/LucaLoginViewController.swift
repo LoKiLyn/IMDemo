@@ -26,22 +26,17 @@ class LucaLoginViewController: UIViewController {
         loginModel.token = passwordTextField.text
         
         IMManager.shared.loginManager.login(model: loginModel) { (error) in
-            
-             //LucaBaseAlertController.sharedInstance
-            
             if error == nil {
                 let userName = NIMSDK.shared().loginManager.currentAccount()
-//                alert.contentLabel.text = "Welcome：\(userName)"
+                self.alert.alertTitle = "Welcome to Luka."
+                self.alert.contentLabel.text = "----- \(userName) -----"
+                self.alert.showOrNot = true
                 self.alert.show(inContainter: self)
-                print(userName)
             } else {
-//                alert.titleLabel.text = "登录失败"
-//                alert.contentLabel.text = "错误信息：\(error!)"
-//                self.alert.alertTitle = "asdasdf"
-                self.alert.str = "asdfasdfasdfasdfasdfasdfasiofuwyeqriq78t2ecfkjahsgd"
-                print(self.alert.str)
+                self.alert.alertTitle = "登录失败"
+                self.alert.contentLabel.text = "错误信息：\(error!)"
+                self.alert.showOrNot = false
                 self.alert.show(inContainter: self)
-                print(error!)
             }
         }
     }
@@ -63,6 +58,7 @@ class LucaLoginViewController: UIViewController {
 extension LucaLoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return textField.endEditing(true)
+        textField.resignFirstResponder()
+        return false
     }
 }

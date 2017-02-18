@@ -14,9 +14,9 @@ class LucaBaseAlertController: UIViewController {
     
     //MARK: - Property
     
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
-    var str = "1234"
+    @IBOutlet internal weak var titleLabel: UILabel!
+    @IBOutlet internal weak var contentLabel: UILabel!
+
     // MARK: - Public
     
     var alertTitle: String {
@@ -28,10 +28,21 @@ class LucaBaseAlertController: UIViewController {
                 label.text = newValue
             }
         }
-        
     }
     
+    var alertContent: String {
+        get {
+            return self.contentLabel.text ?? "content"
+        }
+        set {
+            if let label = self.contentLabel {
+                label.text = newValue
+            }
+        }
+    }
     
+    var showOrNot: Bool = false
+
     class var sharedInstance: LucaBaseAlertController {
         struct Static {
             static let instance = LucaBaseAlertController(nibName: "\(LucaBaseAlertController.self)", bundle: nil)
@@ -56,28 +67,23 @@ class LucaBaseAlertController: UIViewController {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("awakeFromNib")
     }
     
     override func awakeAfter(using aDecoder: NSCoder) -> Any? {
-        print("][][][][][][][")
         return super.awakeAfter(using: aDecoder)
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        loadView()
-        print("asdfasdfasdfasdfasdfasdfasdf")
+        loadView()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        print("============")
     }
     
     override func loadView() {
         super.loadView()
-        print("loadView")
     }
     
     override func viewDidLoad() {
@@ -92,7 +98,15 @@ class LucaBaseAlertController: UIViewController {
     // MARK: Events
     
     @IBAction func submmitButtonPressed(_ sender: UIButton) {
-        self.titleLabel.text = "9273641028367410234"
+        self.dismiss(animated: true, completion: nil)
+        switch sourceViewController.self {
+        case is LucaLoginViewController:
+            if showOrNot {
+            sourceViewController?.performSegue(withIdentifier: "showLucaChatViewController", sender: sourceViewController)
+            }
+        default:
+            break
+        }
     }
     
 }
