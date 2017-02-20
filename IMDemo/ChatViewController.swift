@@ -22,12 +22,13 @@ class ChatViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        NIMSDK.shared().chatManager.add(self)
+        IMManager.shared.chatManager.addDelegate(delegate: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NIMSDK.shared().chatManager.add(self)
+        IMManager.shared.chatManager.addDelegate(delegate: self)
+//        NIMSDK.shared().chatManager.add(self)
     }
     
     override func viewDidLoad() {
@@ -36,7 +37,7 @@ class ChatViewController: UIViewController {
     }
     
     deinit {
-        NIMSDK.shared().chatManager.remove(self)
+//        NIMSDK.shared().chatManager.remove(self)
     }
     
     // MARK: - Events
@@ -56,15 +57,23 @@ class ChatViewController: UIViewController {
     
 }
 
+extension ChatViewController: ChatManagerDelegate {
+    func onRecvMsg(messages: Array<String>) {
+        for message in messages {
+            print(message)
+        }
+    }
+}
+
 extension ChatViewController: NIMChatManagerDelegate {
     
-    func onRecvMessages(_ messages: [NIMMessage]) {
-        for message in messages {
-            self.messages.append(message)
-            print(message.text as Any)
-        }
-        self.tableView.reloadData()
-    }
+//    func onRecvMessages(_ messages: [NIMMessage]) {
+//        for message in messages {
+//            self.messages.append(message)
+//            print(message.text as Any)
+//        }
+//        self.tableView.reloadData()
+//    }
     
     func send(_ message: NIMMessage, didCompleteWithError error: Error?) {
         if error == nil {

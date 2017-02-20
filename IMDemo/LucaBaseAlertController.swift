@@ -109,6 +109,8 @@ class LucaBaseAlertController: UIViewController {
             }
         case is LucaCreateTeamViewController:
             sourceViewController?.dismiss(animated: true, completion: nil)
+        case is LucaMemberViewController:
+            _ = sourceViewController?.navigationController?.popViewController(animated: true)
         default:
             break
         }

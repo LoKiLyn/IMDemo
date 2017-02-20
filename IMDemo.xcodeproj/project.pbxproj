@@ -25,6 +25,7 @@
 		032374341E55977000014308 /* InterfaceTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032374331E55977000014308 /* InterfaceTestController.swift */; };
 		0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D21E519E7800C30BBF /* IMLoginManager.swift */; };
 		0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D61E51B7F600C30BBF /* Extensions.swift */; };
+		03454CE91E5A8C0600756CF8 /* IMMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03454CE81E5A8C0600756CF8 /* IMMessage.swift */; };
 		037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */; };
 		037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */; };
 		037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB1011E4D842E002D734C /* GroupListCell.swift */; };
@@ -73,6 +74,7 @@
 		032374331E55977000014308 /* InterfaceTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTestController.swift; sourceTree = "<group>"; };
 		0326E4D21E519E7800C30BBF /* IMLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginManager.swift; sourceTree = "<group>"; };
 		0326E4D61E51B7F600C30BBF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		03454CE81E5A8C0600756CF8 /* IMMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMMessage.swift; sourceTree = "<group>"; };
 		037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
 		037DB1011E4D842E002D734C /* GroupListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListCell.swift; sourceTree = "<group>"; };
@@ -203,9 +205,10 @@
 			isa = PBXGroup;
 			children = (
 				031943F01E53F5AE0015DA8F /* IMChatManager.swift */,
-				03D38FCA1E5696D200B76826 /* BaseChatModel.swift */,
 				03D38FCC1E56982200B76826 /* NIMChatProvider.swift */,
 				03D38FCE1E56A25C00B76826 /* NIMChatModel.swift */,
+				03D38FCA1E5696D200B76826 /* BaseChatModel.swift */,
+				03454CE81E5A8C0600756CF8 /* IMMessage.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 				03D38FDA1E56E8F100B76826 /* LucaBaseAlertController.swift in Sources */,
 				031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */,
 				031943FB1E5444F90015DA8F /* NIMLoginModel.swift in Sources */,
+				03454CE91E5A8C0600756CF8 /* IMMessage.swift in Sources */,
 				037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */,
 				0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */,
 				0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NIMChatProvider: NSObject, IMChatProtocol {
+class NIMChatProvider: NSObject {
     
     enum chatError: Error {
         case NoTeamID
@@ -16,7 +16,12 @@ class NIMChatProvider: NSObject, IMChatProtocol {
         case NoMessageVideoPath
     }
     
-    func sendMessageWithText(model: BaseChatModel, completion: @escaping MessageHandler) {
+    var delegate: ChatManagerDelegate?
+}
+
+extension NIMChatProvider: IMChatProtocol {
+    
+    internal func sendMessageWithText(model: BaseChatModel, completion: @escaping MessageHandler) {
         let message = NIMMessage()
         message.text = model.messageText
         if model.teamID == nil {
@@ -31,7 +36,7 @@ class NIMChatProvider: NSObject, IMChatProtocol {
         }
     }
     
-    func sendMessageWithImage(model: BaseChatModel, completion: MessageHandler) {
+    internal func sendMessageWithImage(model: BaseChatModel, completion: MessageHandler) {
         let message = NIMMessage()
         if model.messageImage == nil {
             completion(chatError.NoMessageImage)
@@ -51,7 +56,7 @@ class NIMChatProvider: NSObject, IMChatProtocol {
         }
     }
     
-    func sendMessageWithAudio(model: BaseChatModel, completion: MessageHandler) {
+    internal func sendMessageWithAudio(model: BaseChatModel, completion: MessageHandler) {
         let message = NIMMessage()
         if model.messageVideoPath == nil {
             completion(chatError.NoMessageVideoPath)
@@ -68,6 +73,30 @@ class NIMChatProvider: NSObject, IMChatProtocol {
             try NIMSDK.shared().chatManager.send(message, to: session)
         } catch {
             completion(error)
+        }
+    }
+    
+    internal func setDelegate(delegate: ChatManagerDelegate) {
+        NIMSDK.shared().chatManager.add(self)
+        self.delegate = delegate
+    }
+    
+    internal func removeDelegate(delegate: ChatManagerDelegate){
+        NIMSDK.shared().chatManager.remove(self)
+    }
+
+}
+
+extension NIMChatProvider: NIMChatManagerDelegate {
+    
+    func onRecvMessages(_ messages: [NIMMessage]) {
+        if self.delegate != nil {
+            // processedxx
+            var msgArray: Array<String> = []
+            for message in messages {
+                msgArray.append(message.text!)
+            }
+            self.delegate?.onRecvMsg(messages: msgArray)
         }
     }
 }
