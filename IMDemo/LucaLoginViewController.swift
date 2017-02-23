@@ -21,11 +21,7 @@ class LucaLoginViewController: UIViewController {
     
     @IBAction func login(_ sender: UIButton) {
         
-        let loginModel = BaseLoginModel()
-        loginModel.account = "test04"
-        loginModel.token = "000004"
-        
-        IMManager.shared.loginManager.login(model: loginModel) { (error) in
+        IMManager.shared.loginManager.login(account: "test04", token: "000004") { (error) in
             if error == nil {
                 let userName = IMManager.shared.loginManager.currentAccount()
                 self.alert.alertTitle = "Welcome to Luka."

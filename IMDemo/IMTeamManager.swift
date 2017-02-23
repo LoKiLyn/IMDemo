@@ -25,16 +25,16 @@ protocol IMTeamProtocol: NSObjectProtocol {
 class IMTeamManager: NSObject {
 
     var teamProvider: IMTeamProtocol?
-    var teamModel: BaseTeamModel?
     
     /**
      *  创建群组
      *
-     *  @param users 初始添加用户
+     *  @param users 初始添加用户账号（包括创建群组的用户！所以数组元素个数>=2 !）
      *  @param completion 完成回调(error,teamID)
      */
-    
-    func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler) {
+    func createTeam(users: Array<String>, completion:@escaping TeamCreateHandler) {
+        let model = BaseTeamModel()
+        model.initialUsers = users
         teamProvider?.createTeam(model: model, completion: completion)
     }
     
@@ -44,7 +44,6 @@ class IMTeamManager: NSObject {
      *
      *  @return 当前群组状态
      */
-    
     func hasJoinedATeam() -> (Bool) {
         return teamProvider!.hasJoinedATeam()
     }
@@ -55,8 +54,9 @@ class IMTeamManager: NSObject {
      *  @param teamId      群组ID
      *  @param completion  完成后的回调
      */
-    
-    func dismissTeam(model:BaseTeamModel, completion: @escaping TeamHandler) {
+    func dismissTeam(teamID: String, completion: @escaping TeamHandler) {
+        let model = BaseTeamModel()
+        model.teamID = teamID
         teamProvider?.dismissTeam(model: model, completion: completion)
     }
     
@@ -66,8 +66,9 @@ class IMTeamManager: NSObject {
      *  @param teamId     群组ID
      *  @param completion 完成后的回调
      */
-    
-    func quitTeam(model:BaseTeamModel, completion: @escaping TeamHandler) {
+    func quitTeam(teamID: String, completion: @escaping TeamHandler) {
+        let model = BaseTeamModel()
+        model.teamID = teamID
         teamProvider?.quitTeam(model: model, completion: completion)
     }
     
@@ -79,11 +80,19 @@ class IMTeamManager: NSObject {
      *  @param postscript  邀请附言
      *  @param completion  完成后的回调
      */
-    
-    func addUsers(model:BaseTeamModel, completion:@escaping TeamMemberHandler) {
+    func addUsers(users: Array<String>, teamID: String, postscript: String, completion:@escaping TeamMemberHandler) {
+        let model = BaseTeamModel()
+        model.usersToAdd = users
+        model.teamID = teamID
+        model.postScript = postscript
         teamProvider?.addUsers(model: model, completion: completion)
     }
     
+    /**
+     *  当前群组ID
+     *
+     *  @return 群组ID
+     */
     func currentTeamID() -> (String) {
         return (teamProvider?.currentTeamID())!
     }

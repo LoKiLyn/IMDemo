@@ -16,8 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        NIMSDK.shared().register(withAppID: APPKEY, cerName: nil)
+        IMManager.shared.register(appID: APPKEY, cerName: nil)
         NIMSDK.shared().loginManager.add(self as NIMLoginManagerDelegate)
+        NIMCustomObject.registerCustomDecoder(ChatViewController())
         return true
     }
 

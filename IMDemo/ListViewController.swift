@@ -64,9 +64,7 @@ class ListViewController: UIViewController {
     }
     
     @IBAction func createGroupButtonPressed(_ sender: UIButton) {
-        let model = NIMTeamModel()
-        model.initialUsers = ["test01","test03"]
-        IMManager.shared.teamManager.createTeam(model: model) { (error, teamId) in
+        IMManager.shared.teamManager.createTeam(users: ["test01","test03"]) { (error, teamId) in
             if error == nil {
                 let alert = UIAlertController(title: "提示", message: "创建群成功，群号为\(teamId),群成员:", preferredStyle: UIAlertControllerStyle.alert)
                 let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)

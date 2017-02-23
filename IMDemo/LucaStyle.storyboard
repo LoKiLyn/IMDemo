@@ -240,7 +240,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="88" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="CsB-UL-OQa" userLabel="Chat TableView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="371"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyTextCell" id="3XE-mk-R8W" userLabel="ChatMyText Cell">
@@ -738,17 +738,27 @@
                                     <outlet property="delegate" destination="XfT-kG-vqB" id="Pwe-0i-daJ"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3FY-SW-PjN" userLabel="ChatInputBox" customClass="ChatInputBox" customModule="IMDemo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="327" width="375" height="232"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="cUf-PB-CLE"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CsB-UL-OQa" firstAttribute="leading" secondItem="AjW-tN-5dy" secondAttribute="leading" id="1z0-GW-XQx"/>
                             <constraint firstAttribute="trailing" secondItem="CsB-UL-OQa" secondAttribute="trailing" id="I6j-OJ-gEQ"/>
-                            <constraint firstItem="vXx-gd-F2R" firstAttribute="top" secondItem="CsB-UL-OQa" secondAttribute="bottom" constant="188" id="LqH-ri-8xJ"/>
+                            <constraint firstItem="3FY-SW-PjN" firstAttribute="leading" secondItem="AjW-tN-5dy" secondAttribute="leading" id="U3y-Dq-hei"/>
                             <constraint firstItem="LPU-uQ-def" firstAttribute="leading" secondItem="AjW-tN-5dy" secondAttribute="leading" id="c1y-f7-kn8"/>
+                            <constraint firstItem="3FY-SW-PjN" firstAttribute="top" secondItem="CsB-UL-OQa" secondAttribute="bottom" id="cfB-RP-LIj"/>
                             <constraint firstAttribute="bottom" secondItem="LPU-uQ-def" secondAttribute="bottom" id="fWq-Z1-OzC"/>
+                            <constraint firstAttribute="trailing" secondItem="3FY-SW-PjN" secondAttribute="trailing" id="gmq-V8-v3I"/>
                             <constraint firstItem="LPU-uQ-def" firstAttribute="top" secondItem="bdu-2l-Xfn" secondAttribute="bottom" id="lQ4-Ej-onh"/>
                             <constraint firstItem="CsB-UL-OQa" firstAttribute="top" secondItem="bdu-2l-Xfn" secondAttribute="bottom" id="m5p-ne-SSg"/>
                             <constraint firstAttribute="trailing" secondItem="LPU-uQ-def" secondAttribute="trailing" id="nXY-ne-Sqm"/>
+                            <constraint firstItem="vXx-gd-F2R" firstAttribute="top" secondItem="3FY-SW-PjN" secondAttribute="bottom" id="oSc-I1-8zD"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

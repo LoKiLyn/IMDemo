@@ -21,26 +21,33 @@ protocol IMLoginProtocol: NSObjectProtocol {
 class IMLoginManager: NSObject{
     
     internal var loginProvider: IMLoginProtocol?
-    internal var loginModel: BaseLoginModel?
     
     /**
      *  登录
      *
-     *  @param model      登陆模型
+     *  @param account    云信账号
+     *  @param token      云信密码
      *  @param completion 完成回调
      */
-    internal func login(model: BaseLoginModel, completion: @escaping LoginHandler){
+    internal func login(account: String, token: String, completion: @escaping LoginHandler){
+        let model = BaseLoginModel()
+        model.account = account
+        model.token = token
         loginProvider!.login(model: model, completion: completion)
     }
     
     /**
      *  自动登录
      *
-     *  @param model      登陆模型
+     *  @param account    云信账号
+     *  @param token      云信密码
      *  @param completion 完成回调
      *  @discussion 启动APP如果已经保存了用户帐号和令牌,建议使用这个登录方式,使用这种方式可以在无网络时直接打开会话窗口
      */
-    internal func autologin(model: BaseLoginModel, completion: @escaping LoginHandler){
+    internal func autologin(account: String, token: String, completion: @escaping LoginHandler){
+        let model = BaseLoginModel()
+        model.account = account
+        model.token = token
         loginProvider!.autoLogin(model: model, completion: completion)
     }
     

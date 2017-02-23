@@ -16,19 +16,20 @@ class ChatViewController: UIViewController {
     var messages: Array<NIMMessage> = []
     @IBOutlet weak var titleItem: UINavigationItem!
     @IBOutlet weak var inputTextField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var textMessageLabel: UILabel!
+    @IBOutlet weak var imageMessageView: UIImageView!
+    @IBOutlet weak var fileInfoLabel: UILabel!
+    @IBOutlet weak var customInfoLabel: UILabel!
     
     // MARK: - LifeCycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        IMManager.shared.chatManager.addDelegate(delegate: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         IMManager.shared.chatManager.addDelegate(delegate: self)
-//        NIMSDK.shared().chatManager.add(self)
     }
     
     override func viewDidLoad() {
@@ -37,76 +38,87 @@ class ChatViewController: UIViewController {
     }
     
     deinit {
-//        NIMSDK.shared().chatManager.remove(self)
+        IMManager.shared.chatManager.removeDelegate(delegate: self)
     }
     
     // MARK: - Events
     
-    @IBAction func sendButtonPressed(_ sender: UIButton) {
-        let message = NIMMessage()
-        message.text = inputTextField.text
-        //清空textField
-        self.inputTextField.text = ""
-        let session = NIMSession((user?.userId)!, type: NIMSessionType.P2P)
-        do {
-           try NIMSDK.shared().chatManager.send(message, to: session)
-        } catch {
-            print(error)
+    @IBAction func sendImageButtonPressed(_ sender: UIButton) {
+        let image = UIImage(named: "CameraEntrance")
+        IMManager.shared.chatManager.sendMessageWithImage(image: image!, teamID: (user?.userId)!) { (error) in
+            if error == nil {
+                print("发送成功")
+            } else {
+                print("发送失败:\(error)")
+            }
         }
     }
     
+    @IBAction func sendTextButtonPressed(_ sender: UIButton) {
+        let text = self.inputTextField.text ?? ""
+        IMManager.shared.chatManager.sendMessageWithText(text: text, teamID: (user?.userId)!) { (error) in
+            if error == nil {
+                print("发送成功")
+            } else {
+                print("发送失败:\(error)")
+            }
+        }
+    }
+    
+    @IBAction func sendFileButtonPressed(_ sender: UIButton) {
+        let filePath = "/Users/xiaobai/Desktop/test.mp3"
+        IMManager.shared.chatManager.sendMessageWithAudio(filePath: filePath, teamID:(user?.userId)!) { (error) in
+            if error == nil {
+                print("发送成功")
+            } else {
+                print("发送失败:\(error)")
+            }
+        }
+    }
+    
+    @IBAction func sendCustomButtonPressed(_ sender: UIButton) {
+//        IMManager.shared.chatManager.sendCustomMessage(sessionID: (user?.userId)!, customMessage: Attachment() as! CustomAttachmentDelegate) { (error) in
+//            if error == nil {
+//                print("发送成功")
+//            } else {
+//                print("发送失败:\(error)")
+//            }
+//        }
+    }
+    
+
 }
 
 extension ChatViewController: ChatManagerDelegate {
-    func onRecvMsg(messages: Array<String>) {
+    
+    func onRecvMsg(messages: Array<IMMessage>) {
         for message in messages {
-            print(message)
+            switch message.messageType {
+            case .MessageTypeText:
+                print(message.text as Any)
+            case .MessageTypeAudio:
+                print(message.audioObject.debugDescription)
+            case .MessageTypeImage:
+                print(message.imageObject?.url as Any)
+            default:
+                break
+            }
         }
     }
 }
 
-extension ChatViewController: NIMChatManagerDelegate {
-    
-//    func onRecvMessages(_ messages: [NIMMessage]) {
-//        for message in messages {
-//            self.messages.append(message)
-//            print(message.text as Any)
-//        }
-//        self.tableView.reloadData()
-//    }
-    
-    func send(_ message: NIMMessage, didCompleteWithError error: Error?) {
-        if error == nil {
-            let alert = UIAlertController(title: "提示", message: "发送成功！", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true)
-            self.messages.append(message)
-            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
-            self.tableView.insertRows(at:[indexPath], with: UITableViewRowAnimation.left)
-            self.tableView.reloadData()
-        }
-        else {
-            let alert = UIAlertController(title: "提示", message: "发送失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-            alert.addAction(okAction)
-            self.present(alert, animated: true)
-        }
-    }
-}
-
-extension ChatViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (messages.count)
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "chatCell") as! ChatCell
-        cell.messageLabel.text = messages[indexPath.row].text
-        if messages[indexPath.row].senderName == nil {
-            cell.messageLabel.textColor = UIColor.red
-        }else {
-            cell.messageLabel.textColor = UIColor.black
-        }
-        return cell
+extension ChatViewController: NIMCustomAttachmentCoding {
+    func decodeAttachment(_ content: String?) -> NIMCustomAttachment? {
+        var dict: Dictionary<String, String>?
+        let data: Data = (content?.data(using: String.Encoding.utf8))!
+            do {
+                dict = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? Dictionary
+            } catch {
+                print(error)
+            }
+        let attachment = Attachment()
+        attachment.name = dict?["name"]
+        attachment.id = dict?["id"]
+        return attachment
     }
 }

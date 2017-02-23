@@ -55,14 +55,11 @@ extension InterfaceTestController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let model = NIMLoginModel()
-        model.account = "test02"
-        model.token = "000002"
         switch indexPath.section {
         case 0:
             switch indexPath.row {
             case 0:
-                IMManager.shared.loginManager.login(model: model) { (error) in
+                IMManager.shared.loginManager.login(account: "test02", token: "000002") { (error) in
                     if error == nil {
                         let alert = UIAlertController().createAlertWithAction(title: "提示", message: "云信登录成功，您好，\(IMManager.shared.loginManager.currentAccount())", style: UIAlertControllerStyle.alert, actionTitle: "OK", actionStyle: UIAlertActionStyle.cancel)
                         self.present(alert, animated: true)
@@ -74,7 +71,7 @@ extension InterfaceTestController: UITableViewDelegate {
                 }
             break
             case 1:
-                IMManager.shared.loginManager.autologin(model: model, completion: { (error) in
+                IMManager.shared.loginManager.autologin(account: "test02", token: "000002") { (error) in
                     if error == nil {
                         let alert = UIAlertController().createAlertWithAction(title: "提示", message: "自动登录成功，您好，\(IMManager.shared.loginManager.currentAccount())", style: UIAlertControllerStyle.alert, actionTitle: "OK", actionStyle: UIAlertActionStyle.cancel)
                         self.present(alert, animated: true)
@@ -83,7 +80,7 @@ extension InterfaceTestController: UITableViewDelegate {
                         let alert = UIAlertController().createAlertWithAction(title: "提示", message: "自动登录失败,\(error)", style:  UIAlertControllerStyle.alert, actionTitle: "OK", actionStyle: UIAlertActionStyle.cancel)
                         self.present(alert, animated: true)
                     }
-                })
+                }
             break
             case 2:
                 IMManager.shared.loginManager.logout { (error) in
@@ -118,7 +115,6 @@ extension InterfaceTestController: UITableViewDelegate {
             }
             break
   
-        break
         default: break
         }
 

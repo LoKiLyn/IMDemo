@@ -21,6 +21,7 @@ class IMManager: NSObject {
         switchSDK(SDKType: IMManager.SDKType.Nim)
     }
     
+    var currentSDKType: SDKType?
     var loginManager: IMLoginManager = IMLoginManager()
     var teamManager: IMTeamManager = IMTeamManager()
     var chatManager: IMChatManager = IMChatManager()
@@ -32,13 +33,25 @@ class IMManager: NSObject {
      *  @param SDKType   SDK
      */
     func switchSDK(SDKType:SDKType){
+        currentSDKType = SDKType
         switch SDKType {
         case .Nim:
             loginManager.loginProvider = NIMLoginProvider()
-            loginManager.loginModel = NIMLoginModel()
             teamManager.teamProvider = NIMTeamProvider()
-            teamManager.teamModel = NIMTeamModel()
             chatManager.chatProvider = NIMChatProvider()
+        }
+    }
+    
+    /**
+     *  初始化SDK
+     *
+     *  @param appID    应用申请的appKey
+     *  @param cerName  推送证书名（optional)
+     */
+    func register(appID: String, cerName: String?) {
+        switch self.currentSDKType! {
+        case .Nim:
+            NIMSDK.shared().register(withAppID: appID, cerName: cerName)
         }
     }
 }

@@ -38,9 +38,7 @@ class LucaMemberViewController: UIViewController {
     
     @IBAction func quitButtonPressed(sender: UIButton) {
         let teamID = IMManager.shared.teamManager.currentTeamID()
-        let model = BaseTeamModel()
-        model.teamID = teamID
-        IMManager.shared.teamManager.dismissTeam(model: model) { (error) in
+        IMManager.shared.teamManager.dismissTeam(teamID: teamID) { (error) in
             let alert = LucaBaseAlertController(nibName: "\(LucaBaseAlertController.self)", bundle: nil)
             if error == nil {
                 alert.alertTitle = "提示"

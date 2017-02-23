@@ -8,13 +8,17 @@
 
 import UIKit
 
-class NIMTeamProvider: NSObject,IMTeamProtocol {
-    
+class NIMTeamProvider: NSObject {
+
     enum teamError: Error {
         case NoTeamID
         case NoUsersToAdd
         case NeedDevideID
     }
+    
+}
+
+extension NIMTeamProvider: IMTeamProtocol {
     
     func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler){
         let teamOption = NIMCreateTeamOption()
@@ -85,4 +89,5 @@ class NIMTeamProvider: NSObject,IMTeamProtocol {
         let team = NIMSDK.shared().teamManager.allMyTeams()?.first
         return (team?.teamId) ?? ""
     }
+
 }

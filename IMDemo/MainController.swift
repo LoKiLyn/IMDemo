@@ -23,10 +23,7 @@ class MainController: UIViewController {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         self.accountTextField.resignFirstResponder()
         self.passwordTextField.resignFirstResponder()
-        let model = NIMLoginModel()
-        model.account = self.accountTextField.text
-        model.token = self.passwordTextField.text
-        IMManager.shared.loginManager.login(model: model) { (error) in
+        IMManager.shared.loginManager.login(account: self.accountTextField.text!, token: self.passwordTextField.text!) { (error) in
             if error == nil {
                 print(IMManager.shared.loginManager.isLogined())
                 let alert = UIAlertController().createAlertWithAction(title: "提示", message: "云信登录成功，您好，\(IMManager.shared.loginManager.currentAccount())", style: UIAlertControllerStyle.alert, actionTitle: "OK", actionStyle: UIAlertActionStyle.cancel)

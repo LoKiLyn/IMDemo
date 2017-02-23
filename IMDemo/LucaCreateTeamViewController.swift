@@ -12,16 +12,13 @@ class LucaCreateTeamViewController: UIViewController {
     
     // MARK: - Property
     
-    let teamModel = NIMTeamModel()
     let alert = LucaBaseAlertController.sharedInstance
     
     // MARK: - Events
     
     @IBAction func createTeam(_ sender: UIButton) {
-        teamModel.initialUsers.append("test01")
-        IMManager.shared.teamManager.createTeam(model: teamModel) { (error, teamID) in
+        IMManager.shared.teamManager.createTeam(users: ["test01", "test04"]) { (error, teamID) in
             if error == nil {
-                self.teamModel.teamID = teamID
                 self.alert.alertTitle = "创建成功"
                 self.alert.alertContent = "群组ID为：\(teamID!)"
                 self.alert.showOrNot = true
