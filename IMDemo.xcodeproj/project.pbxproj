@@ -231,8 +231,8 @@
 				03D38FCA1E5696D200B76826 /* BaseChatModel.swift */,
 				03F505C11E600A20000EEF79 /* IMBaseObject.swift */,
 				03454CE81E5A8C0600756CF8 /* IMMessage.swift */,
-				03D38FCC1E56982200B76826 /* NIMChatProvider.swift */,
 				031943F01E53F5AE0015DA8F /* IMChatManager.swift */,
+				03D38FCC1E56982200B76826 /* NIMChatProvider.swift */,
 			);
 			name = Chat;
 			sourceTree = "<group>";

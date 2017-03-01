@@ -95,14 +95,14 @@ extension ChatViewController: ChatManagerDelegate {
             case .MessageTypeText:
                 print(message.text as Any)
             case .MessageTypeAudio:
-                print(message.audioObject.debugDescription)
+                print(message.audioObject)
             case .MessageTypeImage:
-                print(message.imageObject?.url as Any)
+                print(message.imageObject.url as Any)
             case .MessageTypeCustom:
                 
                 // todo
                 
-                let a = message.customObject?.attachment as! Attachment
+                let a = message.customObject.attachment as! Attachment
                 print("\(a.id)   \(a.name)")
                 
             default:

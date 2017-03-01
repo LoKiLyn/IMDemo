@@ -15,18 +15,29 @@ class ChatMyVoiceCell: UITableViewCell {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
-    
-    var audioPath: String?
+        
+    private var audioPath: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func configWith(message: IMMessage){
+    func configWith(message: IMMessage) {
         self.nickNameLabel.text = message.from
-        self.audioPath = message.audioObject?.path
-        self.timeLabel.text = "\(message.audioObject!.duration!/1000 + 1)\""
+        self.audioPath = message.audioObject.path
+        self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        switch message.deliveryState {
+        case .MessageDeliveryStateDeliveried:
+            self.retryButton.isHidden = true
+            self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        case .MessageDeliveryStateFailed:
+            self.retryButton.isHidden = false
+            self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        case .MessageDeliveryStateDelivering:
+            self.retryButton.isHidden = true
+            self.timeLabel.text = "Delivering"
+        }
     }
     
 }

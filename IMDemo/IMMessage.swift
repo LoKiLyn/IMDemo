@@ -207,17 +207,17 @@ class IMMessage: NSObject {
     /**
      *  图片消息附件内容
      */
-    var imageObject: IMImageObject?
+    var imageObject: IMImageObject = IMImageObject()
     
     /**
      *  语音消息附件内容
      */
-    var audioObject: IMAudioObject?
+    var audioObject: IMAudioObject = IMAudioObject()
     
     /**
      *  自定义消息附件内容
      */
-    var customObject: IMCustomObject?
+    var customObject: IMCustomObject = IMCustomObject()
     
     /**
      *  消息附件种类
@@ -233,7 +233,7 @@ class IMMessage: NSObject {
     /**
      *  消息投递状态 仅针对发送的消息
      */
-    var deliveryState: MessageDeliveryState?
+    var deliveryState: MessageDeliveryState = MessageDeliveryState.MessageDeliveryStateFailed
     
     /**
      *  消息附件下载状态 仅针对收到的消息

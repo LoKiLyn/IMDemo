@@ -58,24 +58,22 @@ class LucaChatViewController: UIViewController {
         //读取会话中最近10条消息
         self.navigationItem.title = IMManager.shared.teamManager.currentTeamID()
         messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: 20)
-        
-        //tableView滚动到底部
-        self.tableView.scrollToRow(at: IndexPath(row: messageArray.count - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
-        //测试用打印messageInfo
-        for message in messageArray {
-            print(message.audioObject?.path as Any)
-            print(message.audioObject?.duration as Any)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        //tableView滚动到底部
+        self.tableView.scrollToRow(at: IndexPath(row: messageArray.count - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+        //测试用打印messageInfo
+        for message in messageArray {
+            print(message.audioObject.path as Any)
+            print(message.audioObject.duration as Any)
+        }
     }
-    
     
     // MARK: - Events
     
@@ -128,7 +126,7 @@ extension LucaChatViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let url = messageArray[indexPath.row].audioObject?.path
+        let url = messageArray[indexPath.row].audioObject.path
         MediaManager.sharedInstance.playWithURL(url: url!)
     }
 }
@@ -141,6 +139,27 @@ extension LucaChatViewController: ChatManagerDelegate {
         }
         self.tableView.reloadData()
         scrollToBottom()
+    }
+    
+    func willSendMsg(message: IMMessage) {
+        self.messageArray.append(message)
+        self.tableView.reloadData()
+        scrollToBottom()
+    }
+    
+    func send(_ message: IMMessage, progress: Float) {
+        print(progress)
+    }
+    
+    func send(_ message: IMMessage, didCompleteWithError error: Error?) {
+        if error == nil {
+            print("发送成功")
+            self.messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: self.messageArray.count)
+            self.tableView.reloadData()
+            scrollToBottom()
+        } else {
+            print(error as Any)
+        }
     }
 }
 

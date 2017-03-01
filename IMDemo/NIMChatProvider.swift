@@ -28,7 +28,7 @@ class NIMChatProvider: NSObject {
         newMessage.text = message.text
         newMessage.from = message.from
         newMessage.messageType = IMMessage.MessageType(rawValue: message.messageType.rawValue)!
-        newMessage.deliveryState = IMMessage.MessageDeliveryState(rawValue: message.deliveryState.rawValue)
+        newMessage.deliveryState = IMMessage.MessageDeliveryState(rawValue: message.deliveryState.rawValue)!
         newMessage.attachmentDownloadState = IMMessage.MessageAttachmentDownloadState(rawValue: message.attachmentDownloadState.rawValue)
         newMessage.isDeleted = message.isDeleted
         switch newMessage.messageType {

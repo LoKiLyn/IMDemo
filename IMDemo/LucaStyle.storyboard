@@ -279,7 +279,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="CsB-UL-OQa" userLabel="Chat TableView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="327"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="499"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyTextCell" id="3XE-mk-R8W" userLabel="ChatMyText Cell">
@@ -566,31 +566,8 @@
                                             <constraint firstItem="Dax-3S-j16" firstAttribute="leading" secondItem="Kue-Qx-WmD" secondAttribute="leading" constant="23" id="erc-kC-hfq"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTimeCell" rowHeight="44" id="XQe-N2-be0" userLabel="ChatTime Cell" customClass="ChatTimeCell" customModule="IMDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="353" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XQe-N2-be0" id="GZv-aL-1Pr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owc-OH-oGY" userLabel="Time Label">
-                                                    <rect key="frame" x="173" y="15" width="30" height="15"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.41568627450000001" green="0.44705882349999998" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstItem="owc-OH-oGY" firstAttribute="centerY" secondItem="XQe-N2-be0" secondAttribute="centerY" id="06s-CL-tjS"/>
-                                            <constraint firstItem="owc-OH-oGY" firstAttribute="centerX" secondItem="XQe-N2-be0" secondAttribute="centerX" id="er2-SQ-h7G"/>
-                                        </constraints>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatOtherVoiceCell" id="cfx-5e-cc9" userLabel="ChatOtherVoice Cell" customClass="ChatOtherVoiceCell" customModule="IMDemo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="397" width="375" height="88"/>
+                                        <rect key="frame" x="0.0" y="353" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfx-5e-cc9" id="ZF7-lK-ydF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
@@ -678,6 +655,29 @@
                                             <outlet property="nickNameLabel" destination="zAO-dL-2S8" id="aMZ-NI-fxL"/>
                                             <outlet property="timeLabel" destination="iff-Vl-D7m" id="u1d-re-yL9"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatTimeCell" rowHeight="44" id="XQe-N2-be0" userLabel="ChatTime Cell" customClass="ChatTimeCell" customModule="IMDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="441" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XQe-N2-be0" id="GZv-aL-1Pr">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owc-OH-oGY" userLabel="Time Label">
+                                                    <rect key="frame" x="173" y="15" width="30" height="15"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" red="0.41568627450000001" green="0.44705882349999998" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="owc-OH-oGY" firstAttribute="centerY" secondItem="XQe-N2-be0" secondAttribute="centerY" id="06s-CL-tjS"/>
+                                            <constraint firstItem="owc-OH-oGY" firstAttribute="centerX" secondItem="XQe-N2-be0" secondAttribute="centerX" id="er2-SQ-h7G"/>
+                                        </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyVoiceCell" id="gn4-b5-LVF" userLabel="ChatMyVoice Cell" customClass="ChatMyVoiceCell" customModule="IMDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="485" width="375" height="88"/>
@@ -789,7 +789,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3FY-SW-PjN" userLabel="ChatInputBox" customClass="ChatInputBox" customModule="IMDemo" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="327" width="375" height="232"/>
+                                <rect key="frame" x="0.0" y="499" width="375" height="232"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="232" id="cUf-PB-CLE"/>
@@ -808,7 +808,7 @@
                             <constraint firstItem="LPU-uQ-def" firstAttribute="top" secondItem="bdu-2l-Xfn" secondAttribute="bottom" id="lQ4-Ej-onh"/>
                             <constraint firstItem="CsB-UL-OQa" firstAttribute="top" secondItem="bdu-2l-Xfn" secondAttribute="bottom" id="m5p-ne-SSg"/>
                             <constraint firstAttribute="trailing" secondItem="LPU-uQ-def" secondAttribute="trailing" id="nXY-ne-Sqm"/>
-                            <constraint firstItem="vXx-gd-F2R" firstAttribute="top" secondItem="3FY-SW-PjN" secondAttribute="bottom" id="oSc-I1-8zD"/>
+                            <constraint firstItem="vXx-gd-F2R" firstAttribute="top" secondItem="3FY-SW-PjN" secondAttribute="bottom" constant="-172" id="oSc-I1-8zD"/>
                         </constraints>
                     </view>
                     <toolbarItems/>

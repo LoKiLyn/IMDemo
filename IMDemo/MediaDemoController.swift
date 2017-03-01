@@ -53,7 +53,7 @@ extension MediaDemoController: ChatManagerDelegate {
         for message in messages {
             switch  message.messageType {
             case .MessageTypeAudio:
-                self.audioPath = message.audioObject?.path
+                self.audioPath = message.audioObject.path
                 print(self.audioPath as Any)
             default:
                 break

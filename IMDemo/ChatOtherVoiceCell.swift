@@ -21,9 +21,9 @@ class ChatOtherVoiceCell: UITableViewCell {
     
     func configWith(message: IMMessage){
         self.nickNameLabel.text = message.from
-        self.audioPath = message.audioObject?.path
+        self.audioPath = message.audioObject.path
         
-        self.timeLabel.text = "\(message.audioObject!.duration!/1000 + 1)\""
+        self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
         
     }
     
