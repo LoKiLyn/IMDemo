@@ -66,6 +66,10 @@ struct IMAudioObject {
     var duration: NSInteger?
 }
 
+struct IMCustomObject {
+    var attachment: Any?
+}
+
 /**
  *  消息体协议
  */
@@ -209,6 +213,11 @@ class IMMessage: NSObject {
      *  语音消息附件内容
      */
     var audioObject: IMAudioObject?
+    
+    /**
+     *  自定义消息附件内容
+     */
+    var customObject: IMCustomObject?
     
     /**
      *  消息附件种类

@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol ChatInputBoxDelegate {
+    func inputButtonDidTouchDown()
+    func inputButtonDidTouchUpInside()
+    func inputButtonDidTouchCancel()
+    func moreInputButtonDidPressed()
+}
 
 @IBDesignable class ChatInputBox: UIView {
     
     // MARK: - Public
-    
+    var delegate: ChatInputBoxDelegate?
     // MARK: - Property
     
     // MARK: - Lifecycle
@@ -34,6 +40,23 @@ import UIKit
     
     // MARK: - Override
     
+    // MARK: - Events
+    
+    @IBAction func voiceButtonTouchDown(_ sender: UIButton) {
+        self.delegate?.inputButtonDidTouchDown()
+    }
+    
+    @IBAction func voiceButtonTouchUpInside(_ sender: UIButton) {
+        self.delegate?.inputButtonDidTouchUpInside()
+    }
+    
+    @IBAction func voiceButtonTouchCancel(_ sender: UIButton) {
+        self.delegate?.inputButtonDidTouchCancel()
+    }
+    
+    @IBAction func moreInputButtonPressed(_ sender: UIButton) {
+        self.delegate?.moreInputButtonDidPressed()
+    }
 }
 
 
@@ -72,3 +95,8 @@ extension ChatInputBox {
         
     }
 }
+
+
+
+    
+

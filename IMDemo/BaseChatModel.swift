@@ -20,6 +20,6 @@ class BaseChatModel: NSObject {
     //群组ID
     var teamID: String?
     //自定义消息内容
-    var customMessage: CustomAttachmentDelegate?
+    var customMessage: NIMCustomAttachment?
     
 }

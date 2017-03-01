@@ -56,23 +56,6 @@ protocol IMChatProtocol: NSObjectProtocol {
     @objc optional func send(_ message: IMMessage, didCompleteWithError error: Error?)
 }
 
-/**
- *  自定义消息对象附件协议
- */
-protocol CustomAttachmentDelegate {
-    
-    /**
-     *  序列化attachment
-     *
-     *  @return 序列化后的结果，将用于透传
-     */
-    func encode() -> (String)
-}
-
-protocol CustomAttachmentCodingDelegate {
-    func decodeAttachment(_ content: String?) -> (CustomAttachmentDelegate?)
-}
-
 class IMChatManager: NSObject {
 
     internal var chatProvider: IMChatProtocol?
@@ -126,7 +109,7 @@ class IMChatManager: NSObject {
      *  @param teamID      群组ID
      *  @param completion  完成后的回调
      */
-    internal func sendCustomMessage(sessionID: String, customMessage: CustomAttachmentDelegate, completion: @escaping MessageHandler) {
+    internal func sendCustomMessage(sessionID: String, customMessage: NIMCustomAttachment, completion: @escaping MessageHandler) {
         let model = BaseChatModel()
         model.sessionID = sessionID
         model.customMessage = customMessage

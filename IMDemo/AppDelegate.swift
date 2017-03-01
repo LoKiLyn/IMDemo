@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         IMManager.shared.register(appID: APPKEY, cerName: nil)
         NIMSDK.shared().loginManager.add(self as NIMLoginManagerDelegate)
-        NIMCustomObject.registerCustomDecoder(ChatViewController())
+        IMBaseObject.registerCustomDecoder(decoder: IMBaseObject()) // todo
         return true
     }
 

@@ -25,7 +25,7 @@ class IMManager: NSObject {
     var loginManager: IMLoginManager = IMLoginManager()
     var teamManager: IMTeamManager = IMTeamManager()
     var chatManager: IMChatManager = IMChatManager()
-    
+    var historyManager: IMHistoryManager = IMHistoryManager()
     
     /**
      *  切换SDK
@@ -39,6 +39,7 @@ class IMManager: NSObject {
             loginManager.loginProvider = NIMLoginProvider()
             teamManager.teamProvider = NIMTeamProvider()
             chatManager.chatProvider = NIMChatProvider()
+            historyManager.historyProvider = NIMHistoryProvider()
         }
     }
     

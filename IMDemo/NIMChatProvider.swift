@@ -19,8 +19,8 @@ class NIMChatProvider: NSObject {
     
     var chatManagerDelegate: ChatManagerDelegate?
     var messageObjectDelegate: IMMessageObject?
-    var customAttachmentDelegate: CustomAttachmentDelegate?
-    var customAttachmentCodingDelegate: CustomAttachmentCodingDelegate?
+//    var customAttachmentDelegate: CustomAttachmentDelegate?
+//    var customAttachmentCodingDelegate: CustomAttachmentCodingDelegate?
     
     func converseMessage(message: NIMMessage) -> (IMMessage) {
         let newMessage = IMMessage()
@@ -38,6 +38,9 @@ class NIMChatProvider: NSObject {
         case .MessageTypeAudio:
             let originObject = message.messageObject as! NIMAudioObject
             newMessage.audioObject = converseAudioMessageObject(messageObject: originObject)
+        case .MessageTypeCustom:
+            let originObject = message.messageObject as! NIMCustomObject
+            newMessage.customObject = converseCustomObject(messageObject: originObject)
         default:
             break
         }
@@ -60,8 +63,16 @@ class NIMChatProvider: NSObject {
         var audioObject = IMAudioObject()
         audioObject.path = messageObject.path
         audioObject.url = messageObject.url
+        
         audioObject.duration = messageObject.duration
+        
         return audioObject
+    }
+    
+    func converseCustomObject(messageObject: NIMCustomObject) -> (IMCustomObject) {
+        var customObject = IMCustomObject()
+        customObject.attachment = messageObject.attachment
+        return customObject
     }
     
 }
@@ -115,7 +126,7 @@ extension NIMChatProvider: IMChatProtocol {
             completion(chatError.NoTeamID)
             return
         }
-        let session = NIMSession(model.teamID!, type: NIMSessionType.P2P)
+        let session = NIMSession(model.teamID!, type: NIMSessionType.team)
         do {
             try NIMSDK.shared().chatManager.send(message, to: session)
         } catch {
@@ -124,14 +135,24 @@ extension NIMChatProvider: IMChatProtocol {
     }
     
     internal func sendCustomMessage(model:BaseChatModel, completion: @escaping MessageHandler) {
+        
+        
+        // todo
+        
+        
         let customObject = NIMCustomObject()
-        customObject.attachment = self
+        customObject.attachment = Attachment()
         let message = NIMMessage()
         message.messageObject = customObject
+       
+        
+        
+        
         if model.sessionID == nil {
             completion(chatError.NoSessionID)
             return
         }
+        
         let session = NIMSession(model.sessionID!, type: NIMSessionType.P2P)
         do {
             try NIMSDK.shared().chatManager.send(message, to: session)
@@ -184,15 +205,3 @@ extension NIMChatProvider: NIMChatManagerDelegate {
         }
     }
 }
-
-extension NIMChatProvider: NIMCustomAttachment {
-    func encode() -> String {
-        return self.customAttachmentDelegate?.encode() ?? ""
-    }
-}
-
-//extension NIMChatProvider: NIMCustomAttachmentCoding {
-//    func decodeAttachment(_ content: String?) -> NIMCustomAttachment? {
-////        return self.customAttachmentCodingDelegate?.decodeAttachment(_content: content)
-//    }
-//}

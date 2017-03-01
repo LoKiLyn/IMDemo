@@ -77,16 +77,14 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendCustomButtonPressed(_ sender: UIButton) {
-//        IMManager.shared.chatManager.sendCustomMessage(sessionID: (user?.userId)!, customMessage: Attachment() as! CustomAttachmentDelegate) { (error) in
-//            if error == nil {
-//                print("发送成功")
-//            } else {
-//                print("发送失败:\(error)")
-//            }
-//        }
+        IMManager.shared.chatManager.sendCustomMessage(sessionID: (user?.userId)!, customMessage: Attachment()) { (error) in
+            if error == nil {
+                print("发送成功")
+            } else {
+                print("发送失败:\(error)")
+            }
+        }
     }
-    
-
 }
 
 extension ChatViewController: ChatManagerDelegate {
@@ -100,6 +98,13 @@ extension ChatViewController: ChatManagerDelegate {
                 print(message.audioObject.debugDescription)
             case .MessageTypeImage:
                 print(message.imageObject?.url as Any)
+            case .MessageTypeCustom:
+                
+                // todo
+                
+                let a = message.customObject?.attachment as! Attachment
+                print("\(a.id)   \(a.name)")
+                
             default:
                 break
             }
@@ -107,18 +112,3 @@ extension ChatViewController: ChatManagerDelegate {
     }
 }
 
-extension ChatViewController: NIMCustomAttachmentCoding {
-    func decodeAttachment(_ content: String?) -> NIMCustomAttachment? {
-        var dict: Dictionary<String, String>?
-        let data: Data = (content?.data(using: String.Encoding.utf8))!
-            do {
-                dict = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as? Dictionary
-            } catch {
-                print(error)
-            }
-        let attachment = Attachment()
-        attachment.name = dict?["name"]
-        attachment.id = dict?["id"]
-        return attachment
-    }
-}

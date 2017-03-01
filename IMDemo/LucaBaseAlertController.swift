@@ -106,6 +106,7 @@ class LucaBaseAlertController: UIViewController {
         case is LucaLoginViewController:
             if showOrNot {
                 sourceViewController?.performSegue(withIdentifier: "showLucaChatViewController", sender: sourceViewController)
+//                sourceViewController?.performSegue(withIdentifier: "showDemoVC", sender: sourceViewController)
             }
         case is LucaCreateTeamViewController:
             sourceViewController?.dismiss(animated: true, completion: nil)
