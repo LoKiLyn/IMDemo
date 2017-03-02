@@ -12,6 +12,7 @@ class NIMHistoryProvider: NSObject {
     
 }
 
+
 extension NIMHistoryProvider: IMHistoryProtocol {
     
     internal func messagesInSession(model: IMHistoryModel) -> Array<IMMessage> {

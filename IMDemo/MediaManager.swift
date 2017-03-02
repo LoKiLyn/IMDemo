@@ -52,8 +52,6 @@ class MediaManager: NSObject {
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         //设置支持后台
         try! session.setActive(true)
-//        //组合录音文件路径
-//        aacPath = NSTemporaryDirectory().appending("testAcc.aac")
         //初始化字典并添加设置参数
         recorderSettingsDic =
             [
@@ -67,10 +65,7 @@ class MediaManager: NSObject {
         ]
     }
     
-    
-    
     /*录音停止事件*/
-    
     func stop() {
         //停止录音
         recorder?.stop()
@@ -79,7 +74,6 @@ class MediaManager: NSObject {
     }
     
     func playWithURL(url: String) {
-        
         //扬声器
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
         //播放
@@ -91,32 +85,36 @@ class MediaManager: NSObject {
     }
     
     
+    /**
+     *  Remain to be Done
+     */
     
+    /*
+    /*暂停*/
+    func pause(sender: UIButton) {
+        //隐藏暂停按钮
+        pause.hidden = true
+        //显示继续按钮
+        btnContinue.hidden = false
+        //停用时间控制器
+        timer.invalidate()
+        if ((player?.playing) != nil){
+            player?.pause()}
+        //获取暂停时间
+        pauseTime = (player?.currentTime)!
+    }
     
-//    /*暂停*/
-//    func pause(sender: UIButton) {
-//        //隐藏暂停按钮
-//        pause.hidden = true
-//        //显示继续按钮
-//        btnContinue.hidden = false
-//        //停用时间控制器
-//        timer.invalidate()
-//        if ((player?.playing) != nil){
-//            player?.pause()}
-//        //获取暂停时间
-//        pauseTime = (player?.currentTime)!
-//    }
-//    
-//    /*继续播放*/
-//    @IBAction func `continue`(sender: UIButton) {
-//        //显示暂停按钮
-//        pause.hidden = false
-//        //隐藏继续按钮
-//        btnContinue.hidden = true
-//        if player == nil {
-//        }else{
-//            player?.play()
-//        }
-//        
-//    }
+    /*继续播放*/
+    func `continue`(sender: UIButton) {
+        //显示暂停按钮
+        pause.hidden = false
+        //隐藏继续按钮
+        btnContinue.hidden = true
+        if player == nil {
+        }else{
+            player?.play()
+        }
+        
+    }
+    */
 }

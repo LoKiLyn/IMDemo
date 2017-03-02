@@ -46,7 +46,6 @@
 		03D38FDA1E56E8F100B76826 /* LucaBaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FD91E56E8F100B76826 /* LucaBaseAlertController.swift */; };
 		03D38FDD1E56E9C600B76826 /* LucaBaseAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D38FDC1E56E9C600B76826 /* LucaBaseAlertController.xib */; };
 		03D58C7B1E63CA2900897B45 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C7A1E63CA2900897B45 /* MediaManager.swift */; };
-		03D58C7D1E63D13C00897B45 /* MediaDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C7C1E63D13C00897B45 /* MediaDemoController.swift */; };
 		03D58C821E64071300897B45 /* IMHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C811E64071300897B45 /* IMHistoryManager.swift */; };
 		03D58C841E640E6700897B45 /* IMHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C831E640E6700897B45 /* IMHistoryModel.swift */; };
 		03D58C881E64135F00897B45 /* NIMHistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C871E64135F00897B45 /* NIMHistoryProvider.swift */; };
@@ -102,7 +101,6 @@
 		03D38FD91E56E8F100B76826 /* LucaBaseAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaBaseAlertController.swift; sourceTree = "<group>"; };
 		03D38FDC1E56E9C600B76826 /* LucaBaseAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LucaBaseAlertController.xib; sourceTree = "<group>"; };
 		03D58C7A1E63CA2900897B45 /* MediaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
-		03D58C7C1E63D13C00897B45 /* MediaDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDemoController.swift; sourceTree = "<group>"; };
 		03D58C811E64071300897B45 /* IMHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMHistoryManager.swift; sourceTree = "<group>"; };
 		03D58C831E640E6700897B45 /* IMHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMHistoryModel.swift; sourceTree = "<group>"; };
 		03D58C871E64135F00897B45 /* NIMHistoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMHistoryProvider.swift; sourceTree = "<group>"; };
@@ -264,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				03D58C7A1E63CA2900897B45 /* MediaManager.swift */,
-				03D58C7C1E63D13C00897B45 /* MediaDemoController.swift */,
 			);
 			name = Media;
 			sourceTree = "<group>";
@@ -492,7 +489,6 @@
 				031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */,
 				031943F41E5404FE0015DA8F /* IMTeamModel.swift in Sources */,
 				03D58C881E64135F00897B45 /* NIMHistoryProvider.swift in Sources */,
-				03D58C7D1E63D13C00897B45 /* MediaDemoController.swift in Sources */,
 				03D38FCD1E56982200B76826 /* NIMChatProvider.swift in Sources */,
 				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
 				03EA252E1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift in Sources */,

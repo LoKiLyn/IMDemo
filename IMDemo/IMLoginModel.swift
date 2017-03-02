@@ -13,25 +13,11 @@ class IMLoginModel: NSObject {
     /**
      *  account   SDK账号
      */
-    var account: String? {
-        get {
-            return self.account
-        }
-        set {
-            self.account = newValue
-        }
-    }
+    var account: String?
     
     /**
      *  token     SDKToken
      */
-    var token: String? {
-        get {
-            return self.token
-        }
-        set {
-            self.token = newValue
-        }
-    }
+    var token: String?
     
 }

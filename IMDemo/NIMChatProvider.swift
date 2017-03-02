@@ -78,6 +78,7 @@ class NIMChatProvider: NSObject {
     
 }
 
+
 extension NIMChatProvider: IMChatProtocol {
     
     func sendMessageWithText(model: IMChatModel, completion: @escaping MessageHandler) {
@@ -164,6 +165,7 @@ extension NIMChatProvider: IMChatProtocol {
         NIMSDK.shared().chatManager.remove(self)
     }
 }
+
 
 extension NIMChatProvider: NIMChatManagerDelegate {
     

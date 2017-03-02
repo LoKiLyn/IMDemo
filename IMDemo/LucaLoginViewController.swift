@@ -20,7 +20,6 @@ class LucaLoginViewController: UIViewController {
     // MARK: - Events
     
     @IBAction func login(_ sender: UIButton) {
-        
         IMManager.shared.loginManager.login(account: self.accountTextField.text!, token: self.passwordTextField.text!) { (error) in
             if error == nil {
                 let userName = IMManager.shared.loginManager.currentAccount()
@@ -35,7 +34,6 @@ class LucaLoginViewController: UIViewController {
                 self.alert.show(inContainter: self)
             }
         }
-        
     }
     
     

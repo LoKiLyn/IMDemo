@@ -196,7 +196,7 @@
                     <navigationItem key="navigationItem" id="9c8-gj-45Y">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="kzq-VS-jHr" userLabel="TitleView">
-                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <rect key="frame" x="113" y="6" width="150" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="云信登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="47I-mz-H4h" userLabel="TitleLabel">
@@ -217,50 +217,11 @@
                         <outlet property="accountTextField" destination="Y5O-ML-cdn" id="75w-l0-Flu"/>
                         <outlet property="passwordTextField" destination="dUd-oR-oeD" id="vIf-x2-Ufs"/>
                         <segue destination="XfT-kG-vqB" kind="show" identifier="showLucaChatViewController" id="dAr-1K-ln9"/>
-                        <segue destination="UBJ-5f-S4r" kind="show" identifier="showDemoVC" id="gKq-o1-20S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1z-jB-YG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1964" y="27"/>
-        </scene>
-        <!--Media Demo Controller-->
-        <scene sceneID="5Kl-kf-Iui">
-            <objects>
-                <viewController id="UBJ-5f-S4r" customClass="MediaDemoController" customModule="IMDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cF3-az-s4e"/>
-                        <viewControllerLayoutGuide type="bottom" id="lMm-u6-s4p"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NBh-E0-3Vg">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePP-kh-08F">
-                                <rect key="frame" x="149" y="149" width="77" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="按下以录制"/>
-                                <connections>
-                                    <action selector="recordButtonTouchUpInside:" destination="UBJ-5f-S4r" eventType="touchDown" id="95y-6w-rt9"/>
-                                    <action selector="recordButtonTouchUpOutside:" destination="UBJ-5f-S4r" eventType="touchUpInside" id="DfF-2A-HvJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ITA-lw-MB3">
-                                <rect key="frame" x="172" y="280" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="播放"/>
-                                <connections>
-                                    <action selector="playButtonPressed:" destination="UBJ-5f-S4r" eventType="touchUpInside" id="ehh-1a-k1R"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="UJq-83-RuF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QgF-h1-AHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2882" y="-695"/>
         </scene>
         <!--Luca Chat ViewController-->
         <scene sceneID="P2h-t9-8OL">
@@ -903,7 +864,7 @@
                 <navigationController storyboardIdentifier="BaseNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="hoH-s7-dBQ" userLabel="PlaceHolder NavigationController" customClass="LucaBaseNavigationController" customModule="IMDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="wGD-pI-vxt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wGD-pI-vxt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

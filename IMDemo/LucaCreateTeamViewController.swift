@@ -14,6 +14,15 @@ class LucaCreateTeamViewController: UIViewController {
     
     let alert = LucaBaseAlertController.sharedInstance
     
+    
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    
+    
     // MARK: - Events
     
     @IBAction func createTeam(_ sender: UIButton) {
@@ -30,10 +39,6 @@ class LucaCreateTeamViewController: UIViewController {
                 self.alert.show(inContainter: self)
             }
         }
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 }

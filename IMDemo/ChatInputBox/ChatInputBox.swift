@@ -19,13 +19,10 @@ protocol ChatInputBoxDelegate {
     
     // MARK: - Public
     var delegate: ChatInputBoxDelegate?
+    
     // MARK: - Property
     
     // MARK: - Lifecycle
-    
-    deinit {
-//        NotificationCenter.default.removeObserver(self)
-    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

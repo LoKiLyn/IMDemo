@@ -20,7 +20,6 @@ class ChatMyVoiceCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     func configWith(message: IMMessage) {

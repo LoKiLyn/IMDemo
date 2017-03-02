@@ -8,11 +8,6 @@
 
 import UIKit
 
-//protocol LucaChatViewControllerDelegate {
-//    func chatTableViewDidSelectIndexPath(indexPath: IndexPath)
-//}
-
-
 class LucaChatViewController: UIViewController {
 
     
@@ -28,12 +23,12 @@ class LucaChatViewController: UIViewController {
     var hasTeam: Bool = false
     var audioToSend: String?
     var messageArray: Array<IMMessage> = []
-//    var delegate: LucaChatViewControllerDelegate?
     
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet weak var chatInputBox: ChatInputBox!
     
     @IBOutlet weak var chatBoxBottomConstraint: NSLayoutConstraint!
+    
     
     // MARK: - Lifecycle
     
@@ -75,6 +70,7 @@ class LucaChatViewController: UIViewController {
         }
     }
     
+    
     // MARK: - Events
     
     @IBAction func memberButtonPressed(_ sender: UIBarButtonItem) {
@@ -82,11 +78,13 @@ class LucaChatViewController: UIViewController {
         
     }
     
+    
     // MARK: - Private
     
-    internal func scrollToBottom(){
+    fileprivate func scrollToBottom(){
         self.tableView.scrollToRow(at: IndexPath(row: (self.messageArray.count - 1), section: 0), at: UITableViewScrollPosition.bottom, animated: false)
     }
+    
     
     // MARK: - Navigation
     
@@ -121,15 +119,14 @@ extension LucaChatViewController: UITableViewDataSource {
 }
 
 
-
 extension LucaChatViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let url = messageArray[indexPath.row].audioObject.path
-        MediaManager.sharedInstance.playWithURL(url: url!)
+        MediaManager.sharedInstance.playWithURL(url: messageArray[indexPath.row].audioObject.path ?? "")
     }
 }
+
 
 extension LucaChatViewController: ChatManagerDelegate {
     
@@ -166,7 +163,7 @@ extension LucaChatViewController: ChatManagerDelegate {
 extension LucaChatViewController: ChatInputBoxDelegate {
     
     func inputButtonDidTouchDown() {
-        audioToSend = NSTemporaryDirectory().appending("test.aac")
+        audioToSend = NSTemporaryDirectory().appending("audioToSend.aac")
         MediaManager.sharedInstance.startRecordToURL(url: audioToSend)
     }
     
@@ -196,7 +193,6 @@ extension LucaChatViewController: ChatInputBoxDelegate {
             UIView.animate(withDuration: 0.25) {
                 self.chatBoxBottomConstraint.constant = 0
                 self.view.layoutIfNeeded()
-                // 注意先后顺序.
                 self.tableView.scrollToRow(at: IndexPath(row: (self.messageArray.count - 1), section: 0), at: UITableViewScrollPosition.bottom, animated: false)
             }
         }
