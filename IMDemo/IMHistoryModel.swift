@@ -8,8 +8,16 @@
 
 import UIKit
 
-class BaseHistoryModel: NSObject {
+class IMHistoryModel: NSObject {
+    
+    /**
+     *   会话ID
+     */
     var sessionID: String?
+    
+    /**
+     *   查询记录条数
+     */
     var limit: Int?
     
 }

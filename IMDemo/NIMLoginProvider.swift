@@ -15,7 +15,7 @@ class NIMLoginProvider: NSObject, IMLoginProtocol {
         case NoPassword
     }
     
-    internal func login(model:BaseLoginModel, completion: @escaping LoginHandler) {
+    func login(model: IMLoginModel, completion: @escaping LoginHandler) {
         if (model.account == nil) {
             completion(loginError.NoAccount)
         } else if (model.token == nil) {
@@ -27,7 +27,7 @@ class NIMLoginProvider: NSObject, IMLoginProtocol {
         }
     }
     
-    internal func autoLogin(model:BaseLoginModel, completion: @escaping LoginHandler) {
+    func autoLogin(model: IMLoginModel, completion: @escaping LoginHandler) {
         if (model.account == nil) {
             completion(loginError.NoAccount)
         }else if (model.token == nil) {
@@ -39,15 +39,15 @@ class NIMLoginProvider: NSObject, IMLoginProtocol {
         }
     }
     
-    internal func logout(completion: @escaping LoginHandler) {
+    func logout(completion: @escaping LoginHandler) {
         NIMSDK.shared().loginManager.logout(completion)
     }
     
-    internal func isLogined() -> (Bool) {
+    func isLogined() -> (Bool) {
         return NIMSDK.shared().loginManager.isLogined()
     }
     
-    internal func currentAccount() -> (String) {
+    func currentAccount() -> (String) {
         return NIMSDK.shared().loginManager.currentAccount()
     }
     

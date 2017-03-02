@@ -20,7 +20,7 @@ class NIMTeamProvider: NSObject {
 
 extension NIMTeamProvider: IMTeamProtocol {
     
-    func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler){
+    func createTeam(model: IMTeamModel, completion:@escaping TeamCreateHandler){
         let teamOption = NIMCreateTeamOption()
         //群名称
         teamOption.name = ""
@@ -43,7 +43,7 @@ extension NIMTeamProvider: IMTeamProtocol {
         return (NIMSDK.shared().teamManager.allMyTeams()?.count)! >= 1
     }
     
-    func dismissTeam(model:BaseTeamModel, completion: @escaping TeamHandler){
+    func dismissTeam(model: IMTeamModel, completion: @escaping TeamHandler){
         let teamID = model.teamID
         if teamID == nil {
             completion(teamError.NoTeamID)
@@ -52,7 +52,7 @@ extension NIMTeamProvider: IMTeamProtocol {
         }
     }
     
-    func quitTeam(model:BaseTeamModel, completion: @escaping TeamHandler){
+    func quitTeam(model: IMTeamModel, completion: @escaping TeamHandler){
         let teamID = model.teamID
         if teamID == nil {
             completion(teamError.NoTeamID)
@@ -61,7 +61,7 @@ extension NIMTeamProvider: IMTeamProtocol {
         }
     }
     
-    func addUsers(model:BaseTeamModel, completion: @escaping TeamMemberHandler){
+    func addUsers(model: IMTeamModel, completion: @escaping TeamMemberHandler){
         let users = model.usersToAdd
         let teamID = model.teamID
         let postScript = model.postScript
@@ -89,5 +89,4 @@ extension NIMTeamProvider: IMTeamProtocol {
         let team = NIMSDK.shared().teamManager.allMyTeams()?.first
         return (team?.teamId) ?? ""
     }
-
 }

@@ -6,14 +6,14 @@
 //  Copyright © 2017年 LinJian. All rights reserved.
 //
 
-import Foundation
+//Testing For CustomMessage
 
+import Foundation
 
 protocol IMBaseObjectCoding {
     func IMBaseObjectEncodeCoding() -> String
     func IMBaseObjectDecodeCoding(_ content: String?) -> NIMCustomAttachment?
 }
-
 
 class IMBaseObject: NSObject {
     

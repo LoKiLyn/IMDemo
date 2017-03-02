@@ -8,7 +8,8 @@
 
 import UIKit
 
-class BaseTeamModel: NSObject {
+class IMTeamModel: NSObject {
+    
     //创建群组时的初始用户
     var initialUsers: Array<String> = []
     //群组ID
@@ -17,4 +18,5 @@ class BaseTeamModel: NSObject {
     var usersToAdd: Array<String>?
     //邀请信息
     var postScript: String = ""
+    
 }

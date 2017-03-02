@@ -52,7 +52,7 @@ class ListViewController: UIViewController {
                         self.dismiss(animated: true)
                     })
                 })
-                print(IMManager.shared.loginManager.isLogined())
+                print(IMManager.shared.loginManager.isLogined() as Any)
             }
             else {
                 let alert = UIAlertController(title: "提示", message: "云信注销失败,\(error)", preferredStyle: UIAlertControllerStyle.alert)

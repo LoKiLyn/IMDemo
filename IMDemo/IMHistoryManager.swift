@@ -9,7 +9,7 @@
 import UIKit
 
 protocol IMHistoryProtocol {
-    func messagesInSession(model: BaseHistoryModel) -> Array<IMMessage>
+    func messagesInSession(model: IMHistoryModel) -> Array<IMMessage>
 }
 
 
@@ -18,7 +18,7 @@ class IMHistoryManager: NSObject {
     var historyProvider: IMHistoryProtocol?
     
     func messagesInSession(sessionID: String, limit: Int) -> Array<IMMessage> {
-        let model = BaseHistoryModel()
+        let model = IMHistoryModel()
         model.sessionID = sessionID
         model.limit = limit
         return (historyProvider?.messagesInSession(model: model)) ?? []

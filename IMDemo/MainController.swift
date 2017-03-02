@@ -25,7 +25,7 @@ class MainController: UIViewController {
         self.passwordTextField.resignFirstResponder()
         IMManager.shared.loginManager.login(account: self.accountTextField.text!, token: self.passwordTextField.text!) { (error) in
             if error == nil {
-                print(IMManager.shared.loginManager.isLogined())
+                print(IMManager.shared.loginManager.isLogined() as Any)
                 let alert = UIAlertController().createAlertWithAction(title: "提示", message: "云信登录成功，您好，\(IMManager.shared.loginManager.currentAccount())", style: UIAlertControllerStyle.alert, actionTitle: "OK", actionStyle: UIAlertActionStyle.cancel)
                 self.present(alert, animated: true, completion: {
                     DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {

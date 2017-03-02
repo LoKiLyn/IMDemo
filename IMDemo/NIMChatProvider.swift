@@ -19,9 +19,12 @@ class NIMChatProvider: NSObject {
     
     var chatManagerDelegate: ChatManagerDelegate?
     var messageObjectDelegate: IMMessageObject?
-//    var customAttachmentDelegate: CustomAttachmentDelegate?
-//    var customAttachmentCodingDelegate: CustomAttachmentCodingDelegate?
-    
+    /**
+     *  Remain to be done.
+     */
+    var customAttachmentDelegate: Any?
+    var customAttachmentCodingDelegate: Any?
+
     func converseMessage(message: NIMMessage) -> (IMMessage) {
         let newMessage = IMMessage()
         newMessage.messageID = message.messageId
@@ -63,9 +66,7 @@ class NIMChatProvider: NSObject {
         var audioObject = IMAudioObject()
         audioObject.path = messageObject.path
         audioObject.url = messageObject.url
-        
         audioObject.duration = messageObject.duration
-        
         return audioObject
     }
     
@@ -79,13 +80,13 @@ class NIMChatProvider: NSObject {
 
 extension NIMChatProvider: IMChatProtocol {
     
-    internal func sendMessageWithText(model: BaseChatModel, completion: @escaping MessageHandler) {
+    func sendMessageWithText(model: IMChatModel, completion: @escaping MessageHandler) {
         let message = NIMMessage()
         message.text = model.messageText
-        if model.teamID == nil {
+        if model.sessionID == nil {
             completion(chatError.NoTeamID)
         } else {
-            let session = NIMSession(model.teamID!, type: NIMSessionType.P2P)
+            let session = NIMSession(model.sessionID!, type: NIMSessionType.P2P)
             do {
                 try NIMSDK.shared().chatManager.send(message, to: session)
             } catch {
@@ -94,7 +95,7 @@ extension NIMChatProvider: IMChatProtocol {
         }
     }
     
-    internal func sendMessageWithImage(model: BaseChatModel, completion: @escaping MessageHandler) {
+    func sendMessageWithImage(model: IMChatModel, completion: @escaping MessageHandler) {
         let message = NIMMessage()
         if model.messageImage == nil {
             completion(chatError.NoMessageImage)
@@ -102,57 +103,10 @@ extension NIMChatProvider: IMChatProtocol {
         }
         let imageObject = NIMImageObject(image: model.messageImage!)
         message.messageObject = imageObject
-        if model.teamID == nil {
-            completion(chatError.NoTeamID)
-            return
-        }
-        let session = NIMSession(model.teamID!, type: NIMSessionType.P2P)
-        do {
-            try NIMSDK.shared().chatManager.send(message, to: session)
-        } catch {
-            completion(error)
-        }
-    }
-    
-    internal func sendMessageWithAudio(model: BaseChatModel, completion: @escaping MessageHandler) {
-        let message = NIMMessage()
-        if model.messageVideoPath == nil {
-            completion(chatError.NoMessageVideoPath)
-            return
-        }
-        let audioObject = NIMAudioObject(sourcePath: model.messageVideoPath!)
-        message.messageObject = audioObject
-        if model.teamID == nil {
-            completion(chatError.NoTeamID)
-            return
-        }
-        let session = NIMSession(model.teamID!, type: NIMSessionType.team)
-        do {
-            try NIMSDK.shared().chatManager.send(message, to: session)
-        } catch {
-            completion(error)
-        }
-    }
-    
-    internal func sendCustomMessage(model:BaseChatModel, completion: @escaping MessageHandler) {
-        
-        
-        // todo
-        
-        
-        let customObject = NIMCustomObject()
-        customObject.attachment = Attachment()
-        let message = NIMMessage()
-        message.messageObject = customObject
-       
-        
-        
-        
         if model.sessionID == nil {
-            completion(chatError.NoSessionID)
+            completion(chatError.NoTeamID)
             return
         }
-        
         let session = NIMSession(model.sessionID!, type: NIMSessionType.P2P)
         do {
             try NIMSDK.shared().chatManager.send(message, to: session)
@@ -161,12 +115,52 @@ extension NIMChatProvider: IMChatProtocol {
         }
     }
     
-    internal func setDelegate(delegate: ChatManagerDelegate) {
+    func sendMessageWithAudio(model: IMChatModel, completion: @escaping MessageHandler) {
+        let message = NIMMessage()
+        if model.messageVideoPath == nil {
+            completion(chatError.NoMessageVideoPath)
+            return
+        }
+        let audioObject = NIMAudioObject(sourcePath: model.messageVideoPath!)
+        message.messageObject = audioObject
+        if model.sessionID == nil {
+            completion(chatError.NoTeamID)
+            return
+        }
+        let session = NIMSession(model.sessionID!, type: NIMSessionType.team)
+        do {
+            try NIMSDK.shared().chatManager.send(message, to: session)
+        } catch {
+            completion(error)
+        }
+    }
+    
+    /**
+     *  Remain to be done.
+     */
+    func sendCustomMessage(model: IMChatModel, completion: @escaping MessageHandler) {
+        let customObject = NIMCustomObject()
+        customObject.attachment = Attachment()
+        let message = NIMMessage()
+        message.messageObject = customObject
+        if model.sessionID == nil {
+            completion(chatError.NoSessionID)
+            return
+        }
+        let session = NIMSession(model.sessionID!, type: NIMSessionType.P2P)
+        do {
+            try NIMSDK.shared().chatManager.send(message, to: session)
+        } catch {
+            completion(error)
+        }
+    }
+    
+    func setDelegate(delegate: ChatManagerDelegate) {
         NIMSDK.shared().chatManager.add(self)
         self.chatManagerDelegate = delegate
     }
     
-    internal func removeDelegate(delegate: ChatManagerDelegate){
+    func removeDelegate(delegate: ChatManagerDelegate){
         NIMSDK.shared().chatManager.remove(self)
     }
 }
@@ -180,14 +174,14 @@ extension NIMChatProvider: NIMChatManagerDelegate {
                 let msg = self.converseMessage(message: message)
                 msgArray.append(msg)
             }
-            self.chatManagerDelegate?.onRecvMsg?(messages: msgArray)
+            self.chatManagerDelegate!.onRecvMsg?(messages: msgArray)
         }
     }
     
     func willSend(_ message: NIMMessage) {
         if self.chatManagerDelegate != nil {
             let msg = self.converseMessage(message: message)
-            self.chatManagerDelegate?.willSendMsg?(message: msg)
+            self.chatManagerDelegate!.willSendMsg?(message: msg)
         }
     }
     

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */; };
+		031943ED1E53F0CF0015DA8F /* IMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */; };
 		031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EE1E53F5420015DA8F /* IMTeamManager.swift */; };
 		031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F01E53F5AE0015DA8F /* IMChatManager.swift */; };
-		031943F41E5404FE0015DA8F /* BaseTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F31E5404FE0015DA8F /* BaseTeamModel.swift */; };
+		031943F41E5404FE0015DA8F /* IMTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F31E5404FE0015DA8F /* IMTeamModel.swift */; };
 		031943F91E542E220015DA8F /* NIMLoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F81E542E220015DA8F /* NIMLoginProvider.swift */; };
 		031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */; };
 		031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9F1E4B0E25006F8CF0 /* ListViewController.swift */; };
@@ -20,7 +20,6 @@
 		031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */; };
 		0323742D1E55530900014308 /* NIMTeamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323742C1E55530900014308 /* NIMTeamProvider.swift */; };
 		032374311E558C5200014308 /* IMTeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032374301E558C5200014308 /* IMTeamMember.swift */; };
-		032374341E55977000014308 /* InterfaceTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032374331E55977000014308 /* InterfaceTestController.swift */; };
 		0323D7B31E5C2863003AEE25 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323D7B21E5C2863003AEE25 /* Attachment.swift */; };
 		0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D21E519E7800C30BBF /* IMLoginManager.swift */; };
 		0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D61E51B7F600C30BBF /* Extensions.swift */; };
@@ -31,8 +30,6 @@
 		037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */; };
 		037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB1011E4D842E002D734C /* GroupListCell.swift */; };
 		037DB1061E4DA429002D734C /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB1051E4DA429002D734C /* GroupMemberCell.swift */; };
-		038596DF1E5598B900C8DB4C /* InterfaceTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */; };
-		038596E11E559A4800C8DB4C /* Interface.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038596E01E559A4800C8DB4C /* Interface.plist */; };
 		03B3C8371E641D4200B17556 /* ChatMyVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03B3C8361E641D4200B17556 /* ChatMyVoiceCell.swift */; };
 		03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B4081E4C5D4C004A4113 /* ChatCell.swift */; };
 		03C6A10D1E651BE80001DC65 /* ChatOtherVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C6A10C1E651BE80001DC65 /* ChatOtherVoiceCell.swift */; };
@@ -41,7 +38,7 @@
 		03CBA0D01E4ABBDA0076397C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0CE1E4ABBDA0076397C /* Main.storyboard */; };
 		03CBA0D21E4ABBDA0076397C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D11E4ABBDA0076397C /* Assets.xcassets */; };
 		03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D31E4ABBDA0076397C /* LaunchScreen.storyboard */; };
-		03D38FCB1E5696D200B76826 /* BaseChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FCA1E5696D200B76826 /* BaseChatModel.swift */; };
+		03D38FCB1E5696D200B76826 /* IMChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FCA1E5696D200B76826 /* IMChatModel.swift */; };
 		03D38FCD1E56982200B76826 /* NIMChatProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FCC1E56982200B76826 /* NIMChatProvider.swift */; };
 		03D38FD31E56DD7900B76826 /* LucaStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D38FD21E56DD7900B76826 /* LucaStyle.storyboard */; };
 		03D38FD51E56E0E200B76826 /* LucaBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FD41E56E0E200B76826 /* LucaBaseNavigationController.swift */; };
@@ -51,7 +48,7 @@
 		03D58C7B1E63CA2900897B45 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C7A1E63CA2900897B45 /* MediaManager.swift */; };
 		03D58C7D1E63D13C00897B45 /* MediaDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C7C1E63D13C00897B45 /* MediaDemoController.swift */; };
 		03D58C821E64071300897B45 /* IMHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C811E64071300897B45 /* IMHistoryManager.swift */; };
-		03D58C841E640E6700897B45 /* BaseHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C831E640E6700897B45 /* BaseHistoryModel.swift */; };
+		03D58C841E640E6700897B45 /* IMHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C831E640E6700897B45 /* IMHistoryModel.swift */; };
 		03D58C881E64135F00897B45 /* NIMHistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D58C871E64135F00897B45 /* NIMHistoryProvider.swift */; };
 		03D6973C1E52A946002E0451 /* IMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6973B1E52A946002E0451 /* IMManager.swift */; };
 		03EA25281E57F74B00DDDF77 /* LucaChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA25271E57F74B00DDDF77 /* LucaChatViewController.swift */; };
@@ -63,10 +60,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLoginModel.swift; sourceTree = "<group>"; };
+		031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginModel.swift; sourceTree = "<group>"; };
 		031943EE1E53F5420015DA8F /* IMTeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamManager.swift; sourceTree = "<group>"; };
 		031943F01E53F5AE0015DA8F /* IMChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatManager.swift; sourceTree = "<group>"; };
-		031943F31E5404FE0015DA8F /* BaseTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTeamModel.swift; sourceTree = "<group>"; };
+		031943F31E5404FE0015DA8F /* IMTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamModel.swift; sourceTree = "<group>"; };
 		031943F81E542E220015DA8F /* NIMLoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMLoginProvider.swift; sourceTree = "<group>"; };
 		031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IMDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
@@ -77,7 +74,6 @@
 		031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		0323742C1E55530900014308 /* NIMTeamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMTeamProvider.swift; sourceTree = "<group>"; };
 		032374301E558C5200014308 /* IMTeamMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamMember.swift; sourceTree = "<group>"; };
-		032374331E55977000014308 /* InterfaceTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTestController.swift; sourceTree = "<group>"; };
 		0323D7B21E5C2863003AEE25 /* Attachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		0326E4D21E519E7800C30BBF /* IMLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginManager.swift; sourceTree = "<group>"; };
 		0326E4D61E51B7F600C30BBF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -88,8 +84,6 @@
 		037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
 		037DB1011E4D842E002D734C /* GroupListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListCell.swift; sourceTree = "<group>"; };
 		037DB1051E4DA429002D734C /* GroupMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
-		038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InterfaceTest.storyboard; sourceTree = "<group>"; };
-		038596E01E559A4800C8DB4C /* Interface.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Interface.plist; sourceTree = "<group>"; };
 		03B3C8361E641D4200B17556 /* ChatMyVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMyVoiceCell.swift; sourceTree = "<group>"; };
 		03C0B4081E4C5D4C004A4113 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		03C6A10C1E651BE80001DC65 /* ChatOtherVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOtherVoiceCell.swift; sourceTree = "<group>"; };
@@ -100,7 +94,7 @@
 		03CBA0D11E4ABBDA0076397C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03CBA0D41E4ABBDA0076397C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03CBA0D61E4ABBDA0076397C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03D38FCA1E5696D200B76826 /* BaseChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseChatModel.swift; sourceTree = "<group>"; };
+		03D38FCA1E5696D200B76826 /* IMChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatModel.swift; sourceTree = "<group>"; };
 		03D38FCC1E56982200B76826 /* NIMChatProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMChatProvider.swift; sourceTree = "<group>"; };
 		03D38FD21E56DD7900B76826 /* LucaStyle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LucaStyle.storyboard; sourceTree = "<group>"; };
 		03D38FD41E56E0E200B76826 /* LucaBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaBaseNavigationController.swift; sourceTree = "<group>"; };
@@ -110,7 +104,7 @@
 		03D58C7A1E63CA2900897B45 /* MediaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		03D58C7C1E63D13C00897B45 /* MediaDemoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaDemoController.swift; sourceTree = "<group>"; };
 		03D58C811E64071300897B45 /* IMHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMHistoryManager.swift; sourceTree = "<group>"; };
-		03D58C831E640E6700897B45 /* BaseHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHistoryModel.swift; sourceTree = "<group>"; };
+		03D58C831E640E6700897B45 /* IMHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMHistoryModel.swift; sourceTree = "<group>"; };
 		03D58C871E64135F00897B45 /* NIMHistoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMHistoryProvider.swift; sourceTree = "<group>"; };
 		03D6973B1E52A946002E0451 /* IMManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMManager.swift; sourceTree = "<group>"; };
 		03EA25271E57F74B00DDDF77 /* LucaChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaChatViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +132,7 @@
 		031943F21E53F5E80015DA8F /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */,
+				031943EC1E53F0CF0015DA8F /* IMLoginModel.swift */,
 				0326E4D21E519E7800C30BBF /* IMLoginManager.swift */,
 				031943F81E542E220015DA8F /* NIMLoginProvider.swift */,
 			);
@@ -148,7 +142,7 @@
 		031943F51E5405050015DA8F /* Team */ = {
 			isa = PBXGroup;
 			children = (
-				031943F31E5404FE0015DA8F /* BaseTeamModel.swift */,
+				031943F31E5404FE0015DA8F /* IMTeamModel.swift */,
 				031943EE1E53F5420015DA8F /* IMTeamManager.swift */,
 				032374301E558C5200014308 /* IMTeamMember.swift */,
 				0323742C1E55530900014308 /* NIMTeamProvider.swift */,
@@ -169,16 +163,6 @@
 				0323D7B21E5C2863003AEE25 /* Attachment.swift */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		032374321E55970C00014308 /* InterfaceTesting */ = {
-			isa = PBXGroup;
-			children = (
-				032374331E55977000014308 /* InterfaceTestController.swift */,
-				038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */,
-				038596E01E559A4800C8DB4C /* Interface.plist */,
-			);
-			name = InterfaceTesting;
 			sourceTree = "<group>";
 		};
 		03454CEA1E5AE87700756CF8 /* ChatInputBox */ = {
@@ -211,7 +195,6 @@
 		03CBA0C91E4ABBD90076397C /* IMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				032374321E55970C00014308 /* InterfaceTesting */,
 				03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */,
 				031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */,
 				031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */,
@@ -228,10 +211,10 @@
 		03D38FC91E5693C900B76826 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				03D38FCA1E5696D200B76826 /* BaseChatModel.swift */,
+				03D38FCA1E5696D200B76826 /* IMChatModel.swift */,
+				031943F01E53F5AE0015DA8F /* IMChatManager.swift */,
 				03F505C11E600A20000EEF79 /* IMBaseObject.swift */,
 				03454CE81E5A8C0600756CF8 /* IMMessage.swift */,
-				031943F01E53F5AE0015DA8F /* IMChatManager.swift */,
 				03D38FCC1E56982200B76826 /* NIMChatProvider.swift */,
 			);
 			name = Chat;
@@ -311,7 +294,7 @@
 		03D58C801E6406C300897B45 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				03D58C831E640E6700897B45 /* BaseHistoryModel.swift */,
+				03D58C831E640E6700897B45 /* IMHistoryModel.swift */,
 				03D58C811E64071300897B45 /* IMHistoryManager.swift */,
 				03D58C871E64135F00897B45 /* NIMHistoryProvider.swift */,
 			);
@@ -422,8 +405,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				038596DF1E5598B900C8DB4C /* InterfaceTest.storyboard in Resources */,
-				038596E11E559A4800C8DB4C /* Interface.plist in Resources */,
 				03454CEE1E5AE87700756CF8 /* ChatInputBox.xib in Resources */,
 				03D38FD31E56DD7900B76826 /* LucaStyle.storyboard in Resources */,
 				03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */,
@@ -492,13 +473,13 @@
 				037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */,
 				031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */,
 				03D6973C1E52A946002E0451 /* IMManager.swift in Sources */,
-				03D38FCB1E5696D200B76826 /* BaseChatModel.swift in Sources */,
+				03D38FCB1E5696D200B76826 /* IMChatModel.swift in Sources */,
 				037DB1061E4DA429002D734C /* GroupMemberCell.swift in Sources */,
 				03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */,
 				031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */,
 				03D38FD51E56E0E200B76826 /* LucaBaseNavigationController.swift in Sources */,
 				037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */,
-				03D58C841E640E6700897B45 /* BaseHistoryModel.swift in Sources */,
+				03D58C841E640E6700897B45 /* IMHistoryModel.swift in Sources */,
 				031943F91E542E220015DA8F /* NIMLoginProvider.swift in Sources */,
 				03D38FDA1E56E8F100B76826 /* LucaBaseAlertController.swift in Sources */,
 				031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */,
@@ -509,14 +490,13 @@
 				03454CED1E5AE87700756CF8 /* ChatInputBox.swift in Sources */,
 				031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */,
 				031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */,
-				031943F41E5404FE0015DA8F /* BaseTeamModel.swift in Sources */,
+				031943F41E5404FE0015DA8F /* IMTeamModel.swift in Sources */,
 				03D58C881E64135F00897B45 /* NIMHistoryProvider.swift in Sources */,
 				03D58C7D1E63D13C00897B45 /* MediaDemoController.swift in Sources */,
 				03D38FCD1E56982200B76826 /* NIMChatProvider.swift in Sources */,
 				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
-				032374341E55977000014308 /* InterfaceTestController.swift in Sources */,
 				03EA252E1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift in Sources */,
-				031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */,
+				031943ED1E53F0CF0015DA8F /* IMLoginModel.swift in Sources */,
 				03EA252C1E58207000DDDF77 /* LucaMemberDeleteViewController.swift in Sources */,
 				03D58C821E64071300897B45 /* IMHistoryManager.swift in Sources */,
 				032374311E558C5200014308 /* IMTeamMember.swift in Sources */,
@@ -657,7 +637,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GEGB4GAEEL;
 				INFOPLIST_FILE = IMDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.linjian.IMDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -673,7 +653,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = GEGB4GAEEL;
 				INFOPLIST_FILE = IMDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.linjian.IMDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

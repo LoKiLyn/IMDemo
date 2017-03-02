@@ -58,5 +58,4 @@ class IMTeamMember: NSObject {
      */
     var nickName: String?
     
-    
 }

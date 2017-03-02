@@ -58,7 +58,6 @@ extension LucaMemberDeleteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "MemberDeleteCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        
         return cell!
     }
 }

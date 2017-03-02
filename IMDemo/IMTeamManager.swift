@@ -10,15 +10,14 @@ import UIKit
 
 typealias TeamCreateHandler = (Error?, _ teamID: String?) -> Void
 typealias TeamHandler = (Error?) -> Void
-// MARK: -- Need to modify.
 typealias TeamMemberHandler = (Error?, _ teamMember: Array<IMTeamMember>?) -> Void
 
 protocol IMTeamProtocol: NSObjectProtocol {
-    func createTeam(model:BaseTeamModel, completion:@escaping TeamCreateHandler)
+    func createTeam(model: IMTeamModel, completion:@escaping TeamCreateHandler)
     func hasJoinedATeam() -> (Bool)
-    func dismissTeam(model:BaseTeamModel, completion: @escaping TeamHandler)
-    func quitTeam(model:BaseTeamModel, completion: @escaping TeamHandler)
-    func addUsers(model:BaseTeamModel, completion:@escaping TeamMemberHandler)
+    func dismissTeam(model: IMTeamModel, completion: @escaping TeamHandler)
+    func quitTeam(model: IMTeamModel, completion: @escaping TeamHandler)
+    func addUsers(model: IMTeamModel, completion:@escaping TeamMemberHandler)
     func currentTeamID() -> (String)
 }
 
@@ -33,7 +32,7 @@ class IMTeamManager: NSObject {
      *  @param completion 完成回调(error,teamID)
      */
     func createTeam(users: Array<String>, completion:@escaping TeamCreateHandler) {
-        let model = BaseTeamModel()
+        let model = IMTeamModel()
         model.initialUsers = users
         teamProvider?.createTeam(model: model, completion: completion)
     }
@@ -55,7 +54,7 @@ class IMTeamManager: NSObject {
      *  @param completion  完成后的回调
      */
     func dismissTeam(teamID: String, completion: @escaping TeamHandler) {
-        let model = BaseTeamModel()
+        let model = IMTeamModel()
         model.teamID = teamID
         teamProvider?.dismissTeam(model: model, completion: completion)
     }
@@ -67,7 +66,7 @@ class IMTeamManager: NSObject {
      *  @param completion 完成后的回调
      */
     func quitTeam(teamID: String, completion: @escaping TeamHandler) {
-        let model = BaseTeamModel()
+        let model = IMTeamModel()
         model.teamID = teamID
         teamProvider?.quitTeam(model: model, completion: completion)
     }
@@ -81,7 +80,7 @@ class IMTeamManager: NSObject {
      *  @param completion  完成后的回调
      */
     func addUsers(users: Array<String>, teamID: String, postscript: String, completion:@escaping TeamMemberHandler) {
-        let model = BaseTeamModel()
+        let model = IMTeamModel()
         model.usersToAdd = users
         model.teamID = teamID
         model.postScript = postscript
@@ -94,7 +93,7 @@ class IMTeamManager: NSObject {
      *  @return 群组ID
      */
     func currentTeamID() -> (String) {
-        return (teamProvider?.currentTeamID())!
+        return teamProvider?.currentTeamID() ?? ""
     }
     
 }

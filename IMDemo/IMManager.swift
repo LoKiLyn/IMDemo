@@ -16,12 +16,12 @@ class IMManager: NSObject {
     
     static let shared = IMManager()
     
-    private override init(){
+    private override init() {
         super.init()
         switchSDK(SDKType: IMManager.SDKType.Nim)
     }
     
-    var currentSDKType: SDKType?
+    var currentSDKType: SDKType = SDKType.Nim
     var loginManager: IMLoginManager = IMLoginManager()
     var teamManager: IMTeamManager = IMTeamManager()
     var chatManager: IMChatManager = IMChatManager()
@@ -32,7 +32,7 @@ class IMManager: NSObject {
      *
      *  @param SDKType   SDK
      */
-    func switchSDK(SDKType:SDKType){
+    func switchSDK(SDKType:SDKType) {
         currentSDKType = SDKType
         switch SDKType {
         case .Nim:
@@ -50,10 +50,11 @@ class IMManager: NSObject {
      *  @param cerName  推送证书名（optional)
      */
     func register(appID: String, cerName: String?) {
-        switch self.currentSDKType! {
+        switch self.currentSDKType {
         case .Nim:
             NIMSDK.shared().register(withAppID: appID, cerName: cerName)
         }
     }
+    
 }
 

@@ -11,11 +11,10 @@ import UIKit
 typealias MessageHandler = (Error?) -> Void
 
 protocol IMChatProtocol: NSObjectProtocol {
-    
-    func sendMessageWithText(model: BaseChatModel, completion: @escaping MessageHandler)
-    func sendMessageWithImage(model: BaseChatModel, completion: @escaping MessageHandler)
-    func sendMessageWithAudio(model: BaseChatModel, completion: @escaping MessageHandler)
-    func sendCustomMessage(model: BaseChatModel, completion: @escaping MessageHandler)
+    func sendMessageWithText(model: IMChatModel, completion: @escaping MessageHandler)
+    func sendMessageWithImage(model: IMChatModel, completion: @escaping MessageHandler)
+    func sendMessageWithAudio(model: IMChatModel, completion: @escaping MessageHandler)
+    func sendCustomMessage(model: IMChatModel, completion: @escaping MessageHandler)
     func setDelegate(delegate: ChatManagerDelegate)
     func removeDelegate(delegate: ChatManagerDelegate)
 }
@@ -58,7 +57,7 @@ protocol IMChatProtocol: NSObjectProtocol {
 
 class IMChatManager: NSObject {
 
-    internal var chatProvider: IMChatProtocol?
+    var chatProvider: IMChatProtocol?
     
     /**
      *  发送文字消息
@@ -67,10 +66,10 @@ class IMChatManager: NSObject {
      *  @param teamID      群组ID
      *  @param completion  完成后的回调
      */
-    internal func sendMessageWithText(text: String, teamID: String, completion: @escaping MessageHandler) {
-        let model = BaseChatModel()
+    func sendMessageWithText(text: String, teamID: String, completion: @escaping MessageHandler) {
+        let model = IMChatModel()
         model.messageText = text
-        model.teamID = teamID
+        model.sessionID = teamID
         chatProvider?.sendMessageWithText(model: model, completion: completion)
     }
     
@@ -81,10 +80,10 @@ class IMChatManager: NSObject {
      *  @param teamID      群组ID
      *  @param completion  完成后的回调
      */
-    internal func sendMessageWithImage(image: UIImage, teamID: String, completion: @escaping MessageHandler) {
-        let model = BaseChatModel()
+    func sendMessageWithImage(image: UIImage, teamID: String, completion: @escaping MessageHandler) {
+        let model = IMChatModel()
         model.messageImage = image
-        model.teamID = teamID
+        model.sessionID = teamID
         chatProvider?.sendMessageWithImage(model: model, completion: completion)
     }
     
@@ -95,10 +94,10 @@ class IMChatManager: NSObject {
      *  @param teamID      群组ID
      *  @param completion  完成后的回调
      */
-    internal func sendMessageWithAudio(filePath: String, teamID: String, completion: @escaping MessageHandler) {
-        let model = BaseChatModel()
+    func sendMessageWithAudio(filePath: String, teamID: String, completion: @escaping MessageHandler) {
+        let model = IMChatModel()
         model.messageVideoPath = filePath
-        model.teamID = teamID
+        model.sessionID = teamID
         chatProvider?.sendMessageWithAudio(model: model, completion: completion)
     }
     
@@ -109,8 +108,8 @@ class IMChatManager: NSObject {
      *  @param teamID      群组ID
      *  @param completion  完成后的回调
      */
-    internal func sendCustomMessage(sessionID: String, customMessage: NIMCustomAttachment, completion: @escaping MessageHandler) {
-        let model = BaseChatModel()
+    func sendCustomMessage(sessionID: String, customMessage: NIMCustomAttachment, completion: @escaping MessageHandler) {
+        let model = IMChatModel()
         model.sessionID = sessionID
         model.customMessage = customMessage
         chatProvider?.sendCustomMessage(model: model, completion: completion)
@@ -121,7 +120,7 @@ class IMChatManager: NSObject {
      *
      *  @param delegate  消息发送、接收代理
      */
-    internal func addDelegate(delegate: ChatManagerDelegate) {
+    func addDelegate(delegate: ChatManagerDelegate) {
         chatProvider?.setDelegate(delegate: delegate)
     }
     
@@ -130,7 +129,7 @@ class IMChatManager: NSObject {
      *
      *  @param delegate  消息发送、接收代理
      */
-    internal func removeDelegate(delegate: ChatManagerDelegate) {
+    func removeDelegate(delegate: ChatManagerDelegate) {
         chatProvider?.removeDelegate(delegate: delegate)
     }
     

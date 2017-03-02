@@ -49,6 +49,7 @@ struct IMImageObject {
 }
 
 struct IMAudioObject {
+    
     /**
      *  语音的本地路径
      */
@@ -75,16 +76,16 @@ struct IMCustomObject {
  */
 protocol IMMessageObject: NSObjectProtocol {
 
-/**
- *  消息体所在的消息对象
- */
+    /**
+     *  消息体所在的消息对象
+     */
     var message: IMMessage { get }
 
-/**
- *  消息内容类型
- *
- *  @return 消息内容类型
- */
+    /**
+     *  消息内容类型
+     *
+     *  @return 消息内容类型
+     */
     func type() -> (IMMessage.MessageType)
 }
 
@@ -238,7 +239,7 @@ class IMMessage: NSObject {
     /**
      *  消息附件下载状态 仅针对收到的消息
      */
-    var attachmentDownloadState:MessageAttachmentDownloadState?
+    var attachmentDownloadState: MessageAttachmentDownloadState?
     
     /**
      *  消息是否标记为已删除
@@ -247,6 +248,7 @@ class IMMessage: NSObject {
     var isDeleted: Bool?
     
 }
+
 // ------------------------- 其它暂时未用到的接口 -----------------------------
 
 //    /**
