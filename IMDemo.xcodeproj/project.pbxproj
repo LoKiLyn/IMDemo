@@ -7,103 +7,109 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */; };
-		031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943EE1E53F5420015DA8F /* IMTeamManager.swift */; };
-		031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F01E53F5AE0015DA8F /* IMChatManager.swift */; };
-		031943F41E5404FE0015DA8F /* BaseTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F31E5404FE0015DA8F /* BaseTeamModel.swift */; };
-		031943F91E542E220015DA8F /* NIMLoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031943F81E542E220015DA8F /* NIMLoginProvider.swift */; };
 		031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */; };
-		031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9F1E4B0E25006F8CF0 /* ListViewController.swift */; };
-		031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA11E4B1C6F006F8CF0 /* UserInfo.swift */; };
-		031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA31E4B2132006F8CF0 /* UserInfoCell.swift */; };
-		031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */; };
-		031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */; };
-		0323742D1E55530900014308 /* NIMTeamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323742C1E55530900014308 /* NIMTeamProvider.swift */; };
-		032374311E558C5200014308 /* IMTeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032374301E558C5200014308 /* IMTeamMember.swift */; };
-		032374341E55977000014308 /* InterfaceTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032374331E55977000014308 /* InterfaceTestController.swift */; };
-		0323D7B31E5C2863003AEE25 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323D7B21E5C2863003AEE25 /* Attachment.swift */; };
-		0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D21E519E7800C30BBF /* IMLoginManager.swift */; };
-		0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0326E4D61E51B7F600C30BBF /* Extensions.swift */; };
-		03454CE91E5A8C0600756CF8 /* IMMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03454CE81E5A8C0600756CF8 /* IMMessage.swift */; };
-		03454CED1E5AE87700756CF8 /* ChatInputBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03454CEB1E5AE87700756CF8 /* ChatInputBox.swift */; };
-		03454CEE1E5AE87700756CF8 /* ChatInputBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03454CEC1E5AE87700756CF8 /* ChatInputBox.xib */; };
-		037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */; };
-		037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */; };
-		037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB1011E4D842E002D734C /* GroupListCell.swift */; };
-		037DB1061E4DA429002D734C /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037DB1051E4DA429002D734C /* GroupMemberCell.swift */; };
-		038596DF1E5598B900C8DB4C /* InterfaceTest.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */; };
-		038596E11E559A4800C8DB4C /* Interface.plist in Resources */ = {isa = PBXBuildFile; fileRef = 038596E01E559A4800C8DB4C /* Interface.plist */; };
-		03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C0B4081E4C5D4C004A4113 /* ChatCell.swift */; };
 		03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */; };
-		03CBA0CD1E4ABBDA0076397C /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA0CC1E4ABBDA0076397C /* MainController.swift */; };
-		03CBA0D01E4ABBDA0076397C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0CE1E4ABBDA0076397C /* Main.storyboard */; };
 		03CBA0D21E4ABBDA0076397C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D11E4ABBDA0076397C /* Assets.xcassets */; };
 		03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D31E4ABBDA0076397C /* LaunchScreen.storyboard */; };
-		03D38FCB1E5696D200B76826 /* BaseChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FCA1E5696D200B76826 /* BaseChatModel.swift */; };
-		03D38FCD1E56982200B76826 /* NIMChatProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FCC1E56982200B76826 /* NIMChatProvider.swift */; };
-		03D38FD31E56DD7900B76826 /* LucaStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D38FD21E56DD7900B76826 /* LucaStyle.storyboard */; };
-		03D38FD51E56E0E200B76826 /* LucaBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FD41E56E0E200B76826 /* LucaBaseNavigationController.swift */; };
-		03D38FD81E56E62A00B76826 /* LucaLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FD71E56E62A00B76826 /* LucaLoginViewController.swift */; };
-		03D38FDA1E56E8F100B76826 /* LucaBaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D38FD91E56E8F100B76826 /* LucaBaseAlertController.swift */; };
-		03D38FDD1E56E9C600B76826 /* LucaBaseAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D38FDC1E56E9C600B76826 /* LucaBaseAlertController.xib */; };
-		03D6973C1E52A946002E0451 /* IMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D6973B1E52A946002E0451 /* IMManager.swift */; };
-		03EA25281E57F74B00DDDF77 /* LucaChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA25271E57F74B00DDDF77 /* LucaChatViewController.swift */; };
-		03EA252A1E57F94D00DDDF77 /* LucaMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA25291E57F94D00DDDF77 /* LucaMemberViewController.swift */; };
-		03EA252C1E58207000DDDF77 /* LucaMemberDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA252B1E58207000DDDF77 /* LucaMemberDeleteViewController.swift */; };
-		03EA252E1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03EA252D1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift */; };
-		03F505C21E600A20000EEF79 /* IMBaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F505C11E600A20000EEF79 /* IMBaseObject.swift */; };
+		03D5C63D1E67E109001223FC /* IMBaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62A1E67E109001223FC /* IMBaseObject.swift */; };
+		03D5C63E1E67E109001223FC /* IMChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62B1E67E109001223FC /* IMChatManager.swift */; };
+		03D5C63F1E67E109001223FC /* IMChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62C1E67E109001223FC /* IMChatModel.swift */; };
+		03D5C6401E67E109001223FC /* IMMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62D1E67E109001223FC /* IMMessage.swift */; };
+		03D5C6411E67E109001223FC /* NIMChatProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62E1E67E109001223FC /* NIMChatProvider.swift */; };
+		03D5C6421E67E109001223FC /* IMHistoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6301E67E109001223FC /* IMHistoryManager.swift */; };
+		03D5C6431E67E109001223FC /* IMHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6311E67E109001223FC /* IMHistoryModel.swift */; };
+		03D5C6441E67E109001223FC /* NIMHistoryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6321E67E109001223FC /* NIMHistoryProvider.swift */; };
+		03D5C6451E67E109001223FC /* IMManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6331E67E109001223FC /* IMManager.swift */; };
+		03D5C6461E67E109001223FC /* IMLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6351E67E109001223FC /* IMLoginManager.swift */; };
+		03D5C6471E67E109001223FC /* IMLoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6361E67E109001223FC /* IMLoginModel.swift */; };
+		03D5C6481E67E109001223FC /* NIMLoginProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6371E67E109001223FC /* NIMLoginProvider.swift */; };
+		03D5C6491E67E109001223FC /* IMTeamManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6391E67E109001223FC /* IMTeamManager.swift */; };
+		03D5C64A1E67E109001223FC /* IMTeamMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C63A1E67E109001223FC /* IMTeamMember.swift */; };
+		03D5C64B1E67E109001223FC /* IMTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C63B1E67E109001223FC /* IMTeamModel.swift */; };
+		03D5C64C1E67E109001223FC /* NIMTeamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C63C1E67E109001223FC /* NIMTeamProvider.swift */; };
+		03D5C65E1E67E127001223FC /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C64F1E67E127001223FC /* AddFriendViewController.swift */; };
+		03D5C65F1E67E127001223FC /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6501E67E127001223FC /* Attachment.swift */; };
+		03D5C6601E67E127001223FC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6511E67E127001223FC /* ChatViewController.swift */; };
+		03D5C6611E67E127001223FC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6521E67E127001223FC /* Extensions.swift */; };
+		03D5C6621E67E127001223FC /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6531E67E127001223FC /* GroupViewController.swift */; };
+		03D5C6631E67E127001223FC /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6541E67E127001223FC /* ListViewController.swift */; };
+		03D5C6641E67E127001223FC /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6551E67E127001223FC /* MainController.swift */; };
+		03D5C6651E67E127001223FC /* MyGroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6561E67E127001223FC /* MyGroupsViewController.swift */; };
+		03D5C6661E67E127001223FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6571E67E127001223FC /* Main.storyboard */; };
+		03D5C6671E67E127001223FC /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6591E67E127001223FC /* ChatCell.swift */; };
+		03D5C6681E67E127001223FC /* GroupListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C65A1E67E127001223FC /* GroupListCell.swift */; };
+		03D5C6691E67E127001223FC /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C65B1E67E127001223FC /* GroupMemberCell.swift */; };
+		03D5C66A1E67E127001223FC /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C65C1E67E127001223FC /* UserInfo.swift */; };
+		03D5C66B1E67E127001223FC /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C65D1E67E127001223FC /* UserInfoCell.swift */; };
+		03D5C6811E67E13B001223FC /* LucaBaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C66F1E67E13B001223FC /* LucaBaseAlertController.swift */; };
+		03D5C6821E67E13B001223FC /* LucaBaseAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6701E67E13B001223FC /* LucaBaseAlertController.xib */; };
+		03D5C6831E67E13B001223FC /* ChatInputBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6721E67E13B001223FC /* ChatInputBox.swift */; };
+		03D5C6841E67E13B001223FC /* ChatInputBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6731E67E13B001223FC /* ChatInputBox.xib */; };
+		03D5C6851E67E13B001223FC /* LucaBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6751E67E13B001223FC /* LucaBaseNavigationController.swift */; };
+		03D5C6861E67E13B001223FC /* LucaChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6761E67E13B001223FC /* LucaChatViewController.swift */; };
+		03D5C6871E67E13B001223FC /* LucaCreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6771E67E13B001223FC /* LucaCreateTeamViewController.swift */; };
+		03D5C6881E67E13B001223FC /* LucaLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6781E67E13B001223FC /* LucaLoginViewController.swift */; };
+		03D5C6891E67E13B001223FC /* LucaMemberDeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6791E67E13B001223FC /* LucaMemberDeleteViewController.swift */; };
+		03D5C68A1E67E13B001223FC /* LucaMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67A1E67E13B001223FC /* LucaMemberViewController.swift */; };
+		03D5C68B1E67E13B001223FC /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67C1E67E13B001223FC /* MediaManager.swift */; };
+		03D5C68C1E67E13B001223FC /* ChatMyVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67E1E67E13B001223FC /* ChatMyVoiceCell.swift */; };
+		03D5C68D1E67E13B001223FC /* ChatOtherVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67F1E67E13B001223FC /* ChatOtherVoiceCell.swift */; };
+		03D5C68E1E67E13B001223FC /* LucaStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6801E67E13B001223FC /* LucaStyle.storyboard */; };
 		253B7C9EFB758C54A84B4EAB /* Pods_IMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseLoginModel.swift; sourceTree = "<group>"; };
-		031943EE1E53F5420015DA8F /* IMTeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamManager.swift; sourceTree = "<group>"; };
-		031943F01E53F5AE0015DA8F /* IMChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatManager.swift; sourceTree = "<group>"; };
-		031943F31E5404FE0015DA8F /* BaseTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTeamModel.swift; sourceTree = "<group>"; };
-		031943F81E542E220015DA8F /* NIMLoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMLoginProvider.swift; sourceTree = "<group>"; };
 		031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IMDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		031A1D9F1E4B0E25006F8CF0 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
-		031A1DA11E4B1C6F006F8CF0 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
-		031A1DA31E4B2132006F8CF0 /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
-		031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
-		031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		0323742C1E55530900014308 /* NIMTeamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMTeamProvider.swift; sourceTree = "<group>"; };
-		032374301E558C5200014308 /* IMTeamMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamMember.swift; sourceTree = "<group>"; };
-		032374331E55977000014308 /* InterfaceTestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceTestController.swift; sourceTree = "<group>"; };
-		0323D7B21E5C2863003AEE25 /* Attachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
-		0326E4D21E519E7800C30BBF /* IMLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginManager.swift; sourceTree = "<group>"; };
-		0326E4D61E51B7F600C30BBF /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		03454CE81E5A8C0600756CF8 /* IMMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMMessage.swift; sourceTree = "<group>"; };
-		03454CEB1E5AE87700756CF8 /* ChatInputBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputBox.swift; sourceTree = "<group>"; };
-		03454CEC1E5AE87700756CF8 /* ChatInputBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatInputBox.xib; sourceTree = "<group>"; };
-		037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
-		037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
-		037DB1011E4D842E002D734C /* GroupListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListCell.swift; sourceTree = "<group>"; };
-		037DB1051E4DA429002D734C /* GroupMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
-		038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = InterfaceTest.storyboard; sourceTree = "<group>"; };
-		038596E01E559A4800C8DB4C /* Interface.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Interface.plist; sourceTree = "<group>"; };
-		03C0B4081E4C5D4C004A4113 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		03CBA0C71E4ABBD90076397C /* IMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03CBA0CC1E4ABBDA0076397C /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		03CBA0CF1E4ABBDA0076397C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03CBA0D11E4ABBDA0076397C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03CBA0D41E4ABBDA0076397C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03CBA0D61E4ABBDA0076397C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03D38FCA1E5696D200B76826 /* BaseChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseChatModel.swift; sourceTree = "<group>"; };
-		03D38FCC1E56982200B76826 /* NIMChatProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMChatProvider.swift; sourceTree = "<group>"; };
-		03D38FD21E56DD7900B76826 /* LucaStyle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LucaStyle.storyboard; sourceTree = "<group>"; };
-		03D38FD41E56E0E200B76826 /* LucaBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaBaseNavigationController.swift; sourceTree = "<group>"; };
-		03D38FD71E56E62A00B76826 /* LucaLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaLoginViewController.swift; sourceTree = "<group>"; };
-		03D38FD91E56E8F100B76826 /* LucaBaseAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaBaseAlertController.swift; sourceTree = "<group>"; };
-		03D38FDC1E56E9C600B76826 /* LucaBaseAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LucaBaseAlertController.xib; sourceTree = "<group>"; };
-		03D6973B1E52A946002E0451 /* IMManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMManager.swift; sourceTree = "<group>"; };
-		03EA25271E57F74B00DDDF77 /* LucaChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaChatViewController.swift; sourceTree = "<group>"; };
-		03EA25291E57F94D00DDDF77 /* LucaMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaMemberViewController.swift; sourceTree = "<group>"; };
-		03EA252B1E58207000DDDF77 /* LucaMemberDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaMemberDeleteViewController.swift; sourceTree = "<group>"; };
-		03EA252D1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaCreateTeamViewController.swift; sourceTree = "<group>"; };
-		03F505C11E600A20000EEF79 /* IMBaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMBaseObject.swift; sourceTree = "<group>"; };
+		03D5C62A1E67E109001223FC /* IMBaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMBaseObject.swift; sourceTree = "<group>"; };
+		03D5C62B1E67E109001223FC /* IMChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatManager.swift; sourceTree = "<group>"; };
+		03D5C62C1E67E109001223FC /* IMChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatModel.swift; sourceTree = "<group>"; };
+		03D5C62D1E67E109001223FC /* IMMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMMessage.swift; sourceTree = "<group>"; };
+		03D5C62E1E67E109001223FC /* NIMChatProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMChatProvider.swift; sourceTree = "<group>"; };
+		03D5C6301E67E109001223FC /* IMHistoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMHistoryManager.swift; sourceTree = "<group>"; };
+		03D5C6311E67E109001223FC /* IMHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMHistoryModel.swift; sourceTree = "<group>"; };
+		03D5C6321E67E109001223FC /* NIMHistoryProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMHistoryProvider.swift; sourceTree = "<group>"; };
+		03D5C6331E67E109001223FC /* IMManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMManager.swift; sourceTree = "<group>"; };
+		03D5C6351E67E109001223FC /* IMLoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginManager.swift; sourceTree = "<group>"; };
+		03D5C6361E67E109001223FC /* IMLoginModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMLoginModel.swift; sourceTree = "<group>"; };
+		03D5C6371E67E109001223FC /* NIMLoginProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMLoginProvider.swift; sourceTree = "<group>"; };
+		03D5C6391E67E109001223FC /* IMTeamManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamManager.swift; sourceTree = "<group>"; };
+		03D5C63A1E67E109001223FC /* IMTeamMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamMember.swift; sourceTree = "<group>"; };
+		03D5C63B1E67E109001223FC /* IMTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamModel.swift; sourceTree = "<group>"; };
+		03D5C63C1E67E109001223FC /* NIMTeamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMTeamProvider.swift; sourceTree = "<group>"; };
+		03D5C64F1E67E127001223FC /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
+		03D5C6501E67E127001223FC /* Attachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
+		03D5C6511E67E127001223FC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		03D5C6521E67E127001223FC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		03D5C6531E67E127001223FC /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		03D5C6541E67E127001223FC /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		03D5C6551E67E127001223FC /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		03D5C6561E67E127001223FC /* MyGroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyGroupsViewController.swift; sourceTree = "<group>"; };
+		03D5C6571E67E127001223FC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		03D5C6591E67E127001223FC /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		03D5C65A1E67E127001223FC /* GroupListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupListCell.swift; sourceTree = "<group>"; };
+		03D5C65B1E67E127001223FC /* GroupMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
+		03D5C65C1E67E127001223FC /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		03D5C65D1E67E127001223FC /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
+		03D5C66F1E67E13B001223FC /* LucaBaseAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaBaseAlertController.swift; sourceTree = "<group>"; };
+		03D5C6701E67E13B001223FC /* LucaBaseAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LucaBaseAlertController.xib; sourceTree = "<group>"; };
+		03D5C6721E67E13B001223FC /* ChatInputBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputBox.swift; sourceTree = "<group>"; };
+		03D5C6731E67E13B001223FC /* ChatInputBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatInputBox.xib; sourceTree = "<group>"; };
+		03D5C6751E67E13B001223FC /* LucaBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaBaseNavigationController.swift; sourceTree = "<group>"; };
+		03D5C6761E67E13B001223FC /* LucaChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaChatViewController.swift; sourceTree = "<group>"; };
+		03D5C6771E67E13B001223FC /* LucaCreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaCreateTeamViewController.swift; sourceTree = "<group>"; };
+		03D5C6781E67E13B001223FC /* LucaLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaLoginViewController.swift; sourceTree = "<group>"; };
+		03D5C6791E67E13B001223FC /* LucaMemberDeleteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaMemberDeleteViewController.swift; sourceTree = "<group>"; };
+		03D5C67A1E67E13B001223FC /* LucaMemberViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaMemberViewController.swift; sourceTree = "<group>"; };
+		03D5C67C1E67E13B001223FC /* MediaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
+		03D5C67E1E67E13B001223FC /* ChatMyVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMyVoiceCell.swift; sourceTree = "<group>"; };
+		03D5C67F1E67E13B001223FC /* ChatOtherVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOtherVoiceCell.swift; sourceTree = "<group>"; };
+		03D5C6801E67E13B001223FC /* LucaStyle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LucaStyle.storyboard; sourceTree = "<group>"; };
 		6762E5EB97AB937240AC12F8 /* Pods-IMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		834A076FA27F3CCE11C09B17 /* Pods-IMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,61 +127,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		031943F21E53F5E80015DA8F /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				031943EC1E53F0CF0015DA8F /* BaseLoginModel.swift */,
-				0326E4D21E519E7800C30BBF /* IMLoginManager.swift */,
-				031943F81E542E220015DA8F /* NIMLoginProvider.swift */,
-			);
-			name = Login;
-			sourceTree = "<group>";
-		};
-		031943F51E5405050015DA8F /* Team */ = {
-			isa = PBXGroup;
-			children = (
-				031943F31E5404FE0015DA8F /* BaseTeamModel.swift */,
-				031943EE1E53F5420015DA8F /* IMTeamManager.swift */,
-				032374301E558C5200014308 /* IMTeamMember.swift */,
-				0323742C1E55530900014308 /* NIMTeamProvider.swift */,
-			);
-			name = Team;
-			sourceTree = "<group>";
-		};
-		031A1DA71E4B2E78006F8CF0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				03CBA0CC1E4ABBDA0076397C /* MainController.swift */,
-				031A1D9F1E4B0E25006F8CF0 /* ListViewController.swift */,
-				031A1DA51E4B2E62006F8CF0 /* AddFriendViewController.swift */,
-				031A1DA81E4B3C12006F8CF0 /* ChatViewController.swift */,
-				037DB0FF1E4D6E78002D734C /* MyGroupsViewController.swift */,
-				037DB0FD1E4D5C1B002D734C /* GroupViewController.swift */,
-				0326E4D61E51B7F600C30BBF /* Extensions.swift */,
-				0323D7B21E5C2863003AEE25 /* Attachment.swift */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		032374321E55970C00014308 /* InterfaceTesting */ = {
-			isa = PBXGroup;
-			children = (
-				032374331E55977000014308 /* InterfaceTestController.swift */,
-				038596DE1E5598B900C8DB4C /* InterfaceTest.storyboard */,
-				038596E01E559A4800C8DB4C /* Interface.plist */,
-			);
-			name = InterfaceTesting;
-			sourceTree = "<group>";
-		};
-		03454CEA1E5AE87700756CF8 /* ChatInputBox */ = {
-			isa = PBXGroup;
-			children = (
-				03454CEB1E5AE87700756CF8 /* ChatInputBox.swift */,
-				03454CEC1E5AE87700756CF8 /* ChatInputBox.xib */,
-			);
-			path = ChatInputBox;
-			sourceTree = "<group>";
-		};
 		03CBA0BE1E4ABBD90076397C = {
 			isa = PBXGroup;
 			children = (
@@ -197,96 +148,178 @@
 		03CBA0C91E4ABBD90076397C /* IMDemo */ = {
 			isa = PBXGroup;
 			children = (
-				032374321E55970C00014308 /* InterfaceTesting */,
 				03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */,
 				031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */,
 				031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */,
-				03D6973D1E52A954002E0451 /* Manager */,
-				03D38FD01E56DD4600B76826 /* 1.0 */,
-				03D38FD11E56DD5E00B76826 /* 2.0 */,
-				03CBA0D11E4ABBDA0076397C /* Assets.xcassets */,
 				03CBA0D31E4ABBDA0076397C /* LaunchScreen.storyboard */,
 				03CBA0D61E4ABBDA0076397C /* Info.plist */,
+				03CBA0D11E4ABBDA0076397C /* Assets.xcassets */,
+				03D5C6281E67E109001223FC /* Manager */,
+				03D5C64D1E67E127001223FC /* 1.0 */,
+				03D5C66C1E67E13B001223FC /* 2.0 */,
 			);
 			path = IMDemo;
 			sourceTree = "<group>";
 		};
-		03D38FC91E5693C900B76826 /* Chat */ = {
+		03D5C6281E67E109001223FC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				03D38FCA1E5696D200B76826 /* BaseChatModel.swift */,
-				03F505C11E600A20000EEF79 /* IMBaseObject.swift */,
-				03454CE81E5A8C0600756CF8 /* IMMessage.swift */,
-				03D38FCC1E56982200B76826 /* NIMChatProvider.swift */,
-				031943F01E53F5AE0015DA8F /* IMChatManager.swift */,
+				03D5C6331E67E109001223FC /* IMManager.swift */,
+				03D5C6341E67E109001223FC /* Login */,
+				03D5C6291E67E109001223FC /* Chat */,
+				03D5C62F1E67E109001223FC /* History */,
+				03D5C6381E67E109001223FC /* Team */,
 			);
-			name = Chat;
+			path = Manager;
 			sourceTree = "<group>";
 		};
-		03D38FD01E56DD4600B76826 /* 1.0 */ = {
+		03D5C6291E67E109001223FC /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				031A1DA71E4B2E78006F8CF0 /* Controller */,
-				03D6973E1E52A967002E0451 /* View */,
-				03CBA0CE1E4ABBDA0076397C /* Main.storyboard */,
+				03D5C62A1E67E109001223FC /* IMBaseObject.swift */,
+				03D5C62B1E67E109001223FC /* IMChatManager.swift */,
+				03D5C62C1E67E109001223FC /* IMChatModel.swift */,
+				03D5C62D1E67E109001223FC /* IMMessage.swift */,
+				03D5C62E1E67E109001223FC /* NIMChatProvider.swift */,
 			);
-			name = 1.0;
+			path = Chat;
 			sourceTree = "<group>";
 		};
-		03D38FD11E56DD5E00B76826 /* 2.0 */ = {
+		03D5C62F1E67E109001223FC /* History */ = {
 			isa = PBXGroup;
 			children = (
-				03D38FD61E56E58F00B76826 /* Luca */,
+				03D5C6301E67E109001223FC /* IMHistoryManager.swift */,
+				03D5C6311E67E109001223FC /* IMHistoryModel.swift */,
+				03D5C6321E67E109001223FC /* NIMHistoryProvider.swift */,
 			);
-			name = 2.0;
+			path = History;
 			sourceTree = "<group>";
 		};
-		03D38FD61E56E58F00B76826 /* Luca */ = {
+		03D5C6341E67E109001223FC /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				03454CEA1E5AE87700756CF8 /* ChatInputBox */,
-				03D38FDB1E56E96800B76826 /* Alert */,
-				03D38FD21E56DD7900B76826 /* LucaStyle.storyboard */,
-				03D38FD41E56E0E200B76826 /* LucaBaseNavigationController.swift */,
-				03D38FD71E56E62A00B76826 /* LucaLoginViewController.swift */,
-				03EA25271E57F74B00DDDF77 /* LucaChatViewController.swift */,
-				03EA25291E57F94D00DDDF77 /* LucaMemberViewController.swift */,
-				03EA252B1E58207000DDDF77 /* LucaMemberDeleteViewController.swift */,
-				03EA252D1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift */,
+				03D5C6351E67E109001223FC /* IMLoginManager.swift */,
+				03D5C6361E67E109001223FC /* IMLoginModel.swift */,
+				03D5C6371E67E109001223FC /* NIMLoginProvider.swift */,
 			);
-			name = Luca;
+			path = Login;
 			sourceTree = "<group>";
 		};
-		03D38FDB1E56E96800B76826 /* Alert */ = {
+		03D5C6381E67E109001223FC /* Team */ = {
 			isa = PBXGroup;
 			children = (
-				03D38FD91E56E8F100B76826 /* LucaBaseAlertController.swift */,
-				03D38FDC1E56E9C600B76826 /* LucaBaseAlertController.xib */,
+				03D5C6391E67E109001223FC /* IMTeamManager.swift */,
+				03D5C63A1E67E109001223FC /* IMTeamMember.swift */,
+				03D5C63B1E67E109001223FC /* IMTeamModel.swift */,
+				03D5C63C1E67E109001223FC /* NIMTeamProvider.swift */,
 			);
-			name = Alert;
+			path = Team;
 			sourceTree = "<group>";
 		};
-		03D6973D1E52A954002E0451 /* Manager */ = {
+		03D5C64D1E67E127001223FC /* 1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				03D6973B1E52A946002E0451 /* IMManager.swift */,
-				031943F21E53F5E80015DA8F /* Login */,
-				03D38FC91E5693C900B76826 /* Chat */,
-				031943F51E5405050015DA8F /* Team */,
+				03D5C6571E67E127001223FC /* Main.storyboard */,
+				03D5C64E1E67E127001223FC /* Controller */,
+				03D5C6581E67E127001223FC /* View */,
 			);
-			name = Manager;
+			path = 1.0;
 			sourceTree = "<group>";
 		};
-		03D6973E1E52A967002E0451 /* View */ = {
+		03D5C64E1E67E127001223FC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				031A1DA31E4B2132006F8CF0 /* UserInfoCell.swift */,
-				037DB1051E4DA429002D734C /* GroupMemberCell.swift */,
-				03C0B4081E4C5D4C004A4113 /* ChatCell.swift */,
-				031A1DA11E4B1C6F006F8CF0 /* UserInfo.swift */,
-				037DB1011E4D842E002D734C /* GroupListCell.swift */,
+				03D5C64F1E67E127001223FC /* AddFriendViewController.swift */,
+				03D5C6501E67E127001223FC /* Attachment.swift */,
+				03D5C6511E67E127001223FC /* ChatViewController.swift */,
+				03D5C6521E67E127001223FC /* Extensions.swift */,
+				03D5C6531E67E127001223FC /* GroupViewController.swift */,
+				03D5C6541E67E127001223FC /* ListViewController.swift */,
+				03D5C6551E67E127001223FC /* MainController.swift */,
+				03D5C6561E67E127001223FC /* MyGroupsViewController.swift */,
 			);
-			name = View;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03D5C6581E67E127001223FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03D5C6591E67E127001223FC /* ChatCell.swift */,
+				03D5C65A1E67E127001223FC /* GroupListCell.swift */,
+				03D5C65B1E67E127001223FC /* GroupMemberCell.swift */,
+				03D5C65C1E67E127001223FC /* UserInfo.swift */,
+				03D5C65D1E67E127001223FC /* UserInfoCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		03D5C66C1E67E13B001223FC /* 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				03D5C66D1E67E13B001223FC /* Luca */,
+			);
+			path = 2.0;
+			sourceTree = "<group>";
+		};
+		03D5C66D1E67E13B001223FC /* Luca */ = {
+			isa = PBXGroup;
+			children = (
+				03D5C67B1E67E13B001223FC /* Media */,
+				03D5C66E1E67E13B001223FC /* Alert */,
+				03D5C6711E67E13B001223FC /* ChatInputBox */,
+				03D5C6741E67E13B001223FC /* Controller */,
+				03D5C67D1E67E13B001223FC /* View */,
+			);
+			path = Luca;
+			sourceTree = "<group>";
+		};
+		03D5C66E1E67E13B001223FC /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				03D5C66F1E67E13B001223FC /* LucaBaseAlertController.swift */,
+				03D5C6701E67E13B001223FC /* LucaBaseAlertController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		03D5C6711E67E13B001223FC /* ChatInputBox */ = {
+			isa = PBXGroup;
+			children = (
+				03D5C6721E67E13B001223FC /* ChatInputBox.swift */,
+				03D5C6731E67E13B001223FC /* ChatInputBox.xib */,
+			);
+			path = ChatInputBox;
+			sourceTree = "<group>";
+		};
+		03D5C6741E67E13B001223FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				03D5C6751E67E13B001223FC /* LucaBaseNavigationController.swift */,
+				03D5C6761E67E13B001223FC /* LucaChatViewController.swift */,
+				03D5C6771E67E13B001223FC /* LucaCreateTeamViewController.swift */,
+				03D5C6781E67E13B001223FC /* LucaLoginViewController.swift */,
+				03D5C6791E67E13B001223FC /* LucaMemberDeleteViewController.swift */,
+				03D5C67A1E67E13B001223FC /* LucaMemberViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		03D5C67B1E67E13B001223FC /* Media */ = {
+			isa = PBXGroup;
+			children = (
+				03D5C67C1E67E13B001223FC /* MediaManager.swift */,
+			);
+			path = Media;
+			sourceTree = "<group>";
+		};
+		03D5C67D1E67E13B001223FC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				03D5C67E1E67E13B001223FC /* ChatMyVoiceCell.swift */,
+				03D5C67F1E67E13B001223FC /* ChatOtherVoiceCell.swift */,
+				03D5C6801E67E13B001223FC /* LucaStyle.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D067FD0634B9368BC7E50202 /* Pods */ = {
@@ -369,14 +402,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				038596DF1E5598B900C8DB4C /* InterfaceTest.storyboard in Resources */,
-				038596E11E559A4800C8DB4C /* Interface.plist in Resources */,
-				03454CEE1E5AE87700756CF8 /* ChatInputBox.xib in Resources */,
-				03D38FD31E56DD7900B76826 /* LucaStyle.storyboard in Resources */,
+				03D5C6821E67E13B001223FC /* LucaBaseAlertController.xib in Resources */,
 				03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */,
-				03D38FDD1E56E9C600B76826 /* LucaBaseAlertController.xib in Resources */,
+				03D5C6661E67E127001223FC /* Main.storyboard in Resources */,
+				03D5C6841E67E13B001223FC /* ChatInputBox.xib in Resources */,
 				03CBA0D21E4ABBDA0076397C /* Assets.xcassets in Resources */,
-				03CBA0D01E4ABBDA0076397C /* Main.storyboard in Resources */,
+				03D5C68E1E67E13B001223FC /* LucaStyle.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,57 +466,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03CBA0CD1E4ABBDA0076397C /* MainController.swift in Sources */,
-				037DB1001E4D6E78002D734C /* MyGroupsViewController.swift in Sources */,
-				031A1DA61E4B2E62006F8CF0 /* AddFriendViewController.swift in Sources */,
-				03D6973C1E52A946002E0451 /* IMManager.swift in Sources */,
-				03D38FCB1E5696D200B76826 /* BaseChatModel.swift in Sources */,
-				037DB1061E4DA429002D734C /* GroupMemberCell.swift in Sources */,
-				03C0B4091E4C5D4C004A4113 /* ChatCell.swift in Sources */,
-				031A1DA91E4B3C12006F8CF0 /* ChatViewController.swift in Sources */,
-				03D38FD51E56E0E200B76826 /* LucaBaseNavigationController.swift in Sources */,
-				037DB0FE1E4D5C1B002D734C /* GroupViewController.swift in Sources */,
-				031943F91E542E220015DA8F /* NIMLoginProvider.swift in Sources */,
-				03D38FDA1E56E8F100B76826 /* LucaBaseAlertController.swift in Sources */,
+				03D5C66A1E67E127001223FC /* UserInfo.swift in Sources */,
+				03D5C6461E67E109001223FC /* IMLoginManager.swift in Sources */,
+				03D5C66B1E67E127001223FC /* UserInfoCell.swift in Sources */,
+				03D5C6441E67E109001223FC /* NIMHistoryProvider.swift in Sources */,
+				03D5C6421E67E109001223FC /* IMHistoryManager.swift in Sources */,
+				03D5C6471E67E109001223FC /* IMLoginModel.swift in Sources */,
+				03D5C6621E67E127001223FC /* GroupViewController.swift in Sources */,
+				03D5C64B1E67E109001223FC /* IMTeamModel.swift in Sources */,
+				03D5C6681E67E127001223FC /* GroupListCell.swift in Sources */,
+				03D5C6641E67E127001223FC /* MainController.swift in Sources */,
+				03D5C6691E67E127001223FC /* GroupMemberCell.swift in Sources */,
+				03D5C63E1E67E109001223FC /* IMChatManager.swift in Sources */,
+				03D5C65F1E67E127001223FC /* Attachment.swift in Sources */,
 				031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */,
-				03454CE91E5A8C0600756CF8 /* IMMessage.swift in Sources */,
-				037DB1021E4D842E002D734C /* GroupListCell.swift in Sources */,
-				0326E4D31E519E7800C30BBF /* IMLoginManager.swift in Sources */,
-				0326E4D71E51B7F600C30BBF /* Extensions.swift in Sources */,
-				03454CED1E5AE87700756CF8 /* ChatInputBox.swift in Sources */,
-				031943EF1E53F5420015DA8F /* IMTeamManager.swift in Sources */,
-				031A1DA41E4B2132006F8CF0 /* UserInfoCell.swift in Sources */,
-				031943F41E5404FE0015DA8F /* BaseTeamModel.swift in Sources */,
-				03D38FCD1E56982200B76826 /* NIMChatProvider.swift in Sources */,
-				031A1DA01E4B0E25006F8CF0 /* ListViewController.swift in Sources */,
-				032374341E55977000014308 /* InterfaceTestController.swift in Sources */,
-				03EA252E1E5827FD00DDDF77 /* LucaCreateTeamViewController.swift in Sources */,
-				031943ED1E53F0CF0015DA8F /* BaseLoginModel.swift in Sources */,
-				03EA252C1E58207000DDDF77 /* LucaMemberDeleteViewController.swift in Sources */,
-				032374311E558C5200014308 /* IMTeamMember.swift in Sources */,
-				0323D7B31E5C2863003AEE25 /* Attachment.swift in Sources */,
-				03F505C21E600A20000EEF79 /* IMBaseObject.swift in Sources */,
-				031A1DA21E4B1C6F006F8CF0 /* UserInfo.swift in Sources */,
-				03EA252A1E57F94D00DDDF77 /* LucaMemberViewController.swift in Sources */,
+				03D5C6891E67E13B001223FC /* LucaMemberDeleteViewController.swift in Sources */,
+				03D5C6431E67E109001223FC /* IMHistoryModel.swift in Sources */,
+				03D5C6851E67E13B001223FC /* LucaBaseNavigationController.swift in Sources */,
+				03D5C68D1E67E13B001223FC /* ChatOtherVoiceCell.swift in Sources */,
+				03D5C6481E67E109001223FC /* NIMLoginProvider.swift in Sources */,
+				03D5C6861E67E13B001223FC /* LucaChatViewController.swift in Sources */,
+				03D5C6631E67E127001223FC /* ListViewController.swift in Sources */,
+				03D5C68C1E67E13B001223FC /* ChatMyVoiceCell.swift in Sources */,
+				03D5C6881E67E13B001223FC /* LucaLoginViewController.swift in Sources */,
+				03D5C65E1E67E127001223FC /* AddFriendViewController.swift in Sources */,
+				03D5C64A1E67E109001223FC /* IMTeamMember.swift in Sources */,
+				03D5C6671E67E127001223FC /* ChatCell.swift in Sources */,
+				03D5C68B1E67E13B001223FC /* MediaManager.swift in Sources */,
+				03D5C6811E67E13B001223FC /* LucaBaseAlertController.swift in Sources */,
+				03D5C64C1E67E109001223FC /* NIMTeamProvider.swift in Sources */,
+				03D5C68A1E67E13B001223FC /* LucaMemberViewController.swift in Sources */,
+				03D5C6871E67E13B001223FC /* LucaCreateTeamViewController.swift in Sources */,
+				03D5C6401E67E109001223FC /* IMMessage.swift in Sources */,
+				03D5C6651E67E127001223FC /* MyGroupsViewController.swift in Sources */,
+				03D5C6411E67E109001223FC /* NIMChatProvider.swift in Sources */,
 				03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */,
-				031943F11E53F5AE0015DA8F /* IMChatManager.swift in Sources */,
-				0323742D1E55530900014308 /* NIMTeamProvider.swift in Sources */,
-				03EA25281E57F74B00DDDF77 /* LucaChatViewController.swift in Sources */,
-				03D38FD81E56E62A00B76826 /* LucaLoginViewController.swift in Sources */,
+				03D5C6491E67E109001223FC /* IMTeamManager.swift in Sources */,
+				03D5C6831E67E13B001223FC /* ChatInputBox.swift in Sources */,
+				03D5C6451E67E109001223FC /* IMManager.swift in Sources */,
+				03D5C63D1E67E109001223FC /* IMBaseObject.swift in Sources */,
+				03D5C6611E67E127001223FC /* Extensions.swift in Sources */,
+				03D5C63F1E67E109001223FC /* IMChatModel.swift in Sources */,
+				03D5C6601E67E127001223FC /* ChatViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		03CBA0CE1E4ABBDA0076397C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03CBA0CF1E4ABBDA0076397C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		03CBA0D31E4ABBDA0076397C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
