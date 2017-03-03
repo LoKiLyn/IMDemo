@@ -19,7 +19,10 @@ class ChatMyVoiceCell: UITableViewCell {
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var timeLabel: UILabel!
-        
+    @IBOutlet weak var contentImageView: UIImageView!
+    @IBOutlet weak var playingImageView: UIImageView!
+    @IBOutlet weak var secondLabel: UILabel!
+    
     private var audioPath: String?
     private var indexPath: IndexPath?
     var delegate: ChatMyVoiceCellDelegate?
@@ -29,6 +32,11 @@ class ChatMyVoiceCell: UITableViewCell {
     }
     
     @IBAction func voiceContentPressed(_ sender: UIControl) {
+        
+        self.playingImageView.animationImages = [#imageLiteral(resourceName: "MyVoicePlaying1"),#imageLiteral(resourceName: "MyVoicePlaying2"),#imageLiteral(resourceName: "MyVoicePlaying3")]
+        self.playingImageView.animationDuration = 2
+        self.playingImageView.startAnimating()
+        
         if self.delegate != nil {
             self.delegate?.voiceContentDidPressed(indexPath: self.indexPath!)
         }
