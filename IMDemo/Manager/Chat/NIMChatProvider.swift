@@ -29,6 +29,7 @@ class NIMChatProvider: NSObject {
         newMessage.deliveryState = IMMessage.MessageDeliveryState(rawValue: message.deliveryState.rawValue)!
         newMessage.attachmentDownloadState = IMMessage.MessageAttachmentDownloadState(rawValue: message.attachmentDownloadState.rawValue)
         newMessage.isDeleted = message.isDeleted
+        
         switch newMessage.messageType {
         case .MessageTypeImage:
             let originObject = message.messageObject as! NIMImageObject
@@ -204,13 +205,8 @@ extension NIMChatProvider: NIMChatManagerDelegate {
  */
 
 class Attachment: NSObject {
-    
-    override init() {
-        super.init()
-    }
-    
+
     public var encodeString: String?
-    
     public var content: String?
     
 }
