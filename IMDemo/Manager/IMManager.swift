@@ -53,6 +53,10 @@ class IMManager: NSObject {
         switch self.currentSDKType {
         case .Nim:
             NIMSDK.shared().register(withAppID: appID, cerName: cerName)
+            /*
+             * 注册自定义消息
+             */
+            NIMCustomObject.registerCustomDecoder(Attachment())
         }
     }
     

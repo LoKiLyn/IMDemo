@@ -19,11 +19,6 @@ class NIMChatProvider: NSObject {
     
     var chatManagerDelegate: ChatManagerDelegate?
     var messageObjectDelegate: IMMessageObject?
-    /**
-     *  Remain to be done.
-     */
-    var customAttachmentDelegate: Any?
-    var customAttachmentCodingDelegate: Any?
 
     func converseMessage(message: NIMMessage) -> (IMMessage) {
         let newMessage = IMMessage()
@@ -72,7 +67,8 @@ class NIMChatProvider: NSObject {
     
     func converseCustomObject(messageObject: NIMCustomObject) -> (IMCustomObject) {
         var customObject = IMCustomObject()
-        customObject.attachment = messageObject.attachment
+        let attachment = messageObject.attachment as! Attachment
+        customObject.content = attachment.content
         return customObject
     }
     
@@ -136,12 +132,11 @@ extension NIMChatProvider: IMChatProtocol {
         }
     }
     
-    /**
-     *  Remain to be done.
-     */
     func sendCustomMessage(model: IMChatModel, completion: @escaping MessageHandler) {
         let customObject = NIMCustomObject()
-        customObject.attachment = Attachment()
+        let attachment = Attachment()
+        attachment.encodeString = model.customMessage
+        customObject.attachment = attachment
         let message = NIMMessage()
         message.messageObject = customObject
         if model.sessionID == nil {
@@ -150,10 +145,12 @@ extension NIMChatProvider: IMChatProtocol {
         }
         let session = NIMSession(model.sessionID!, type: NIMSessionType.P2P)
         do {
+            
             try NIMSDK.shared().chatManager.send(message, to: session)
         } catch {
             completion(error)
         }
+        
     }
     
     func setDelegate(delegate: ChatManagerDelegate) {
@@ -201,3 +198,35 @@ extension NIMChatProvider: NIMChatManagerDelegate {
         }
     }
 }
+
+/*
+ *  自定义消息附件
+ */
+
+class Attachment: NSObject {
+    
+    override init() {
+        super.init()
+    }
+    
+    public var encodeString: String?
+    
+    public var content: String?
+    
+}
+
+
+extension Attachment: NIMCustomAttachment {
+    func encode() -> String {
+        return self.encodeString ?? ""
+    }
+}
+
+extension Attachment: NIMCustomAttachmentCoding {
+    
+    func decodeAttachment(_ content: String?) -> NIMCustomAttachment? {
+        self.content = content
+        return self
+    }
+}
+

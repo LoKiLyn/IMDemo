@@ -9,14 +9,14 @@
 import UIKit
 
 
-class LucaBaseNavigationController: UINavigationController {
+class LukaBaseNavigationController: UINavigationController {
     
     // MARK: - Property
     
     // MARK: - Lifecycle
     
     override class func initialize () {
-        if self == LucaBaseNavigationController.self {
+        if self == LukaBaseNavigationController.self {
             let backIndicatorImage = UIImage(named: "back")?.withRenderingMode(.alwaysOriginal)
             let rightRectImage = backIndicatorImage?.withAlignmentRectInsets(UIEdgeInsetsMake(0, 0, 3.5, 0))
             UINavigationBar.appearance().backIndicatorImage = rightRectImage

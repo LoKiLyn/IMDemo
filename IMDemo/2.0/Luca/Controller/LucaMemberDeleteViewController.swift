@@ -1,5 +1,5 @@
 //
-//  LucaMemberDeleteViewController.swift
+//  LukaMemberDeleteViewController.swift
 //  IMDemo
 //
 //  Created by 小白 on 2017/2/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LucaMemberDeleteViewController: UIViewController {
+class LukaMemberDeleteViewController: UIViewController {
 
     // MARK: - Property
     
@@ -49,7 +49,7 @@ class LucaMemberDeleteViewController: UIViewController {
 }
 
 
-extension LucaMemberDeleteViewController: UITableViewDataSource {
+extension LukaMemberDeleteViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -63,7 +63,7 @@ extension LucaMemberDeleteViewController: UITableViewDataSource {
 }
 
 
-extension LucaMemberDeleteViewController: UITableViewDelegate {
+extension LukaMemberDeleteViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

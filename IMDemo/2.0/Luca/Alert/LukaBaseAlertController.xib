@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LucaBaseAlertController" customModule="IMDemo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LukaBaseAlertController" customModule="IMDemo" customModuleProvider="target">
             <connections>
                 <outlet property="contentLabel" destination="O77-sV-yD7" id="Pst-NW-yyo"/>
                 <outlet property="titleLabel" destination="gaU-5P-ipg" id="qEO-fq-mYZ"/>
@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D1g-2H-apO" userLabel="Alert View">
-                    <rect key="frame" x="50" y="234" width="275" height="199.5"/>
+                    <rect key="frame" x="50" y="234" width="275" height="200"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W5N-cx-U3Y" userLabel="Title View">
                             <rect key="frame" x="0.0" y="0.0" width="275" height="44"/>
@@ -46,7 +46,7 @@
                             </constraints>
                         </view>
                         <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ac6-Ga-S35" userLabel="Content View">
-                            <rect key="frame" x="20" y="44" width="235" height="69.5"/>
+                            <rect key="frame" x="20" y="44" width="235" height="70"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录成功" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-5P-ipg" userLabel="Title Label">
                                     <rect key="frame" x="0.0" y="0.0" width="235" height="20"/>
@@ -56,7 +56,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O77-sV-yD7" userLabel="Content Label">
-                                    <rect key="frame" x="0.0" y="50" width="235" height="19.5"/>
+                                    <rect key="frame" x="0.0" y="50" width="235" height="20"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="textColor" red="0.25490196079999999" green="0.33333333329999998" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -75,7 +75,7 @@
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dy-ap-jJI" userLabel="GoTo Button">
-                            <rect key="frame" x="48" y="143.5" width="179" height="32"/>
+                            <rect key="frame" x="48" y="144" width="179" height="32"/>
                             <color key="backgroundColor" red="0.52156862749999999" green="0.69411764710000001" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="32" id="0cB-Qa-1ka"/>

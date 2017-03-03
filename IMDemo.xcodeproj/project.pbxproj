@@ -11,7 +11,6 @@
 		03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */; };
 		03CBA0D21E4ABBDA0076397C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D11E4ABBDA0076397C /* Assets.xcassets */; };
 		03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D31E4ABBDA0076397C /* LaunchScreen.storyboard */; };
-		03D5C63D1E67E109001223FC /* IMBaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62A1E67E109001223FC /* IMBaseObject.swift */; };
 		03D5C63E1E67E109001223FC /* IMChatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62B1E67E109001223FC /* IMChatManager.swift */; };
 		03D5C63F1E67E109001223FC /* IMChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62C1E67E109001223FC /* IMChatModel.swift */; };
 		03D5C6401E67E109001223FC /* IMMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C62D1E67E109001223FC /* IMMessage.swift */; };
@@ -28,7 +27,6 @@
 		03D5C64B1E67E109001223FC /* IMTeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C63B1E67E109001223FC /* IMTeamModel.swift */; };
 		03D5C64C1E67E109001223FC /* NIMTeamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C63C1E67E109001223FC /* NIMTeamProvider.swift */; };
 		03D5C65E1E67E127001223FC /* AddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C64F1E67E127001223FC /* AddFriendViewController.swift */; };
-		03D5C65F1E67E127001223FC /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6501E67E127001223FC /* Attachment.swift */; };
 		03D5C6601E67E127001223FC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6511E67E127001223FC /* ChatViewController.swift */; };
 		03D5C6611E67E127001223FC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6521E67E127001223FC /* Extensions.swift */; };
 		03D5C6621E67E127001223FC /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6531E67E127001223FC /* GroupViewController.swift */; };
@@ -41,8 +39,8 @@
 		03D5C6691E67E127001223FC /* GroupMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C65B1E67E127001223FC /* GroupMemberCell.swift */; };
 		03D5C66A1E67E127001223FC /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C65C1E67E127001223FC /* UserInfo.swift */; };
 		03D5C66B1E67E127001223FC /* UserInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C65D1E67E127001223FC /* UserInfoCell.swift */; };
-		03D5C6811E67E13B001223FC /* LucaBaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C66F1E67E13B001223FC /* LucaBaseAlertController.swift */; };
-		03D5C6821E67E13B001223FC /* LucaBaseAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6701E67E13B001223FC /* LucaBaseAlertController.xib */; };
+		03D5C6811E67E13B001223FC /* LukaBaseAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C66F1E67E13B001223FC /* LukaBaseAlertController.swift */; };
+		03D5C6821E67E13B001223FC /* LukaBaseAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6701E67E13B001223FC /* LukaBaseAlertController.xib */; };
 		03D5C6831E67E13B001223FC /* ChatInputBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6721E67E13B001223FC /* ChatInputBox.swift */; };
 		03D5C6841E67E13B001223FC /* ChatInputBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6731E67E13B001223FC /* ChatInputBox.xib */; };
 		03D5C6851E67E13B001223FC /* LucaBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C6751E67E13B001223FC /* LucaBaseNavigationController.swift */; };
@@ -54,7 +52,7 @@
 		03D5C68B1E67E13B001223FC /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67C1E67E13B001223FC /* MediaManager.swift */; };
 		03D5C68C1E67E13B001223FC /* ChatMyVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67E1E67E13B001223FC /* ChatMyVoiceCell.swift */; };
 		03D5C68D1E67E13B001223FC /* ChatOtherVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67F1E67E13B001223FC /* ChatOtherVoiceCell.swift */; };
-		03D5C68E1E67E13B001223FC /* LucaStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6801E67E13B001223FC /* LucaStyle.storyboard */; };
+		03D5C68E1E67E13B001223FC /* LukaStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6801E67E13B001223FC /* LukaStyle.storyboard */; };
 		253B7C9EFB758C54A84B4EAB /* Pods_IMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,7 +64,6 @@
 		03CBA0D11E4ABBDA0076397C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03CBA0D41E4ABBDA0076397C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03CBA0D61E4ABBDA0076397C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03D5C62A1E67E109001223FC /* IMBaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMBaseObject.swift; sourceTree = "<group>"; };
 		03D5C62B1E67E109001223FC /* IMChatManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatManager.swift; sourceTree = "<group>"; };
 		03D5C62C1E67E109001223FC /* IMChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMChatModel.swift; sourceTree = "<group>"; };
 		03D5C62D1E67E109001223FC /* IMMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMMessage.swift; sourceTree = "<group>"; };
@@ -83,7 +80,6 @@
 		03D5C63B1E67E109001223FC /* IMTeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IMTeamModel.swift; sourceTree = "<group>"; };
 		03D5C63C1E67E109001223FC /* NIMTeamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NIMTeamProvider.swift; sourceTree = "<group>"; };
 		03D5C64F1E67E127001223FC /* AddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendViewController.swift; sourceTree = "<group>"; };
-		03D5C6501E67E127001223FC /* Attachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		03D5C6511E67E127001223FC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		03D5C6521E67E127001223FC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		03D5C6531E67E127001223FC /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
@@ -96,8 +92,8 @@
 		03D5C65B1E67E127001223FC /* GroupMemberCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupMemberCell.swift; sourceTree = "<group>"; };
 		03D5C65C1E67E127001223FC /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		03D5C65D1E67E127001223FC /* UserInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoCell.swift; sourceTree = "<group>"; };
-		03D5C66F1E67E13B001223FC /* LucaBaseAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaBaseAlertController.swift; sourceTree = "<group>"; };
-		03D5C6701E67E13B001223FC /* LucaBaseAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LucaBaseAlertController.xib; sourceTree = "<group>"; };
+		03D5C66F1E67E13B001223FC /* LukaBaseAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LukaBaseAlertController.swift; sourceTree = "<group>"; };
+		03D5C6701E67E13B001223FC /* LukaBaseAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LukaBaseAlertController.xib; sourceTree = "<group>"; };
 		03D5C6721E67E13B001223FC /* ChatInputBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatInputBox.swift; sourceTree = "<group>"; };
 		03D5C6731E67E13B001223FC /* ChatInputBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatInputBox.xib; sourceTree = "<group>"; };
 		03D5C6751E67E13B001223FC /* LucaBaseNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LucaBaseNavigationController.swift; sourceTree = "<group>"; };
@@ -109,7 +105,7 @@
 		03D5C67C1E67E13B001223FC /* MediaManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		03D5C67E1E67E13B001223FC /* ChatMyVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMyVoiceCell.swift; sourceTree = "<group>"; };
 		03D5C67F1E67E13B001223FC /* ChatOtherVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOtherVoiceCell.swift; sourceTree = "<group>"; };
-		03D5C6801E67E13B001223FC /* LucaStyle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LucaStyle.storyboard; sourceTree = "<group>"; };
+		03D5C6801E67E13B001223FC /* LukaStyle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LukaStyle.storyboard; sourceTree = "<group>"; };
 		6762E5EB97AB937240AC12F8 /* Pods-IMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		834A076FA27F3CCE11C09B17 /* Pods-IMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +172,6 @@
 		03D5C6291E67E109001223FC /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				03D5C62A1E67E109001223FC /* IMBaseObject.swift */,
 				03D5C62B1E67E109001223FC /* IMChatManager.swift */,
 				03D5C62C1E67E109001223FC /* IMChatModel.swift */,
 				03D5C62D1E67E109001223FC /* IMMessage.swift */,
@@ -229,9 +224,8 @@
 		03D5C64E1E67E127001223FC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				03D5C64F1E67E127001223FC /* AddFriendViewController.swift */,
-				03D5C6501E67E127001223FC /* Attachment.swift */,
 				03D5C6511E67E127001223FC /* ChatViewController.swift */,
+				03D5C64F1E67E127001223FC /* AddFriendViewController.swift */,
 				03D5C6521E67E127001223FC /* Extensions.swift */,
 				03D5C6531E67E127001223FC /* GroupViewController.swift */,
 				03D5C6541E67E127001223FC /* ListViewController.swift */,
@@ -256,12 +250,12 @@
 		03D5C66C1E67E13B001223FC /* 2.0 */ = {
 			isa = PBXGroup;
 			children = (
-				03D5C66D1E67E13B001223FC /* Luca */,
+				03D5C66D1E67E13B001223FC /* Luka */,
 			);
 			path = 2.0;
 			sourceTree = "<group>";
 		};
-		03D5C66D1E67E13B001223FC /* Luca */ = {
+		03D5C66D1E67E13B001223FC /* Luka */ = {
 			isa = PBXGroup;
 			children = (
 				03D5C67B1E67E13B001223FC /* Media */,
@@ -270,14 +264,15 @@
 				03D5C6741E67E13B001223FC /* Controller */,
 				03D5C67D1E67E13B001223FC /* View */,
 			);
+			name = Luka;
 			path = Luca;
 			sourceTree = "<group>";
 		};
 		03D5C66E1E67E13B001223FC /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				03D5C66F1E67E13B001223FC /* LucaBaseAlertController.swift */,
-				03D5C6701E67E13B001223FC /* LucaBaseAlertController.xib */,
+				03D5C66F1E67E13B001223FC /* LukaBaseAlertController.swift */,
+				03D5C6701E67E13B001223FC /* LukaBaseAlertController.xib */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -317,7 +312,7 @@
 			children = (
 				03D5C67E1E67E13B001223FC /* ChatMyVoiceCell.swift */,
 				03D5C67F1E67E13B001223FC /* ChatOtherVoiceCell.swift */,
-				03D5C6801E67E13B001223FC /* LucaStyle.storyboard */,
+				03D5C6801E67E13B001223FC /* LukaStyle.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -402,12 +397,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03D5C6821E67E13B001223FC /* LucaBaseAlertController.xib in Resources */,
+				03D5C6821E67E13B001223FC /* LukaBaseAlertController.xib in Resources */,
 				03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */,
 				03D5C6661E67E127001223FC /* Main.storyboard in Resources */,
 				03D5C6841E67E13B001223FC /* ChatInputBox.xib in Resources */,
 				03CBA0D21E4ABBDA0076397C /* Assets.xcassets in Resources */,
-				03D5C68E1E67E13B001223FC /* LucaStyle.storyboard in Resources */,
+				03D5C68E1E67E13B001223FC /* LukaStyle.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +473,6 @@
 				03D5C6641E67E127001223FC /* MainController.swift in Sources */,
 				03D5C6691E67E127001223FC /* GroupMemberCell.swift in Sources */,
 				03D5C63E1E67E109001223FC /* IMChatManager.swift in Sources */,
-				03D5C65F1E67E127001223FC /* Attachment.swift in Sources */,
 				031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */,
 				03D5C6891E67E13B001223FC /* LucaMemberDeleteViewController.swift in Sources */,
 				03D5C6431E67E109001223FC /* IMHistoryModel.swift in Sources */,
@@ -493,7 +487,7 @@
 				03D5C64A1E67E109001223FC /* IMTeamMember.swift in Sources */,
 				03D5C6671E67E127001223FC /* ChatCell.swift in Sources */,
 				03D5C68B1E67E13B001223FC /* MediaManager.swift in Sources */,
-				03D5C6811E67E13B001223FC /* LucaBaseAlertController.swift in Sources */,
+				03D5C6811E67E13B001223FC /* LukaBaseAlertController.swift in Sources */,
 				03D5C64C1E67E109001223FC /* NIMTeamProvider.swift in Sources */,
 				03D5C68A1E67E13B001223FC /* LucaMemberViewController.swift in Sources */,
 				03D5C6871E67E13B001223FC /* LucaCreateTeamViewController.swift in Sources */,
@@ -504,7 +498,6 @@
 				03D5C6491E67E109001223FC /* IMTeamManager.swift in Sources */,
 				03D5C6831E67E13B001223FC /* ChatInputBox.swift in Sources */,
 				03D5C6451E67E109001223FC /* IMManager.swift in Sources */,
-				03D5C63D1E67E109001223FC /* IMBaseObject.swift in Sources */,
 				03D5C6611E67E127001223FC /* Extensions.swift in Sources */,
 				03D5C63F1E67E109001223FC /* IMChatModel.swift in Sources */,
 				03D5C6601E67E127001223FC /* ChatViewController.swift in Sources */,

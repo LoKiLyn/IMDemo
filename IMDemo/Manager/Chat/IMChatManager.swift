@@ -108,7 +108,7 @@ class IMChatManager: NSObject {
      *  @param teamID      群组ID
      *  @param completion  完成后的回调
      */
-    func sendCustomMessage(sessionID: String, customMessage: NIMCustomAttachment, completion: @escaping MessageHandler) {
+    func sendCustomMessage(sessionID: String, customMessage: String, completion: @escaping MessageHandler) {
         let model = IMChatModel()
         model.sessionID = sessionID
         model.customMessage = customMessage

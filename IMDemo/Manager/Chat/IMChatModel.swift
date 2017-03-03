@@ -31,8 +31,8 @@ class IMChatModel: NSObject {
     var sessionID: String?
     
     /**
-     *  Remain To Be Done
+     *  自定义消息Data字符串
      */
-    var customMessage: Any?
+    var customMessage: String?
     
 }

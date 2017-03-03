@@ -1,5 +1,5 @@
 //
-//  LucaMemberViewController.swift
+//  LukaMemberViewController.swift
 //  IMDemo
 //
 //  Created by 小白 on 2017/2/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LucaMemberViewController: UIViewController {
+class LukaMemberViewController: UIViewController {
 
     // MARK: - Property
     
@@ -39,7 +39,7 @@ class LucaMemberViewController: UIViewController {
     @IBAction func quitButtonPressed(sender: UIButton) {
         let teamID = IMManager.shared.teamManager.currentTeamID()
         IMManager.shared.teamManager.dismissTeam(teamID: teamID) { (error) in
-            let alert = LucaBaseAlertController(nibName: "\(LucaBaseAlertController.self)", bundle: nil)
+            let alert = LukaBaseAlertController(nibName: "\(LukaBaseAlertController.self)", bundle: nil)
             if error == nil {
                 alert.alertTitle = "提示"
                 alert.contentLabel.text = "退出群组\(teamID)成功"
@@ -61,7 +61,7 @@ class LucaMemberViewController: UIViewController {
 }
 
 
-extension LucaMemberViewController: UITableViewDataSource {
+extension LukaMemberViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
@@ -75,14 +75,14 @@ extension LucaMemberViewController: UITableViewDataSource {
 }
 
 
-extension LucaMemberViewController: UITableViewDelegate {
+extension LukaMemberViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.row > 0 {
             self.performSegue(withIdentifier: "presentMemberDeleteViewController", sender: self)
         } else {
-            let alert = LucaBaseAlertController(nibName: "\(LucaBaseAlertController.self)", bundle: nil)
+            let alert = LukaBaseAlertController(nibName: "\(LukaBaseAlertController.self)", bundle: nil)
             alert.alertTitle = "邀请成员"
             alert.show(inContainter: self)
         }

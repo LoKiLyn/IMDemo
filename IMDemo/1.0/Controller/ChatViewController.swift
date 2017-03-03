@@ -14,12 +14,14 @@ class ChatViewController: UIViewController {
     
     var user: NIMUser?
     var messages: Array<NIMMessage> = []
+    var result: String?
     @IBOutlet weak var titleItem: UINavigationItem!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var textMessageLabel: UILabel!
     @IBOutlet weak var imageMessageView: UIImageView!
     @IBOutlet weak var fileInfoLabel: UILabel!
     @IBOutlet weak var customInfoLabel: UILabel!
+    
     
     // MARK: - LifeCycle
     
@@ -40,6 +42,7 @@ class ChatViewController: UIViewController {
     deinit {
         IMManager.shared.chatManager.removeDelegate(delegate: self)
     }
+    
     
     // MARK: - Events
     
@@ -77,7 +80,7 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendCustomButtonPressed(_ sender: UIButton) {
-        IMManager.shared.chatManager.sendCustomMessage(sessionID: (user?.userId)!, customMessage: Attachment()) { (error) in
+        IMManager.shared.chatManager.sendCustomMessage(sessionID: (user?.userId)!, customMessage: "abcdefg") { (error) in
             if error == nil {
                 print("发送成功")
             } else {
@@ -86,6 +89,7 @@ class ChatViewController: UIViewController {
         }
     }
 }
+
 
 extension ChatViewController: ChatManagerDelegate {
     
@@ -99,16 +103,10 @@ extension ChatViewController: ChatManagerDelegate {
             case .MessageTypeImage:
                 print(message.imageObject.url as Any)
             case .MessageTypeCustom:
-                
-                // todo
-                
-                let a = message.customObject.attachment as! Attachment
-                print("\(a.id)   \(a.name)")
-                
+                print(message.customObject.content as Any)
             default:
                 break
             }
         }
     }
 }
-

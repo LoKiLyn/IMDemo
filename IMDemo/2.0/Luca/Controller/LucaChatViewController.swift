@@ -1,5 +1,5 @@
 //
-//  LucaChatViewController.swift
+//  LukaChatViewController.swift
 //  IMDemo
 //
 //  Created by 小白 on 2017/2/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LucaChatViewController: UIViewController {
+class LukaChatViewController: UIViewController {
 
     
     // MARK: - Property
@@ -91,7 +91,7 @@ class LucaChatViewController: UIViewController {
 }
 
 
-extension LucaChatViewController: UITableViewDataSource {
+extension LukaChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.messageArray.count
@@ -119,7 +119,7 @@ extension LucaChatViewController: UITableViewDataSource {
 }
 
 
-extension LucaChatViewController: UITableViewDelegate {
+extension LukaChatViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -128,7 +128,7 @@ extension LucaChatViewController: UITableViewDelegate {
 }
 
 
-extension LucaChatViewController: ChatManagerDelegate {
+extension LukaChatViewController: ChatManagerDelegate {
     
     func onRecvMsg(messages: Array<IMMessage>) {
         for message in messages {
@@ -160,7 +160,7 @@ extension LucaChatViewController: ChatManagerDelegate {
     }
 }
 
-extension LucaChatViewController: ChatInputBoxDelegate {
+extension LukaChatViewController: ChatInputBoxDelegate {
     
     func inputButtonDidTouchDown() {
         audioToSend = NSTemporaryDirectory().appending("audioToSend.aac")

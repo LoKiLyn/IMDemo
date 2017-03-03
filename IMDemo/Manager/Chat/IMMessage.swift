@@ -68,7 +68,7 @@ struct IMAudioObject {
 }
 
 struct IMCustomObject {
-    var attachment: Any?
+    var content: String?
 }
 
 /**

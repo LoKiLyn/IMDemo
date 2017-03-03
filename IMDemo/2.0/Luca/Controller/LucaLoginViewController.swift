@@ -1,5 +1,5 @@
 //
-//  LucaLoginViewController.swift
+//  LukaLoginViewController.swift
 //  IMDemo
 //
 //  Created by 小白 on 2017/2/17.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-class LucaLoginViewController: UIViewController {
+class LukaLoginViewController: UIViewController {
 
     // MARK: - Property
     
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    let alert = LucaBaseAlertController(nibName: "\(LucaBaseAlertController.self)", bundle: nil)
+    let alert = LukaBaseAlertController(nibName: "\(LukaBaseAlertController.self)", bundle: nil)
     
     // MARK: - Events
     
@@ -50,7 +50,7 @@ class LucaLoginViewController: UIViewController {
 }
 
 
-extension LucaLoginViewController: UITextFieldDelegate {
+extension LukaLoginViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

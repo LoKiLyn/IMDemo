@@ -1,5 +1,5 @@
 //
-//  LucaCreateTeamViewController.swift
+//  LukaCreateTeamViewController.swift
 //  IMDemo
 //
 //  Created by 小白 on 2017/2/18.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class LucaCreateTeamViewController: UIViewController {
+class LukaCreateTeamViewController: UIViewController {
     
     // MARK: - Property
     
-    let alert = LucaBaseAlertController.sharedInstance
+    let alert = LukaBaseAlertController.sharedInstance
     
     
     // MARK: - Lifecycle

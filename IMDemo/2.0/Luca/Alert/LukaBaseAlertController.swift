@@ -10,7 +10,7 @@
 import UIKit
 
 
-class LucaBaseAlertController: UIViewController {
+class LukaBaseAlertController: UIViewController {
     
     //MARK: - Property
     
@@ -43,9 +43,9 @@ class LucaBaseAlertController: UIViewController {
     
     var showOrNot: Bool = false
 
-    class var sharedInstance: LucaBaseAlertController {
+    class var sharedInstance: LukaBaseAlertController {
         struct Static {
-            static let instance = LucaBaseAlertController(nibName: "\(LucaBaseAlertController.self)", bundle: nil)
+            static let instance = LukaBaseAlertController(nibName: "\(LukaBaseAlertController.self)", bundle: nil)
         }
         return Static.instance
     }
@@ -103,13 +103,13 @@ class LucaBaseAlertController: UIViewController {
     @IBAction func submmitButtonPressed(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
         switch sourceViewController.self {
-        case is LucaLoginViewController:
+        case is LukaLoginViewController:
             if showOrNot {
-                sourceViewController?.performSegue(withIdentifier: "showLucaChatViewController", sender: sourceViewController)
+                sourceViewController?.performSegue(withIdentifier: "showLukaChatViewController", sender: sourceViewController)
             }
-        case is LucaCreateTeamViewController:
+        case is LukaCreateTeamViewController:
             sourceViewController?.dismiss(animated: true, completion: nil)
-        case is LucaMemberViewController:
+        case is LukaMemberViewController:
             _ = sourceViewController?.navigationController?.popViewController(animated: true)
         default:
             break
