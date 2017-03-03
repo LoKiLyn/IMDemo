@@ -239,7 +239,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="88" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="CsB-UL-OQa" userLabel="Chat TableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="88" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="CsB-UL-OQa" userLabel="Chat TableView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="499"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -673,7 +673,7 @@
                                                 <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvz-9N-fMN" userLabel="ChatContent View" customClass="UIControl">
                                                     <rect key="frame" x="238" y="29" width="80" height="45"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatContentMine" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-9K-sPK" userLabel="Content ImageView">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatContentMine" highlightedImage="ChatContentOther" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-9K-sPK" userLabel="Content ImageView">
                                                             <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -708,6 +708,9 @@
                                                         <constraint firstItem="mtt-jn-mdo" firstAttribute="leading" secondItem="OWd-NL-LzO" secondAttribute="trailing" constant="10" id="xOB-HJ-T7F"/>
                                                         <constraint firstAttribute="trailing" secondItem="mtt-jn-mdo" secondAttribute="trailing" constant="20" id="xrl-gP-b7u"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="voiceContentPressed:" destination="gn4-b5-LVF" eventType="touchUpInside" id="bhM-FQ-Vm1"/>
+                                                    </connections>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVo-VB-Zsx" userLabel="Retry Button">
                                                     <rect key="frame" x="200" y="32" width="38" height="38"/>

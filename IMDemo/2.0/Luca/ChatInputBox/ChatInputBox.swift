@@ -17,10 +17,32 @@ protocol ChatInputBoxDelegate {
 
 @IBDesignable class ChatInputBox: UIView {
     
+    enum InputMode: Int {
+        case InputModeVoice
+        case InputModeText
+    }
+    
     // MARK: - Public
+    
     var delegate: ChatInputBoxDelegate?
     
+    
     // MARK: - Property
+    
+    var currentInputMode: InputMode = InputMode.InputModeVoice {
+        didSet {
+            if currentInputMode == InputMode.InputModeVoice {
+                inputSwitchButton.setTitle("声音", for: UIControlState.normal)
+                voiceButton.isHidden = true
+            } else {
+                inputSwitchButton.setTitle("文字", for: UIControlState.normal)
+                voiceButton.isHidden = false
+            }
+        }
+    }
+    
+    @IBOutlet weak var inputSwitchButton: UIButton!
+    @IBOutlet weak var voiceButton: UIButton!
     
     // MARK: - Lifecycle
     
@@ -34,8 +56,6 @@ protocol ChatInputBoxDelegate {
         self.initFromNib()
     }
     
-    
-    // MARK: - Override
     
     // MARK: - Events
     
@@ -54,6 +74,15 @@ protocol ChatInputBoxDelegate {
     @IBAction func moreInputButtonPressed(_ sender: UIButton) {
         self.delegate?.moreInputButtonDidPressed()
     }
+    
+    @IBAction func inputSwitchButtonPressed(_ sender: UIButton) {
+        if currentInputMode == InputMode.InputModeText {
+            currentInputMode = InputMode.InputModeVoice
+        } else {
+            currentInputMode = InputMode.InputModeText
+        }
+    }
+    
 }
 
 

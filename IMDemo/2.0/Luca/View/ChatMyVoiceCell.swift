@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ChatMyVoiceCellDelegate {
+    func voiceContentDidPressed(indexPath: IndexPath)
+}
+
 class ChatMyVoiceCell: UITableViewCell {
 
     @IBOutlet weak var retryButton: UIButton!
@@ -17,12 +21,21 @@ class ChatMyVoiceCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
         
     private var audioPath: String?
+    private var indexPath: IndexPath?
+    var delegate: ChatMyVoiceCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configWith(message: IMMessage) {
+    @IBAction func voiceContentPressed(_ sender: UIControl) {
+        if self.delegate != nil {
+            self.delegate?.voiceContentDidPressed(indexPath: self.indexPath!)
+        }
+    }
+    
+    func configWith(message: IMMessage, indexPath: IndexPath) {
+        self.indexPath = indexPath
         self.nickNameLabel.text = message.from
         self.audioPath = message.audioObject.path
         self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""

@@ -21,7 +21,7 @@ class LukaChatViewController: UIViewController {
         "ChatMyVoiceCell",
         ]
     var hasTeam: Bool = false
-    var audioToSend: String?
+    var audioToSend: String? = NSTemporaryDirectory().appending("audioToSend.aac")
     var messageArray: Array<IMMessage> = []
     
     @IBOutlet internal weak var tableView: UITableView!
@@ -103,7 +103,8 @@ extension LukaChatViewController: UITableViewDataSource {
         case .MessageTypeAudio:
             if message.from == IMManager.shared.loginManager.currentAccount() {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ChatMyVoiceCell") as! ChatMyVoiceCell
-                cell.configWith(message: message)
+                cell.configWith(message: message, indexPath: indexPath)
+                cell.delegate = self
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ChatOtherVoiceCell") as! ChatOtherVoiceCell
@@ -123,7 +124,6 @@ extension LukaChatViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        MediaManager.sharedInstance.playWithURL(url: messageArray[indexPath.row].audioObject.path ?? "")
     }
 }
 
@@ -163,7 +163,6 @@ extension LukaChatViewController: ChatManagerDelegate {
 extension LukaChatViewController: ChatInputBoxDelegate {
     
     func inputButtonDidTouchDown() {
-        audioToSend = NSTemporaryDirectory().appending("audioToSend.aac")
         MediaManager.sharedInstance.startRecordToURL(url: audioToSend)
     }
     
@@ -199,3 +198,9 @@ extension LukaChatViewController: ChatInputBoxDelegate {
     }
 }
 
+
+extension LukaChatViewController: ChatMyVoiceCellDelegate {
+    func voiceContentDidPressed(indexPath: IndexPath) {
+        MediaManager.sharedInstance.playWithURL(url: messageArray[indexPath.row].audioObject.path ?? "")
+    }
+}
