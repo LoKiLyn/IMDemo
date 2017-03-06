@@ -78,10 +78,12 @@ class MediaManager: NSObject {
         try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
         //播放
         player = try! AVAudioPlayer(contentsOf: URL(string: url)!)
+        
         if player == nil {
-        }else{
+        } else {
             player?.play()
         }
+        
     }
     
     

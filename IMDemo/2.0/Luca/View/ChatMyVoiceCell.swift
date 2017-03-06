@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 protocol ChatMyVoiceCellDelegate {
     func voiceContentDidPressed(indexPath: IndexPath)
@@ -25,39 +26,60 @@ class ChatMyVoiceCell: UITableViewCell {
     
     private var audioPath: String?
     private var indexPath: IndexPath?
-    var delegate: ChatMyVoiceCellDelegate?
+    
+    // MARK: Public
+    
+    
+    public var animationSwitch: Bool = false {
+        didSet{
+            if animationSwitch {
+                playingImageView.startAnimating()
+            } else {
+                playingImageView.stopAnimating()
+            }
+        }
+    }
+    
+    public var delegate: ChatMyVoiceCellDelegate?
+    
+    func configWith(message: IMMessage, indexPath: IndexPath) {
+        
+        self.indexPath = indexPath
+        nickNameLabel.text = message.from
+        audioPath = message.audioObject.path
+        timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        
+        switch message.deliveryState {
+        case .MessageDeliveryStateDeliveried:
+            retryButton.isHidden = true
+            timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        case .MessageDeliveryStateFailed:
+            retryButton.isHidden = false
+            timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        case .MessageDeliveryStateDelivering:
+            retryButton.isHidden = true
+            timeLabel.text = "Delivering"
+        }
+    }
+    
+    
+    // MARK: Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
+    
+    // MARK: Events
+    
     @IBAction func voiceContentPressed(_ sender: UIControl) {
-        
-        self.playingImageView.animationImages = [#imageLiteral(resourceName: "MyVoicePlaying1"),#imageLiteral(resourceName: "MyVoicePlaying2"),#imageLiteral(resourceName: "MyVoicePlaying3")]
-        self.playingImageView.animationDuration = 2
-        self.playingImageView.startAnimating()
-        
+        playingImageView.animationImages = [#imageLiteral(resourceName: "MyVoicePlaying1"),#imageLiteral(resourceName: "MyVoicePlaying2"),#imageLiteral(resourceName: "MyVoicePlaying3")]
+        playingImageView.animationDuration = 2
+        animationSwitch = true
         if self.delegate != nil {
             self.delegate?.voiceContentDidPressed(indexPath: self.indexPath!)
         }
     }
     
-    func configWith(message: IMMessage, indexPath: IndexPath) {
-        self.indexPath = indexPath
-        self.nickNameLabel.text = message.from
-        self.audioPath = message.audioObject.path
-        self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
-        switch message.deliveryState {
-        case .MessageDeliveryStateDeliveried:
-            self.retryButton.isHidden = true
-            self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
-        case .MessageDeliveryStateFailed:
-            self.retryButton.isHidden = false
-            self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
-        case .MessageDeliveryStateDelivering:
-            self.retryButton.isHidden = true
-            self.timeLabel.text = "Delivering"
-        }
-    }
-    
 }
+

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */; };
+		037C01741E6A611500851914 /* ChatVoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037C01731E6A611500851914 /* ChatVoiceModel.swift */; };
 		03CBA0CB1E4ABBD90076397C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */; };
 		03CBA0D21E4ABBDA0076397C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D11E4ABBDA0076397C /* Assets.xcassets */; };
 		03CBA0D51E4ABBDA0076397C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03CBA0D31E4ABBDA0076397C /* LaunchScreen.storyboard */; };
@@ -59,6 +60,7 @@
 /* Begin PBXFileReference section */
 		031A1D9A1E4AC630006F8CF0 /* IMDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IMDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		031A1D9B1E4ACAEF006F8CF0 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		037C01731E6A611500851914 /* ChatVoiceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVoiceModel.swift; sourceTree = "<group>"; };
 		03CBA0C71E4ABBD90076397C /* IMDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03CBA0CA1E4ABBD90076397C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03CBA0D11E4ABBDA0076397C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		037C01721E6A60EC00851914 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				037C01731E6A611500851914 /* ChatVoiceModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		03CBA0BE1E4ABBD90076397C = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +268,7 @@
 		03D5C66D1E67E13B001223FC /* Luka */ = {
 			isa = PBXGroup;
 			children = (
+				037C01721E6A60EC00851914 /* Model */,
 				03D5C67B1E67E13B001223FC /* Media */,
 				03D5C66E1E67E13B001223FC /* Alert */,
 				03D5C6711E67E13B001223FC /* ChatInputBox */,
@@ -475,6 +486,7 @@
 				03D5C63E1E67E109001223FC /* IMChatManager.swift in Sources */,
 				031A1D9C1E4ACAEF006F8CF0 /* AppConstants.swift in Sources */,
 				03D5C6891E67E13B001223FC /* LucaMemberDeleteViewController.swift in Sources */,
+				037C01741E6A611500851914 /* ChatVoiceModel.swift in Sources */,
 				03D5C6431E67E109001223FC /* IMHistoryModel.swift in Sources */,
 				03D5C6851E67E13B001223FC /* LucaBaseNavigationController.swift in Sources */,
 				03D5C68D1E67E13B001223FC /* ChatOtherVoiceCell.swift in Sources */,

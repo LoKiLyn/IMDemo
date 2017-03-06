@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import AVFoundation
 
 class LukaChatViewController: UIViewController {
 
     
     // MARK: - Property
     
+    /*
+     *  CellIdentifiers
+     */
     let items: [String] = [
         "ChatTimeCell",
         "ChatMyVoiceCell",
@@ -20,13 +24,29 @@ class LukaChatViewController: UIViewController {
         "ChatOtherVoiceCell",
         "ChatMyVoiceCell",
         ]
+    /*
+     *  将要发送的语音文件的本地路径
+     */
+    let audioToSend: String? = NSTemporaryDirectory().appending("audioToSend.aac")
+    
+    /*
+     *  是否已有群组
+     */
     var hasTeam: Bool = false
-    var audioToSend: String? = NSTemporaryDirectory().appending("audioToSend.aac")
+    
+    /*
+     *  作为数据源的消息集合
+     */
     var messageArray: Array<IMMessage> = []
+    
+    /*
+     *  当前正在播放的Cell
+     */
+    var playingCell: UITableViewCell?
+    
     
     @IBOutlet internal weak var tableView: UITableView!
     @IBOutlet weak var chatInputBox: ChatInputBox!
-    
     @IBOutlet weak var chatBoxBottomConstraint: NSLayoutConstraint!
     
     
@@ -38,21 +58,35 @@ class LukaChatViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        /*
+         *  添加聊天代理
+         */
         IMManager.shared.chatManager.addDelegate(delegate: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //判断是否已有群组
+        /*
+         *  判断是否已有群组
+         */
         self.hasTeam = IMManager.shared.teamManager.hasJoinedATeam()
+        /*
+         *  若没有群组，跳转至创建群组Controller
+         */
         if !hasTeam {
             self.performSegue(withIdentifier: "presentCreateTeamViewController", sender: self)
         }
-        //添加聊天键盘代理
+        /*
+         *  添加聊天键盘代理(ChatInputBoxDelegate)
+         */
         self.chatInputBox.delegate = self
-        //读取会话中最近10条消息
-        self.navigationItem.title = IMManager.shared.teamManager.currentTeamID()
+        /*  
+         *  读取会话中最近(limit)条消息
+         */
         messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: 20)
+        
+        // TestUse: TeamID
+        self.navigationItem.title = IMManager.shared.teamManager.currentTeamID()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,13 +95,7 @@ class LukaChatViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        //tableView滚动到底部
-        self.tableView.scrollToRow(at: IndexPath(row: messageArray.count - 1, section: 0), at: UITableViewScrollPosition.bottom, animated: false)
-        //测试用打印messageInfo
-        for message in messageArray {
-            print(message.audioObject.path as Any)
-            print(message.audioObject.duration as Any)
-        }
+        scrollToBottom()
     }
     
     
@@ -75,18 +103,17 @@ class LukaChatViewController: UIViewController {
     
     @IBAction func memberButtonPressed(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "showMemberViewController", sender: self)
-        
     }
     
     
     // MARK: - Private
     
+    /*
+     *  TableView滚动到底部
+     */
     fileprivate func scrollToBottom(){
         self.tableView.scrollToRow(at: IndexPath(row: (self.messageArray.count - 1), section: 0), at: UITableViewScrollPosition.bottom, animated: false)
     }
-    
-    
-    // MARK: - Navigation
     
 }
 
@@ -114,7 +141,6 @@ extension LukaChatViewController: UITableViewDataSource {
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChatTimeCell")
             return cell!
-            
         }
     }
 }
@@ -132,15 +158,15 @@ extension LukaChatViewController: ChatManagerDelegate {
     
     func onRecvMsg(messages: Array<IMMessage>) {
         for message in messages {
-            self.messageArray.append(message)
+            messageArray.append(message)
         }
-        self.tableView.reloadData()
+        tableView.reloadData()
         scrollToBottom()
     }
     
     func willSendMsg(message: IMMessage) {
-        self.messageArray.append(message)
-        self.tableView.reloadData()
+        messageArray.append(message)
+        tableView.reloadData()
         scrollToBottom()
     }
     
@@ -150,15 +176,15 @@ extension LukaChatViewController: ChatManagerDelegate {
     
     func send(_ message: IMMessage, didCompleteWithError error: Error?) {
         if error == nil {
-            print("发送成功")
-            self.messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: self.messageArray.count)
-            self.tableView.reloadData()
+            messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: self.messageArray.count)
+            tableView.reloadData()
             scrollToBottom()
         } else {
             print(error as Any)
         }
     }
 }
+
 
 extension LukaChatViewController: ChatInputBoxDelegate {
     
@@ -179,7 +205,6 @@ extension LukaChatViewController: ChatInputBoxDelegate {
     
     func inputButtonDidTouchCancel() {
         MediaManager.sharedInstance.stop()
-        //清理录制下来的文件. ToDo
     }
     
     func moreInputButtonDidPressed() {
@@ -202,5 +227,29 @@ extension LukaChatViewController: ChatInputBoxDelegate {
 extension LukaChatViewController: ChatMyVoiceCellDelegate {
     func voiceContentDidPressed(indexPath: IndexPath) {
         MediaManager.sharedInstance.playWithURL(url: messageArray[indexPath.row].audioObject.path ?? "")
+        //添加播放器代理
+        MediaManager.sharedInstance.player?.delegate = self
+
+        if playingCell != nil {
+            let oldCell = playingCell as! ChatMyVoiceCell
+            if playingCell == tableView.cellForRow(at: indexPath) {
+                oldCell.animationSwitch = false
+                oldCell.animationSwitch = true
+            } else {
+                oldCell.animationSwitch = false
+                playingCell = tableView.cellForRow(at: indexPath)
+                let newCell = playingCell as! ChatMyVoiceCell
+                newCell.animationSwitch = true
+            }
+        }
+        playingCell = tableView.cellForRow(at: indexPath)
+    }
+}
+
+
+extension LukaChatViewController: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        let cell = playingCell as! ChatMyVoiceCell
+        cell.playingImageView.stopAnimating()
     }
 }
