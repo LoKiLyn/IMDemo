@@ -37,12 +37,14 @@ class LukaChatViewController: UIViewController {
     /*
      *  作为数据源的消息集合
      */
+    var dataSource: Array<ChatVoiceModel> = []
+    
     var messageArray: Array<IMMessage> = []
     
     /*
      *  当前正在播放的Cell
      */
-    var playingCell: UITableViewCell?
+    var playingModel: ChatVoiceModel?
     
     
     @IBOutlet internal weak var tableView: UITableView!
@@ -76,15 +78,16 @@ class LukaChatViewController: UIViewController {
         if !hasTeam {
             self.performSegue(withIdentifier: "presentCreateTeamViewController", sender: self)
         }
+        
+        /*
+         *  读取会话中最近(limit)条消息
+         */
+        messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: 20)
+        loadData()
         /*
          *  添加聊天键盘代理(ChatInputBoxDelegate)
          */
         self.chatInputBox.delegate = self
-        /*  
-         *  读取会话中最近(limit)条消息
-         */
-        messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: 20)
-        
         // TestUse: TeamID
         self.navigationItem.title = IMManager.shared.teamManager.currentTeamID()
     }
@@ -111,8 +114,23 @@ class LukaChatViewController: UIViewController {
     /*
      *  TableView滚动到底部
      */
-    fileprivate func scrollToBottom(){
-        self.tableView.scrollToRow(at: IndexPath(row: (self.messageArray.count - 1), section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+    fileprivate func scrollToBottom() {
+        self.tableView.scrollToRow(at: IndexPath(row: (self.dataSource.count - 1), section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+    }
+    
+    fileprivate func loadData() {
+        dataSource = []
+        for message in messageArray {
+            switch message.messageType {
+            case .MessageTypeAudio:
+                let model = ChatVoiceModel()
+                model.message = message
+                model.isPlaying = false
+                dataSource.append(model)
+            default:
+                print("Invaild message type.")
+            }
+        }
     }
     
 }
@@ -121,16 +139,20 @@ class LukaChatViewController: UIViewController {
 extension LukaChatViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.messageArray.count
+        return self.dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let message = messageArray[indexPath.row]
+        let messageModel = dataSource[indexPath.row]
+        if messageModel.message == nil {
+            print("Found empty message!")
+        }
+        let message = messageModel.message ?? IMMessage()
         switch message.messageType {
         case .MessageTypeAudio:
             if message.from == IMManager.shared.loginManager.currentAccount() {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "ChatMyVoiceCell") as! ChatMyVoiceCell
-                cell.configWith(message: message, indexPath: indexPath)
+                cell.configWith(messageModel: messageModel, indexPath: indexPath)
                 cell.delegate = self
                 return cell
             } else {
@@ -160,12 +182,14 @@ extension LukaChatViewController: ChatManagerDelegate {
         for message in messages {
             messageArray.append(message)
         }
+        loadData()
         tableView.reloadData()
         scrollToBottom()
     }
     
     func willSendMsg(message: IMMessage) {
         messageArray.append(message)
+        loadData()
         tableView.reloadData()
         scrollToBottom()
     }
@@ -176,7 +200,8 @@ extension LukaChatViewController: ChatManagerDelegate {
     
     func send(_ message: IMMessage, didCompleteWithError error: Error?) {
         if error == nil {
-            messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: self.messageArray.count)
+            messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: self.dataSource.count)
+            loadData()
             tableView.reloadData()
             scrollToBottom()
         } else {
@@ -217,7 +242,7 @@ extension LukaChatViewController: ChatInputBoxDelegate {
             UIView.animate(withDuration: 0.25) {
                 self.chatBoxBottomConstraint.constant = 0
                 self.view.layoutIfNeeded()
-                self.tableView.scrollToRow(at: IndexPath(row: (self.messageArray.count - 1), section: 0), at: UITableViewScrollPosition.bottom, animated: false)
+                self.tableView.scrollToRow(at: IndexPath(row: (self.dataSource.count - 1), section: 0), at: UITableViewScrollPosition.bottom, animated: false)
             }
         }
     }
@@ -229,27 +254,24 @@ extension LukaChatViewController: ChatMyVoiceCellDelegate {
         MediaManager.sharedInstance.playWithURL(url: messageArray[indexPath.row].audioObject.path ?? "")
         //添加播放器代理
         MediaManager.sharedInstance.player?.delegate = self
-
-        if playingCell != nil {
-            let oldCell = playingCell as! ChatMyVoiceCell
-            if playingCell == tableView.cellForRow(at: indexPath) {
-                oldCell.animationSwitch = false
-                oldCell.animationSwitch = true
-            } else {
-                oldCell.animationSwitch = false
-                playingCell = tableView.cellForRow(at: indexPath)
-                let newCell = playingCell as! ChatMyVoiceCell
-                newCell.animationSwitch = true
-            }
+        
+        if playingModel != nil {
+            let oldModel = playingModel!
+            oldModel.isPlaying = false
+            playingModel = dataSource[indexPath.row]
+            playingModel!.isPlaying = true
+        } else {
+            playingModel = dataSource [indexPath.row]
+            playingModel!.isPlaying = true
         }
-        playingCell = tableView.cellForRow(at: indexPath)
+        
     }
 }
 
 
 extension LukaChatViewController: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        let cell = playingCell as! ChatMyVoiceCell
-        cell.playingImageView.stopAnimating()
+        playingModel!.isPlaying = false
+        tableView.reloadData()
     }
 }

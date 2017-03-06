@@ -29,10 +29,9 @@ class ChatMyVoiceCell: UITableViewCell {
     
     // MARK: Public
     
-    
-    public var animationSwitch: Bool = false {
+    public var isPlaying: Bool = false {
         didSet{
-            if animationSwitch {
+            if isPlaying {
                 playingImageView.startAnimating()
             } else {
                 playingImageView.stopAnimating()
@@ -42,7 +41,10 @@ class ChatMyVoiceCell: UITableViewCell {
     
     public var delegate: ChatMyVoiceCellDelegate?
     
-    func configWith(message: IMMessage, indexPath: IndexPath) {
+    func configWith(messageModel: ChatVoiceModel, indexPath: IndexPath) {
+        
+        let message = messageModel.message ?? IMMessage()
+        isPlaying = messageModel.isPlaying ?? false
         
         self.indexPath = indexPath
         nickNameLabel.text = message.from
@@ -75,7 +77,7 @@ class ChatMyVoiceCell: UITableViewCell {
     @IBAction func voiceContentPressed(_ sender: UIControl) {
         playingImageView.animationImages = [#imageLiteral(resourceName: "MyVoicePlaying1"),#imageLiteral(resourceName: "MyVoicePlaying2"),#imageLiteral(resourceName: "MyVoicePlaying3")]
         playingImageView.animationDuration = 2
-        animationSwitch = true
+        isPlaying = true
         if self.delegate != nil {
             self.delegate?.voiceContentDidPressed(indexPath: self.indexPath!)
         }

@@ -15,10 +15,10 @@ class ChatVoiceModel: NSObject {
      */
     var message: IMMessage?
     
-    /*
-     *  IndexPath
-     */
-    var indexPath: IndexPath?
+//    /*
+//     *  IndexPath
+//     */
+//    var indexPath: IndexPath?
     
     /*
      *  播放状态
