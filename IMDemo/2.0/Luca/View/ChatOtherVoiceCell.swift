@@ -8,20 +8,73 @@
 
 import UIKit
 
+protocol ChatOtherVoiceCellDelegate {
+    func voiceContentDidPressed(indexPath: IndexPath)
+}
+
 class ChatOtherVoiceCell: UITableViewCell {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var nickNameLabel: UILabel!
-    var audioPath: String?
+    @IBOutlet weak var chatContentView: UIControl!
+    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var contentImageView: UIImageView!
+    @IBOutlet weak var playingImageView: UIImageView!
+    
+    private var audioPath: String?
+    private var indexPath: IndexPath?
+    
+    // MARK: Public
+    
+    public var isPlaying: Bool = false {
+        didSet{
+            if isPlaying {
+                playingImageView.startAnimating()
+            } else {
+                playingImageView.stopAnimating()
+            }
+        }
+    }
+    
+    public var delegate: ChatOtherVoiceCellDelegate?
+    
+    func configWith(messageModel: ChatVoiceModel, indexPath: IndexPath) {
+        
+        let message = messageModel.message ?? IMMessage()
+        isPlaying = messageModel.isPlaying ?? false
+        
+        self.indexPath = indexPath
+        nickNameLabel.text = message.from
+        audioPath = message.audioObject.path
+        timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        
+        switch message.deliveryState {
+        case .MessageDeliveryStateDeliveried:
+            timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        case .MessageDeliveryStateFailed:
+            timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        case .MessageDeliveryStateDelivering:
+            timeLabel.text = "Delivering"
+        }
+    }
+    
+    
+    // MARK: Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func configWith(message: IMMessage){
-        self.nickNameLabel.text = message.from
-        self.audioPath = message.audioObject.path
-        self.timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+    
+    // MARK: Events
+    
+    @IBAction func voiceContentPressed(_ sender: UIControl) {
+        playingImageView.animationImages = [#imageLiteral(resourceName: "OtherVoicePlaying1"),#imageLiteral(resourceName: "OtherVoicePlaying2"),#imageLiteral(resourceName: "OtherVoicePlaying3")]
+        playingImageView.animationDuration = 2
+        isPlaying = true
+        if self.delegate != nil {
+            self.delegate?.voiceContentDidPressed(indexPath: self.indexPath!)
+        }
     }
     
 }

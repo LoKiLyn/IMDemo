@@ -530,7 +530,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatOtherVoiceCell" id="cfx-5e-cc9" userLabel="ChatOtherVoice Cell" customClass="ChatOtherVoiceCell" customModule="IMDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="353" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfx-5e-cc9" id="ZF7-lK-ydF">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfx-5e-cc9" id="ZF7-lK-ydF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -557,7 +557,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
-                                                <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpT-e5-iYV" userLabel="ChatContent View" customClass="UIControl">
+                                                <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bpT-e5-iYV" userLabel="ChatContent View" customClass="UIControl">
                                                     <rect key="frame" x="57" y="29" width="80" height="45"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatContentOther" translatesAutoresizingMaskIntoConstraints="NO" id="bxO-gB-D0D" userLabel="Content ImageView">
@@ -595,6 +595,9 @@
                                                         <constraint firstAttribute="trailing" secondItem="bxO-gB-D0D" secondAttribute="trailing" id="lbV-oC-LFE"/>
                                                         <constraint firstItem="bxO-gB-D0D" firstAttribute="top" secondItem="bpT-e5-iYV" secondAttribute="top" id="wu1-rg-gHQ"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="voiceContentPressed:" destination="cfx-5e-cc9" eventType="touchUpInside" id="JVp-kw-lT0"/>
+                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -613,7 +616,11 @@
                                             <constraint firstItem="zAO-dL-2S8" firstAttribute="leading" secondItem="cfx-5e-cc9" secondAttribute="leading" constant="26" id="jg2-Kv-cJE"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="avatarImageView" destination="1Ce-ez-zeb" id="p4O-CZ-V7t"/>
+                                            <outlet property="chatContentView" destination="bpT-e5-iYV" id="K7u-JB-Jvi"/>
+                                            <outlet property="contentImageView" destination="bxO-gB-D0D" id="ceC-qK-Nr8"/>
                                             <outlet property="nickNameLabel" destination="zAO-dL-2S8" id="aMZ-NI-fxL"/>
+                                            <outlet property="playingImageView" destination="COM-4Y-GNL" id="4Fi-2c-q7g"/>
                                             <outlet property="timeLabel" destination="iff-Vl-D7m" id="u1d-re-yL9"/>
                                         </connections>
                                     </tableViewCell>
@@ -643,7 +650,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatMyVoiceCell" id="gn4-b5-LVF" userLabel="ChatMyVoice Cell" customClass="ChatMyVoiceCell" customModule="IMDemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="485" width="375" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gn4-b5-LVF" id="Jmj-GF-AtS">
+                                        <tableViewCellContentView key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gn4-b5-LVF" id="Jmj-GF-AtS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -745,7 +752,6 @@
                                             <outlet property="nickNameLabel" destination="Oi7-Vl-eRR" id="zce-xU-noS"/>
                                             <outlet property="playingImageView" destination="mtt-jn-mdo" id="zHs-M1-Ac2"/>
                                             <outlet property="retryButton" destination="IVo-VB-Zsx" id="y6m-89-YZH"/>
-                                            <outlet property="secondLabel" destination="OWd-NL-LzO" id="RXn-SS-7xa"/>
                                             <outlet property="timeLabel" destination="OWd-NL-LzO" id="Jvy-ju-MR4"/>
                                         </connections>
                                     </tableViewCell>

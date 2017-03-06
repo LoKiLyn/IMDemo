@@ -151,13 +151,14 @@ extension LukaChatViewController: UITableViewDataSource {
         switch message.messageType {
         case .MessageTypeAudio:
             if message.from == IMManager.shared.loginManager.currentAccount() {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatMyVoiceCell") as! ChatMyVoiceCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatMyVoiceCell", for: indexPath) as! ChatMyVoiceCell
                 cell.configWith(messageModel: messageModel, indexPath: indexPath)
                 cell.delegate = self
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatOtherVoiceCell") as! ChatOtherVoiceCell
-                cell.configWith(message: message)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatOtherVoiceCell", for: indexPath) as! ChatOtherVoiceCell
+                cell.configWith(messageModel: messageModel, indexPath: indexPath)
+                cell.delegate = self
                 return cell
             }
         default:
@@ -249,10 +250,9 @@ extension LukaChatViewController: ChatInputBoxDelegate {
 }
 
 
-extension LukaChatViewController: ChatMyVoiceCellDelegate {
+extension LukaChatViewController: ChatMyVoiceCellDelegate, ChatOtherVoiceCellDelegate {
     func voiceContentDidPressed(indexPath: IndexPath) {
         MediaManager.sharedInstance.playWithURL(url: messageArray[indexPath.row].audioObject.path ?? "")
-        //添加播放器代理
         MediaManager.sharedInstance.player?.delegate = self
         
         if playingModel != nil {

@@ -22,7 +22,6 @@ class ChatMyVoiceCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var playingImageView: UIImageView!
-    @IBOutlet weak var secondLabel: UILabel!
     
     private var audioPath: String?
     private var indexPath: IndexPath?
