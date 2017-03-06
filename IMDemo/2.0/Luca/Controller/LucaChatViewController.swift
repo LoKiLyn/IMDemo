@@ -264,7 +264,7 @@ extension LukaChatViewController: ChatMyVoiceCellDelegate {
             playingModel = dataSource [indexPath.row]
             playingModel!.isPlaying = true
         }
-        
+        tableView.reloadData()
     }
 }
 
