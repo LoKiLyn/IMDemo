@@ -20,4 +20,8 @@ class IMHistoryModel: NSObject {
      */
     var limit: Int?
     
+    /*
+     *  传入的消息(获取传入消息之前的若干条记录时使用)
+     */
+    var message: IMMessage?
 }

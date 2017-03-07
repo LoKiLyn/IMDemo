@@ -82,14 +82,35 @@ class LukaChatViewController: UIViewController {
         /*
          *  读取会话中最近(limit)条消息
          */
-        messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: 20)
+        messageArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: 10)
         loadData()
         /*
          *  添加聊天键盘代理(ChatInputBoxDelegate)
          */
         self.chatInputBox.delegate = self
+        
+        /*
+         *  添加下拉刷新
+         */
+        tableView.refreshClosure = {
+            self.loadHistory()
+        }
+        
         // TestUse: TeamID
         self.navigationItem.title = IMManager.shared.teamManager.currentTeamID()
+    }
+    
+    // 读取历史记录
+    private func loadHistory() {
+        tableView.beginRefreshing()
+        if messageArray.count > 0 {
+            let appendArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: 10, message: messageArray.first!)
+            for message in appendArray.reversed() {
+                messageArray.insert(message, at: 0)
+            }
+        }
+        tableView.reloadData()
+        tableView.endRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {

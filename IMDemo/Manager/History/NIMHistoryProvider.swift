@@ -17,7 +17,8 @@ extension NIMHistoryProvider: IMHistoryProtocol {
     
     internal func messagesInSession(model: IMHistoryModel) -> Array<IMMessage> {
         let session = NIMSession(model.sessionID ?? "", type: NIMSessionType.team)
-        let messages = NIMSDK.shared().conversationManager.messages(in: session, message: nil, limit: model.limit ?? 0)
+        let message = NIMSDK.shared().conversationManager.messages(in: session, messageIds: ["\(model.message?.messageID)"])?.first
+        let messages = NIMSDK.shared().conversationManager.messages(in: session, message: message, limit: model.limit ?? 0)
         
         var newMessages: Array<IMMessage> = []
         for message in messages! {
