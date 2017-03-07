@@ -94,10 +94,6 @@ class LukaChatViewController: UIViewController {
          */
         tableView.refreshClosure = {
             self.loadHistory()
-            self.loadData()
-            self.tableView.reloadData()
-            self.tableView.scrollToRow(at: IndexPath(row: (10), section: 0), at: UITableViewScrollPosition.top, animated: false)
-            self.tableView.endRefreshing()
         }
         
         // TestUse: TeamID
@@ -109,9 +105,18 @@ class LukaChatViewController: UIViewController {
         tableView.beginRefreshing()
         if messageArray.count > 0 {
             let appendArray = IMManager.shared.historyManager.messagesInSession(sessionID: IMManager.shared.teamManager.currentTeamID(), limit: 10, message: messageArray.first!)
-            for message in appendArray.reversed() {
-                messageArray.insert(message, at: 0)
+            if appendArray.count > 0 {
+                for message in appendArray.reversed() {
+                    messageArray.insert(message, at: 0)
+                }
+                loadData()
+                tableView.reloadData()
+                tableView.scrollToRow(at: IndexPath(row: (10), section: 0), at: UITableViewScrollPosition.top, animated: false)
+            } else {
+                //测试用，应使用HUD
+                print("没有新数据了！")
             }
+            tableView.endRefreshing()
         }
     }
     
