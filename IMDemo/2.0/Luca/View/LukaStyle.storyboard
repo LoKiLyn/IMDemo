@@ -595,6 +595,7 @@
                                                         <constraint firstItem="iff-Vl-D7m" firstAttribute="leading" secondItem="COM-4Y-GNL" secondAttribute="trailing" constant="10" id="b4w-3p-ml6"/>
                                                         <constraint firstAttribute="trailing" secondItem="bxO-gB-D0D" secondAttribute="trailing" id="lbV-oC-LFE"/>
                                                         <constraint firstItem="bxO-gB-D0D" firstAttribute="top" secondItem="bpT-e5-iYV" secondAttribute="top" id="wu1-rg-gHQ"/>
+                                                        <constraint firstAttribute="width" constant="80" id="xfh-Qq-1MK"/>
                                                     </constraints>
                                                     <connections>
                                                         <action selector="voiceContentPressed:" destination="cfx-5e-cc9" eventType="touchUpInside" id="JVp-kw-lT0"/>
@@ -619,6 +620,7 @@
                                         <connections>
                                             <outlet property="avatarImageView" destination="1Ce-ez-zeb" id="p4O-CZ-V7t"/>
                                             <outlet property="chatContentView" destination="bpT-e5-iYV" id="K7u-JB-Jvi"/>
+                                            <outlet property="chatContentViewWidth" destination="xfh-Qq-1MK" id="ZI4-mj-Xm0"/>
                                             <outlet property="contentImageView" destination="bxO-gB-D0D" id="ceC-qK-Nr8"/>
                                             <outlet property="nickNameLabel" destination="zAO-dL-2S8" id="aMZ-NI-fxL"/>
                                             <outlet property="playingImageView" destination="COM-4Y-GNL" id="4Fi-2c-q7g"/>
@@ -679,17 +681,17 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvz-9N-fMN" userLabel="ChatContent View" customClass="UIControl">
-                                                    <rect key="frame" x="118" y="29" width="200" height="45"/>
+                                                    <rect key="frame" x="238" y="29" width="80" height="45"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatContentMine" highlightedImage="ChatContentOther" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-9K-sPK" userLabel="Content ImageView">
-                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="ZJ5-XJ-cU8"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyVoicePlaying3" translatesAutoresizingMaskIntoConstraints="NO" id="mtt-jn-mdo" userLabel="Playing ImageView">
-                                                            <rect key="frame" x="163" y="10" width="17" height="25"/>
+                                                            <rect key="frame" x="43" y="10" width="17" height="25"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="7vj-xJ-q7U"/>
@@ -697,7 +699,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="1''" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWd-NL-LzO" userLabel="Second Label">
-                                                            <rect key="frame" x="14" y="11" width="139" height="24"/>
+                                                            <rect key="frame" x="14" y="11" width="19" height="24"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -715,14 +717,14 @@
                                                         <constraint firstItem="nAb-9K-sPK" firstAttribute="top" secondItem="Rvz-9N-fMN" secondAttribute="top" id="q6a-um-VJV"/>
                                                         <constraint firstItem="mtt-jn-mdo" firstAttribute="leading" secondItem="OWd-NL-LzO" secondAttribute="trailing" priority="999" constant="10" id="xOB-HJ-T7F"/>
                                                         <constraint firstAttribute="trailing" secondItem="mtt-jn-mdo" secondAttribute="trailing" constant="20" id="xrl-gP-b7u"/>
-                                                        <constraint firstAttribute="width" priority="999" constant="200" id="xsK-Hv-Imm"/>
+                                                        <constraint firstAttribute="width" priority="999" constant="80" id="xsK-Hv-Imm"/>
                                                     </constraints>
                                                     <connections>
                                                         <action selector="voiceContentPressed:" destination="gn4-b5-LVF" eventType="touchUpInside" id="bhM-FQ-Vm1"/>
                                                     </connections>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVo-VB-Zsx" userLabel="Retry Button">
-                                                    <rect key="frame" x="80" y="32" width="38" height="38"/>
+                                                    <rect key="frame" x="200" y="32" width="38" height="38"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="IVo-VB-Zsx" secondAttribute="height" multiplier="1:1" id="Ess-o4-QOd"/>

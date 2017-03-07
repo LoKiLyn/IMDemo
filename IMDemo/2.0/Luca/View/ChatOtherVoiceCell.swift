@@ -20,10 +20,12 @@ class ChatOtherVoiceCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var playingImageView: UIImageView!
+    @IBOutlet weak var chatContentViewWidth: NSLayoutConstraint!
     
     private var audioPath: String?
     private var indexPath: IndexPath?
     
+
     // MARK: Public
     
     public var isPlaying: Bool = false {
@@ -47,6 +49,17 @@ class ChatOtherVoiceCell: UITableViewCell {
         nickNameLabel.text = message.from
         audioPath = message.audioObject.path
         timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
+        
+        //语音条长度测试用数据
+        let duration = message.audioObject.duration!/1000 + 1
+        if duration <= 10 {
+            chatContentViewWidth.constant = CGFloat(80 + duration * 5)
+        } else if duration < 30 && duration > 10 {
+            chatContentViewWidth.constant = CGFloat(130 + ((Double(duration) - 10)/10) * 40)
+        } else {
+            chatContentViewWidth.constant = CGFloat(210)
+        }
+        self.layoutIfNeeded()
         
         switch message.deliveryState {
         case .MessageDeliveryStateDeliveried:
