@@ -94,6 +94,10 @@ class LukaChatViewController: UIViewController {
          */
         tableView.refreshClosure = {
             self.loadHistory()
+            self.loadData()
+            self.tableView.reloadData()
+            self.tableView.scrollToRow(at: IndexPath(row: (10), section: 0), at: UITableViewScrollPosition.top, animated: false)
+            self.tableView.endRefreshing()
         }
         
         // TestUse: TeamID
@@ -109,8 +113,6 @@ class LukaChatViewController: UIViewController {
                 messageArray.insert(message, at: 0)
             }
         }
-        tableView.reloadData()
-        tableView.endRefreshing()
     }
     
     override func viewWillAppear(_ animated: Bool) {
