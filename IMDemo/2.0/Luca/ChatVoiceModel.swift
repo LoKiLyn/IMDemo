@@ -8,17 +8,7 @@
 
 import UIKit
 
-class ChatVoiceModel: NSObject {
-    
-    /*
-     *  语音消息
-     */
-    var message: IMMessage?
-    
-//    /*
-//     *  IndexPath
-//     */
-//    var indexPath: IndexPath?
+class ChatVoiceModel: BaseChatModel {
     
     /*
      *  播放状态

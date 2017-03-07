@@ -43,7 +43,7 @@ class ChatMyVoiceCell: UITableViewCell {
     
     func configWith(messageModel: ChatVoiceModel, indexPath: IndexPath) {
         
-        let message = messageModel.message ?? IMMessage()
+        let message = messageModel.message
         isPlaying = messageModel.isPlaying ?? false
         
         self.indexPath = indexPath
@@ -93,6 +93,9 @@ class ChatMyVoiceCell: UITableViewCell {
         if self.delegate != nil {
             self.delegate?.voiceContentDidPressed(indexPath: self.indexPath!)
         }
+    }
+    
+    @IBAction func retryButtonPressed(_ sender: UIButton) {
     }
     
 }
