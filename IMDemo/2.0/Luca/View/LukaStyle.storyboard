@@ -416,10 +416,10 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XZ-71-055" userLabel="ChatContent View" customClass="UIControl">
-                                                    <rect key="frame" x="213" y="29" width="105" height="45"/>
+                                                    <rect key="frame" x="118" y="29" width="200" height="45"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatContentMine" translatesAutoresizingMaskIntoConstraints="NO" id="yyu-Oy-ZZp" userLabel="Content ImageView">
-                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="WG4-73-QoL"/>
@@ -429,13 +429,14 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="yyu-Oy-ZZp" secondAttribute="trailing" id="52R-x8-4Rn"/>
+                                                        <constraint firstAttribute="width" constant="200" id="Gms-AR-973"/>
                                                         <constraint firstItem="yyu-Oy-ZZp" firstAttribute="leading" secondItem="7XZ-71-055" secondAttribute="leading" id="NBN-We-zfy"/>
                                                         <constraint firstAttribute="bottom" secondItem="yyu-Oy-ZZp" secondAttribute="bottom" id="W0v-Le-gKX"/>
                                                         <constraint firstItem="yyu-Oy-ZZp" firstAttribute="top" secondItem="7XZ-71-055" secondAttribute="top" id="yRv-cG-zOu"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jdy-OD-46z" userLabel="Retry Button">
-                                                    <rect key="frame" x="175" y="32" width="38" height="38"/>
+                                                    <rect key="frame" x="80" y="32" width="38" height="38"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="38" id="Gil-rE-j1A"/>
@@ -458,7 +459,7 @@
                                             <constraint firstItem="Kdi-eJ-e4k" firstAttribute="top" secondItem="QMm-l6-XuQ" secondAttribute="top" constant="4" id="FWC-fd-2wq"/>
                                             <constraint firstAttribute="trailing" secondItem="Kdi-eJ-e4k" secondAttribute="trailing" constant="26" id="cuc-Su-aac"/>
                                             <constraint firstAttribute="trailing" secondItem="33M-Er-9ba" secondAttribute="trailing" constant="23" id="hTg-lq-RSt"/>
-                                            <constraint firstItem="7XZ-71-055" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QMm-l6-XuQ" secondAttribute="leading" priority="999" constant="128" id="jbw-aQ-gij"/>
+                                            <constraint firstItem="7XZ-71-055" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QMm-l6-XuQ" secondAttribute="leading" priority="999" constant="20" id="jbw-aQ-gij"/>
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatOtherImageCell" id="Kue-Qx-WmD" userLabel="ChatOtherImage Cell">
@@ -575,7 +576,7 @@
                                                                 <constraint firstAttribute="width" constant="17" id="tc1-Bs-wFK"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="1''" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iff-Vl-D7m" userLabel="Second Label">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="1''" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iff-Vl-D7m" userLabel="Second Label">
                                                             <rect key="frame" x="47" y="10" width="19" height="24"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -678,17 +679,17 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rvz-9N-fMN" userLabel="ChatContent View" customClass="UIControl">
-                                                    <rect key="frame" x="238" y="29" width="80" height="45"/>
+                                                    <rect key="frame" x="118" y="29" width="200" height="45"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ChatContentMine" highlightedImage="ChatContentOther" translatesAutoresizingMaskIntoConstraints="NO" id="nAb-9K-sPK" userLabel="Content ImageView">
-                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="45"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="200" height="45"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="45" id="ZJ5-XJ-cU8"/>
                                                             </constraints>
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MyVoicePlaying3" translatesAutoresizingMaskIntoConstraints="NO" id="mtt-jn-mdo" userLabel="Playing ImageView">
-                                                            <rect key="frame" x="43" y="10" width="17" height="25"/>
+                                                            <rect key="frame" x="163" y="10" width="17" height="25"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="7vj-xJ-q7U"/>
@@ -696,7 +697,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="751" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="1''" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWd-NL-LzO" userLabel="Second Label">
-                                                            <rect key="frame" x="14" y="11" width="19" height="24"/>
+                                                            <rect key="frame" x="14" y="11" width="139" height="24"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -709,18 +710,19 @@
                                                         <constraint firstItem="OWd-NL-LzO" firstAttribute="centerY" secondItem="Rvz-9N-fMN" secondAttribute="centerY" id="8xw-gt-I1l"/>
                                                         <constraint firstItem="mtt-jn-mdo" firstAttribute="centerY" secondItem="Rvz-9N-fMN" secondAttribute="centerY" id="QxG-Hi-szi"/>
                                                         <constraint firstAttribute="trailing" secondItem="nAb-9K-sPK" secondAttribute="trailing" id="VAB-nP-fLz"/>
-                                                        <constraint firstItem="OWd-NL-LzO" firstAttribute="leading" secondItem="Rvz-9N-fMN" secondAttribute="leading" priority="752" constant="14" id="XYv-sI-D0r"/>
+                                                        <constraint firstItem="OWd-NL-LzO" firstAttribute="leading" secondItem="Rvz-9N-fMN" secondAttribute="leading" constant="14" id="XYv-sI-D0r"/>
                                                         <constraint firstAttribute="bottom" secondItem="nAb-9K-sPK" secondAttribute="bottom" id="nHx-P6-e8p"/>
                                                         <constraint firstItem="nAb-9K-sPK" firstAttribute="top" secondItem="Rvz-9N-fMN" secondAttribute="top" id="q6a-um-VJV"/>
-                                                        <constraint firstItem="mtt-jn-mdo" firstAttribute="leading" secondItem="OWd-NL-LzO" secondAttribute="trailing" constant="10" id="xOB-HJ-T7F"/>
+                                                        <constraint firstItem="mtt-jn-mdo" firstAttribute="leading" secondItem="OWd-NL-LzO" secondAttribute="trailing" priority="999" constant="10" id="xOB-HJ-T7F"/>
                                                         <constraint firstAttribute="trailing" secondItem="mtt-jn-mdo" secondAttribute="trailing" constant="20" id="xrl-gP-b7u"/>
+                                                        <constraint firstAttribute="width" priority="999" constant="200" id="xsK-Hv-Imm"/>
                                                     </constraints>
                                                     <connections>
                                                         <action selector="voiceContentPressed:" destination="gn4-b5-LVF" eventType="touchUpInside" id="bhM-FQ-Vm1"/>
                                                     </connections>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVo-VB-Zsx" userLabel="Retry Button">
-                                                    <rect key="frame" x="200" y="32" width="38" height="38"/>
+                                                    <rect key="frame" x="80" y="32" width="38" height="38"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="IVo-VB-Zsx" secondAttribute="height" multiplier="1:1" id="Ess-o4-QOd"/>
@@ -742,12 +744,13 @@
                                         <constraints>
                                             <constraint firstItem="Oi7-Vl-eRR" firstAttribute="top" secondItem="gn4-b5-LVF" secondAttribute="top" constant="4" id="2Oj-WG-aJI"/>
                                             <constraint firstAttribute="trailing" secondItem="9D6-IG-4xu" secondAttribute="trailing" constant="23" id="GiX-fu-dcP"/>
-                                            <constraint firstItem="Rvz-9N-fMN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gn4-b5-LVF" secondAttribute="leading" priority="999" constant="128" id="YaM-HP-2JX"/>
+                                            <constraint firstItem="Rvz-9N-fMN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gn4-b5-LVF" secondAttribute="leading" constant="100" id="YaM-HP-2JX"/>
                                             <constraint firstAttribute="trailing" secondItem="Oi7-Vl-eRR" secondAttribute="trailing" constant="26" id="c4y-kS-eQZ"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="avatarImageView" destination="9D6-IG-4xu" id="TdU-QN-zdp"/>
                                             <outlet property="chatContentView" destination="Rvz-9N-fMN" id="boI-it-wcM"/>
+                                            <outlet property="chatContentViewWidth" destination="xsK-Hv-Imm" id="AsY-yh-rJH"/>
                                             <outlet property="contentImageView" destination="nAb-9K-sPK" id="4LR-pa-HJr"/>
                                             <outlet property="nickNameLabel" destination="Oi7-Vl-eRR" id="zce-xU-noS"/>
                                             <outlet property="playingImageView" destination="mtt-jn-mdo" id="zHs-M1-Ac2"/>
