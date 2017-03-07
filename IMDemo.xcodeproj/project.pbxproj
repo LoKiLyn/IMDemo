@@ -54,6 +54,7 @@
 		03D5C68C1E67E13B001223FC /* ChatMyVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67E1E67E13B001223FC /* ChatMyVoiceCell.swift */; };
 		03D5C68D1E67E13B001223FC /* ChatOtherVoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D5C67F1E67E13B001223FC /* ChatOtherVoiceCell.swift */; };
 		03D5C68E1E67E13B001223FC /* LukaStyle.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03D5C6801E67E13B001223FC /* LukaStyle.storyboard */; };
+		03E1D4FD1E6E558100F9A2D2 /* ScrollView+PullToRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E1D4FC1E6E558100F9A2D2 /* ScrollView+PullToRefresh.swift */; };
 		253B7C9EFB758C54A84B4EAB /* Pods_IMDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,7 @@
 		03D5C67E1E67E13B001223FC /* ChatMyVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMyVoiceCell.swift; sourceTree = "<group>"; };
 		03D5C67F1E67E13B001223FC /* ChatOtherVoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatOtherVoiceCell.swift; sourceTree = "<group>"; };
 		03D5C6801E67E13B001223FC /* LukaStyle.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LukaStyle.storyboard; sourceTree = "<group>"; };
+		03E1D4FC1E6E558100F9A2D2 /* ScrollView+PullToRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ScrollView+PullToRefresh.swift"; sourceTree = "<group>"; };
 		6762E5EB97AB937240AC12F8 /* Pods-IMDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.release.xcconfig"; sourceTree = "<group>"; };
 		834A076FA27F3CCE11C09B17 /* Pods-IMDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMDemo/Pods-IMDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		C3D7DF00C4465C8FDD780F03 /* Pods_IMDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -268,6 +270,7 @@
 		03D5C66D1E67E13B001223FC /* Luka */ = {
 			isa = PBXGroup;
 			children = (
+				03E1D4FC1E6E558100F9A2D2 /* ScrollView+PullToRefresh.swift */,
 				037C01721E6A60EC00851914 /* Model */,
 				03D5C67B1E67E13B001223FC /* Media */,
 				03D5C66E1E67E13B001223FC /* Alert */,
@@ -491,6 +494,7 @@
 				03D5C6851E67E13B001223FC /* LucaBaseNavigationController.swift in Sources */,
 				03D5C68D1E67E13B001223FC /* ChatOtherVoiceCell.swift in Sources */,
 				03D5C6481E67E109001223FC /* NIMLoginProvider.swift in Sources */,
+				03E1D4FD1E6E558100F9A2D2 /* ScrollView+PullToRefresh.swift in Sources */,
 				03D5C6861E67E13B001223FC /* LucaChatViewController.swift in Sources */,
 				03D5C6631E67E127001223FC /* ListViewController.swift in Sources */,
 				03D5C68C1E67E13B001223FC /* ChatMyVoiceCell.swift in Sources */,

@@ -7,4 +7,5 @@ target 'IMDemo' do
 
   # Pods for IMDemo
 pod ’NIMSDK’
+pod ‘MJRefresh’
 end
