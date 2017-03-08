@@ -15,6 +15,7 @@ class NIMChatProvider: NSObject {
         case NoTeamID
         case NoMessageImage
         case NoMessageVideoPath
+        case NoMessage
     }
     
     var chatManagerDelegate: ChatManagerDelegate?
@@ -154,6 +155,20 @@ extension NIMChatProvider: IMChatProtocol {
         
     }
     
+    func resendMessage(model: IMChatModel, completion: @escaping MessageHandler) {
+        let session = NIMSession(model.sessionID ?? "", type: NIMSessionType.team)
+        let message = NIMSDK.shared().conversationManager.messages(in: session, messageIds: [(model.message.messageID) ?? ""])?.first
+        if message == nil {
+            completion(chatError.NoMessage)
+        } else {
+            do {
+                try NIMSDK.shared().chatManager.resend(message!)
+            } catch {
+                completion(error)
+            }
+        }
+    }
+    
     func setDelegate(delegate: ChatManagerDelegate) {
         NIMSDK.shared().chatManager.add(self)
         self.chatManagerDelegate = delegate
@@ -193,8 +208,10 @@ extension NIMChatProvider: NIMChatManagerDelegate {
     }
     
     func send(_ message: NIMMessage, didCompleteWithError error: Error?) {
+        
         if self.chatManagerDelegate != nil {
             let msg = self.converseMessage(message: message)
+            
             self.chatManagerDelegate!.send?(msg, didCompleteWithError: error)
         }
     }

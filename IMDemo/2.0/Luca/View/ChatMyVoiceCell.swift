@@ -11,6 +11,7 @@ import AVFoundation
 
 protocol ChatMyVoiceCellDelegate {
     func voiceContentDidPressed(indexPath: IndexPath)
+    func retryButtonDidPressed(indexPath: IndexPath)
 }
 
 class ChatMyVoiceCell: UITableViewCell {
@@ -25,7 +26,7 @@ class ChatMyVoiceCell: UITableViewCell {
     @IBOutlet weak var chatContentViewWidth: NSLayoutConstraint!
     
     private var audioPath: String?
-    private var indexPath: IndexPath?
+    private var indexPath: IndexPath = IndexPath()
     
     // MARK: Public
     
@@ -65,12 +66,14 @@ class ChatMyVoiceCell: UITableViewCell {
         
         switch message.deliveryState {
         case .MessageDeliveryStateDeliveried:
+            
             retryButton.isHidden = true
             timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
         case .MessageDeliveryStateFailed:
             retryButton.isHidden = false
             timeLabel.text = "\(message.audioObject.duration!/1000 + 1)\""
         case .MessageDeliveryStateDelivering:
+            
             retryButton.isHidden = true
             timeLabel.text = "Delivering"
         }
@@ -91,11 +94,14 @@ class ChatMyVoiceCell: UITableViewCell {
         playingImageView.animationDuration = 2
         isPlaying = true
         if self.delegate != nil {
-            self.delegate?.voiceContentDidPressed(indexPath: self.indexPath!)
+            self.delegate?.voiceContentDidPressed(indexPath: self.indexPath)
         }
     }
     
     @IBAction func retryButtonPressed(_ sender: UIButton) {
+        if self.delegate != nil {
+            self.delegate?.retryButtonDidPressed(indexPath: self.indexPath)
+        }
     }
     
 }

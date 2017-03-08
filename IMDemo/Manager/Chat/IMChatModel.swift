@@ -35,4 +35,9 @@ class IMChatModel: NSObject {
      */
     var customMessage: String?
     
+    /**
+     *  消息对象(暂时用于重发)
+     */
+    var message: IMMessage = IMMessage()
+    
 }

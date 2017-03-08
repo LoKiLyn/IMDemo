@@ -229,9 +229,14 @@ extension LukaChatViewController: ChatManagerDelegate {
     }
     
     func send(_ message: IMMessage, didCompleteWithError error: Error?) {
+        
         if error == nil {
+            for model in dataSource {
+                if model.message.messageID == message.messageID {
+                    model.message.deliveryState = message.deliveryState
+                }
+            }
             tableView.reloadData()
-            scrollToBottom()
         } else {
             print(error as Any)
         }
@@ -278,6 +283,31 @@ extension LukaChatViewController: ChatInputBoxDelegate {
 
 
 extension LukaChatViewController: ChatMyVoiceCellDelegate, ChatOtherVoiceCellDelegate {
+    
+    func retryButtonDidPressed(indexPath: IndexPath) {
+        //暂用系统alert.
+        let alert = UIAlertController(title: "提示", message: "重发该消息？", preferredStyle: UIAlertControllerStyle.alert)
+        let resendAction = UIAlertAction(title: "确定", style: UIAlertActionStyle.default) { (resendAction) in
+            let messageToResend = self.dataSource[indexPath.row].message
+            self.dataSource.remove(at: indexPath.row)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+            }, completion: { (finish) in
+                IMManager.shared.chatManager.resendMessage(sessionID: IMManager.shared.teamManager.currentTeamID(), message: messageToResend, completion: { (error) in
+                    if error == nil {
+                        print("发送成功")
+                    } else {
+                        print("发送失败,错误信息:\(error)")
+                    }
+                })
+            })
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(cancelAction)
+        alert.addAction(resendAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func voiceContentDidPressed(indexPath: IndexPath) {
         MediaManager.sharedInstance.playWithURL(url: dataSource[indexPath.row].message.audioObject.path ?? "")
         MediaManager.sharedInstance.player?.delegate = self
@@ -288,7 +318,7 @@ extension LukaChatViewController: ChatMyVoiceCellDelegate, ChatOtherVoiceCellDel
             playingModel = dataSource[indexPath.row] as? ChatVoiceModel
             playingModel!.isPlaying = true
         } else {
-            playingModel = dataSource [indexPath.row] as? ChatVoiceModel
+            playingModel = dataSource[indexPath.row] as? ChatVoiceModel
             playingModel!.isPlaying = true
         }
         tableView.reloadData()

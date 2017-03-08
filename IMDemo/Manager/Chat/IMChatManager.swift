@@ -9,12 +9,14 @@
 import UIKit
 
 typealias MessageHandler = (Error?) -> Void
+typealias ResendHandler = (Bool, Error?) -> Void
 
 protocol IMChatProtocol: NSObjectProtocol {
     func sendMessageWithText(model: IMChatModel, completion: @escaping MessageHandler)
     func sendMessageWithImage(model: IMChatModel, completion: @escaping MessageHandler)
     func sendMessageWithAudio(model: IMChatModel, completion: @escaping MessageHandler)
     func sendCustomMessage(model: IMChatModel, completion: @escaping MessageHandler)
+    func resendMessage(model: IMChatModel, completion: @escaping MessageHandler)
     func setDelegate(delegate: ChatManagerDelegate)
     func removeDelegate(delegate: ChatManagerDelegate)
 }
@@ -114,6 +116,21 @@ class IMChatManager: NSObject {
         model.customMessage = customMessage
         chatProvider?.sendCustomMessage(model: model, completion: completion)
     }
+    
+    /**
+     *  消息重发
+     *
+     *  @param sessionID      群组ID
+     *  @param message        要重发的消息
+     *  @param completion     完成后的回调
+     */
+    func resendMessage(sessionID: String, message: IMMessage, completion: @escaping MessageHandler) {
+        let model = IMChatModel()
+        model.sessionID = sessionID
+        model.message = message
+        chatProvider?.resendMessage(model: model, completion: completion)
+    }
+    
     
     /**
      *  添加代理
